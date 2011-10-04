@@ -17,6 +17,7 @@ package eu.jpereira.trainings.gpstore.model;
 
 import java.util.List;
 
+import eu.jpereira.trainings.gpstore.exceptions.DuplicateSaleableItemException;
 import eu.jpereira.trainings.gpstore.exceptions.NotImplementedException;
 import eu.jpereira.trainings.gpstore.model.exceptions.NoSuchSalealeItemExistsException;
 
@@ -39,12 +40,12 @@ public class ItemCategory extends AbstractEntity {
 	 * 
 	 * @param saleableItem
 	 *            The sellableItem
-	 * @throws DuplicateSaleableItem
+	 * @throws DuplicateSaleableItemException
 	 *             If such a SaleableItem already exists in the collection of
 	 *             saleable Items for this ItemCategory
 	 */
 	public void addSellableItem(SaleableItem saleableItem)
-			throws DuplicateSaleableItem {
+			throws DuplicateSaleableItemException {
 
 	}
 
