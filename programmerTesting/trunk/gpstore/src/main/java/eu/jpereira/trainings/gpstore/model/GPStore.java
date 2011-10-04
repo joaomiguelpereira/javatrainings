@@ -30,6 +30,18 @@ import eu.jpereira.trainings.gpstore.model.exceptions.NoSuchDepartmentException;
  * @author jpereira
  * 
  */
+/**
+ * @author jpereira
+ *
+ */
+/**
+ * @author jpereira
+ *
+ */
+/**
+ * @author jpereira
+ *
+ */
 public class GPStore extends AbstractEntity {
 
 	// private data
@@ -117,13 +129,12 @@ public class GPStore extends AbstractEntity {
 		return this.departments.size();
 	}
 
-	/*
-	 * (non-Javadoc)
-	 * 
-	 * @see eu.jpereira.trainings.gpstore.AbstractEntity#find(long)
+	/**
+	 * Find an department if you know its ID
+	 * @param id the department id
+	 * @return a department or null if none found with the argument id
 	 */
-	@Override
-	public GPStore find(long entityId) {
+	public GPStore findDepartment(long id) {
 
 		throw new NotImplementedException();
 	}

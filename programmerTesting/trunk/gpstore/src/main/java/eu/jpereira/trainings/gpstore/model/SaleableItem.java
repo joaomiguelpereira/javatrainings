@@ -77,13 +77,6 @@ public class SaleableItem extends AbstractEntity {
 		this.price = price;
 	}
 
-	/* (non-Javadoc)
-	 * @see eu.jpereira.trainings.gpstore.AbstractEntity#find(long)
-	 */
-	@Override
-	public AbstractEntity find(long entityId) {
-		// TODO Auto-generated method stub
-		return null;
-	}
+	
 	
 }

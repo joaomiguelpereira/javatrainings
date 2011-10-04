@@ -13,23 +13,15 @@
  *  See the License for the specific language governing permissions and
  *  limitations under the License.
  */
-package eu.jpereira.trainings.gpstore.reporting;
-
-import eu.jpereira.trainings.gpstore.exceptions.NotImplementedException;
-import eu.jpereira.trainings.gpstore.model.AbstractEntity;
+package eu.jpereira.trainings.gpstore.reporter;
 
 /**
+ * Test suit for SaleableItemReporter (the SUT)
  * @author jpereira
  *
  */
-public class DepartmentReporter extends AbstractReporter {
+public class SaleableItemReporterTest {
 
-	/* (non-Javadoc)
-	 * @see eu.jpereira.trainings.gpstore.reporting.Reporter#getAsJSON(eu.jpereira.trainings.gpstore.model.AbstractEntity)
-	 */
-	@Override
-	public String getAsJSON(AbstractEntity entity) {
-		throw new NotImplementedException();
-	}
-
+	
+	//TODO: Develop tests
 }

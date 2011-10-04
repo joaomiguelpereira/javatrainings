@@ -15,21 +15,24 @@
  */
 package eu.jpereira.trainings.gpstore.reporting;
 
-import eu.jpereira.trainings.gpstore.exceptions.NotImplementedException;
+import sun.reflect.generics.reflectiveObjects.NotImplementedException;
 import eu.jpereira.trainings.gpstore.model.AbstractEntity;
 
 /**
+ * The Reporter for SaleableItem
  * @author jpereira
  *
  */
-public class DepartmentReporter extends AbstractReporter {
+public class SaleableItemReporter extends AbstractReporter {
 
 	/* (non-Javadoc)
 	 * @see eu.jpereira.trainings.gpstore.reporting.Reporter#getAsJSON(eu.jpereira.trainings.gpstore.model.AbstractEntity)
 	 */
 	@Override
 	public String getAsJSON(AbstractEntity entity) {
+		// TODO: implement this method
 		throw new NotImplementedException();
+		
 	}
 
 }

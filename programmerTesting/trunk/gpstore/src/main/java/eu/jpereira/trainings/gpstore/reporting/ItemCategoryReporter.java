@@ -22,13 +22,14 @@ import eu.jpereira.trainings.gpstore.model.AbstractEntity;
  * @author jpereira
  *
  */
-public class DepartmentReporter extends AbstractReporter {
+public class ItemCategoryReporter extends AbstractReporter {
 
 	/* (non-Javadoc)
 	 * @see eu.jpereira.trainings.gpstore.reporting.Reporter#getAsJSON(eu.jpereira.trainings.gpstore.model.AbstractEntity)
 	 */
 	@Override
 	public String getAsJSON(AbstractEntity entity) {
+		// TODO: Implement this method
 		throw new NotImplementedException();
 	}
 

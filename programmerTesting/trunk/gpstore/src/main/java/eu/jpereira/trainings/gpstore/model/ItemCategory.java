@@ -27,8 +27,8 @@ import eu.jpereira.trainings.gpstore.model.exceptions.NoSuchSalealeItemExistsExc
  */
 public class ItemCategory extends AbstractEntity {
 
-	
 	private String description;
+
 	/**
 	 * @param id
 	 * @See {@link AbstractEntity}
@@ -46,8 +46,7 @@ public class ItemCategory extends AbstractEntity {
 	 *             If such a SaleableItem already exists in the collection of
 	 *             saleable Items for this ItemCategory
 	 */
-	public void addSellableItem(SaleableItem saleableItem)
-			throws DuplicateSaleableItemException {
+	public void addSellableItem(SaleableItem saleableItem) throws DuplicateSaleableItemException {
 
 	}
 
@@ -61,41 +60,51 @@ public class ItemCategory extends AbstractEntity {
 	 *             if the id does not represents any SaleableItem in this
 	 *             ItemCategory
 	 */
-	public void removeSaleableItem(long saleableItemId)
-			throws NoSuchSalealeItemExistsException {
+	public void removeSaleableItem(long saleableItemId) throws NoSuchSalealeItemExistsException {
 		throw new NotImplementedException();
 	}
-	
+
 	/**
 	 * Returns a list o saleable items.
-	 * @return the list of SaleableItem. If none exists, a empty list will be returned.
+	 * 
+	 * @return the list of SaleableItem. If none exists, a empty list will be
+	 *         returned.
 	 */
 	public List<SaleableItem> getAllSaleableItems() {
 		throw new NotImplementedException();
 	}
-	
+
 	/**
-	 * Find a SaleableItem by the name. This operation is <b>NOT</b> case sensitive 
-	 * @param name The name of expected SaleableItem
-	 * @return The SaleAble  with the name equals to parameter name. If none found, it gives you <b>null</b>
+	 * Find a SaleableItem by the name. This operation is <b>NOT</b> case
+	 * sensitive
+	 * 
+	 * @param name
+	 *            The name of expected SaleableItem
+	 * @return The SaleAble with the name equals to parameter name. If none
+	 *         found, it gives you <b>null</b>
 	 */
 	public SaleableItem findSaleableItemByName(String name) {
 		throw new NotImplementedException();
 	}
-	
+
 	/**
 	 * Get the number of SaleableItems that this ItemCategory groups
+	 * 
 	 * @return The count of SaleableItems
 	 */
 	public int getSaleableItemCount() {
 		throw new NotImplementedException();
 	}
 
-	/* (non-Javadoc)
-	 * @see eu.jpereira.trainings.gpstore.AbstractEntity#find(long)
+	/**
+	 * Find a saleable item when you know its ID
+	 * 
+	 * @param id
+	 *            the saleableItemId
+	 * @return A saleable item with the provided id, or null if no such saleable
+	 *         item exists
 	 */
-	@Override
-	public AbstractEntity find(long entityId) {
+	public SaleableItem findSaleableItem(long id) {
 		// TODO Auto-generated method stub
 		return null;
 	}
@@ -108,7 +117,8 @@ public class ItemCategory extends AbstractEntity {
 	}
 
 	/**
-	 * @param description the description to set
+	 * @param description
+	 *            the description to set
 	 */
 	public void setDescription(String description) {
 		this.description = description;

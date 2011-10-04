@@ -108,10 +108,37 @@ public class GPStoreTest {
 		// assert it was removed
 		assertEquals(0, sut.getDepartmentCount());
 	}
-	
-	@Test(expected=NoSuchDepartmentException.class)
+
+	@Test(expected = NoSuchDepartmentException.class)
 	public void tetRemoveNoSuchDertment() throws NoSuchDepartmentException {
 		sut.removeDepartment(10l);
 	}
 
+	// TODO: Complete the following tests and add more to reach 100% line
+	// coverage and 100% branch coverage in class GPStore
+
+	@Test
+	public void testFindDepartmentByName() {
+		// TODO: Implement test
+		fail("Test not implemented");
+	}
+
+	@Test
+	public void testFindDepartmentByNameWhenNameDoesNotExists() {
+		// TODO: Implement test
+		fail("Test not implemented");
+	}
+
+	@Test
+	public void testFindDepartmentById() {
+		// TODO: Implement test
+		fail("Test not implemented");
+	}
+	
+
+	@Test
+	public void testFindDepartmentByIdWhenIdDoesNotExists() {
+		// TODO: Implement test
+		fail("Test not implemented");
+	}
 }

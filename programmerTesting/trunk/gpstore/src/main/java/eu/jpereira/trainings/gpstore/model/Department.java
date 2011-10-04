@@ -54,8 +54,7 @@ public class Department extends AbstractEntity {
 	 * @throws DuplicateItemCategoryException
 	 *             if the ItemCategory already exists
 	 */
-	public void addItemCategory(ItemCategory itemCategory)
-			throws DuplicateItemCategoryException {
+	public void addItemCategory(ItemCategory itemCategory) throws DuplicateItemCategoryException {
 		throw new NotImplementedException();
 	}
 
@@ -74,35 +73,46 @@ public class Department extends AbstractEntity {
 
 	/**
 	 * Returns a list o item categories.
-	 * @return the list of ItemCategory. If none exists, a empty list will be returned.
+	 * 
+	 * @return the list of ItemCategory. If none exists, a empty list will be
+	 *         returned.
 	 */
 	public List<ItemCategory> getAllItemCategories() {
 		throw new NotImplementedException();
 	}
-	
+
 	/**
-	 * Find a ItemCategory by the name. This operation is <b>NOT</b> case sensitive 
-	 * @param name The name of expected ItemCategory
-	 * @return The ItemCategory  with the name equals to parameter name. If none found, it gives you <b>null</b>
+	 * Find a ItemCategory by the name. This operation is <b>NOT</b> case
+	 * sensitive
+	 * 
+	 * @param name
+	 *            The name of expected ItemCategory
+	 * @return The ItemCategory with the name equals to parameter name. If none
+	 *         found, it gives you <b>null</b>
 	 */
 	public ItemCategory findItemCategoryByName(String name) {
 		throw new NotImplementedException();
 	}
-	
+
 	/**
 	 * Get the number of ItemCategories that this department cas sell
+	 * 
 	 * @return The count of ItemCategories
 	 */
 	public int getItemCategoryCount() {
 		throw new NotImplementedException();
 	}
 
-	/* (non-Javadoc)
-	 * @see eu.jpereira.trainings.gpstore.AbstractEntity#find(long)
+	/**
+	 * Find a item category when you know its ID
+	 * 
+	 * @param id
+	 *            the item category id
+	 * @return A item category with the provided id, or null if no such item
+	 *         category item
 	 */
-	@Override
-	public AbstractEntity find(long entityId) {
-		// TODO Auto-generated method stub
-		return null;
+	public AbstractEntity findItemCategory(long id) {
+		// TODO: Implement
+		throw new NotImplementedException();
 	}
 }

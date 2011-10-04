@@ -67,6 +67,6 @@ public abstract class AbstractEntity {
 		this.name = name;
 	}
 	
-	public abstract AbstractEntity find(long entityId);
+	
 
 }
