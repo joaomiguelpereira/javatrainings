@@ -110,7 +110,7 @@ public class GPStoreTest {
 	}
 
 	@Test(expected = NoSuchDepartmentException.class)
-	public void tetRemoveNoSuchDertment() throws NoSuchDepartmentException {
+	public void tetRemoveNoSuchDepartment() throws NoSuchDepartmentException {
 		sut.removeDepartment(10l);
 	}
 

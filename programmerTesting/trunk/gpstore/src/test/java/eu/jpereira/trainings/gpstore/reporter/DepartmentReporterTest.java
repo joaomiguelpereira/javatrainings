@@ -15,16 +15,20 @@
  */
 package eu.jpereira.trainings.gpstore.reporter;
 
+import org.junit.Test;
+
 /**
  * This test suite test the DepartmentReporter. The SUT is DepartmentReporter
  * 
  * @author jpereira
- *
+ * 
  */
 public class DepartmentReporterTest {
 
-	
-	//TODO; Implement the tests and the DepartmentReporter
-	
-	
+	// TODO; Implement the tests and the DepartmentReporter
+	@Test
+	public void testSomething() {
+
+	}
+
 }

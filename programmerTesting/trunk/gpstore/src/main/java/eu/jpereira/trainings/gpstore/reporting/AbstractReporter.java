@@ -51,7 +51,7 @@ public abstract class AbstractReporter implements Reporter {
 	 * (eu.jpereira.trainings.gpstore.reporting.Reporter, java.lang.Class)
 	 */
 	@Override
-	public <T extends AbstractEntity> void addEntityReporterReporter(Reporter childReporter, Class<T> entityClazz) {
+	public <T extends AbstractEntity> void addEntityReporter(Reporter childReporter, Class<T> entityClazz) {
 		this.reporters.put(entityClazz, childReporter);
 
 	}

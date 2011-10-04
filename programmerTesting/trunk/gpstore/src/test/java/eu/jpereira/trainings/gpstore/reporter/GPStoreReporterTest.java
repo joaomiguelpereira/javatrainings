@@ -29,7 +29,7 @@ import static org.junit.Assert.*;
 /**
  * This test suite test the GPStoreReporter. SUT: GPStoreReporter Though the
  * code coverage for the SUT is 100%, we are not testing all scenarios. We have
- * tested a single store and a store with one department. The are various
+ * tested a single store and a store with one department. The are other
  * scenarios to test.
  * <ul>
  * 
@@ -71,7 +71,7 @@ public class GPStoreReporterTest {
 
 		Department department = mock(Department.class);
 
-		// stub values
+		// stubbed values
 		when(department.getName()).thenReturn("Some dummy department");
 		when(department.getId()).thenReturn(90L);
 
@@ -80,7 +80,7 @@ public class GPStoreReporterTest {
 		// create the reporter (sut)
 		Reporter sut = new GPStoreReporter();
 		// Need a reporter for the department
-		sut.addEntityReporterReporter(mockReporterForDepartment, Department.class);
+		sut.addEntityReporter(mockReporterForDepartment, Department.class);
 
 		// test behavior
 		when(mockReporterForDepartment.getAsJSON(department)).thenReturn("{name: \"Some dummy department\", id: 90}");

@@ -15,6 +15,8 @@
  */
 package eu.jpereira.trainings.gpstore.reporter;
 
+import org.junit.Test;
+
 /**
  * This test suite test the ItemCategoryReporter. The SUT is ItemCategoryReporter
  * 
@@ -22,6 +24,12 @@ package eu.jpereira.trainings.gpstore.reporter;
  *
  */public class ItemCategoryReporterTest {
 
-	 
+
 	 //TODO: Implement tests
+	  @Test
+	  public void testSomething() {
+		  
+	  }
+	 
+
 }

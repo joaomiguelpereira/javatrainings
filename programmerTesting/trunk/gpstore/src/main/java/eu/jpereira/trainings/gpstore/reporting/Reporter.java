@@ -56,7 +56,7 @@ public interface Reporter {
 	 * @param entityClazz
 	 *            the class that will this report act upon
 	 */
-	public <T extends AbstractEntity> void addEntityReporterReporter(Reporter childReporter, Class<T> entityClazz);
+	public <T extends AbstractEntity> void addEntityReporter(Reporter childReporter, Class<T> entityClazz);
 
 	/**
 	 * Get the child reporter for the type represented by the argument

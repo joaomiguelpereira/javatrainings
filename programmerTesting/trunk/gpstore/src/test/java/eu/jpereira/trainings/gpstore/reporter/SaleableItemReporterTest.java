@@ -15,13 +15,19 @@
  */
 package eu.jpereira.trainings.gpstore.reporter;
 
+import org.junit.Test;
+
 /**
  * Test suit for SaleableItemReporter (the SUT)
+ * 
  * @author jpereira
- *
+ * 
  */
 public class SaleableItemReporterTest {
 
-	
-	//TODO: Develop tests
+	// TODO: Implement tests
+	@Test
+	public void testSomething() {
+
+	}
 }
