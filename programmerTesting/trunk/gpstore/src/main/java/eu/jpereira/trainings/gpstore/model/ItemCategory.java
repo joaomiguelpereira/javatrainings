@@ -27,6 +27,8 @@ import eu.jpereira.trainings.gpstore.model.exceptions.NoSuchSalealeItemExistsExc
  */
 public class ItemCategory extends AbstractEntity {
 
+	
+	private String description;
 	/**
 	 * @param id
 	 * @See {@link AbstractEntity}
@@ -96,6 +98,20 @@ public class ItemCategory extends AbstractEntity {
 	public AbstractEntity find(long entityId) {
 		// TODO Auto-generated method stub
 		return null;
+	}
+
+	/**
+	 * @return the description
+	 */
+	public String getDescription() {
+		return description;
+	}
+
+	/**
+	 * @param description the description to set
+	 */
+	public void setDescription(String description) {
+		this.description = description;
 	}
 
 }

@@ -15,7 +15,6 @@
  */
 package eu.jpereira.trainings.gpstore.exceptions;
 
-import eu.jpereira.trainings.gpstore.model.GPStoreException;
 
 /**
  * @author jpereira

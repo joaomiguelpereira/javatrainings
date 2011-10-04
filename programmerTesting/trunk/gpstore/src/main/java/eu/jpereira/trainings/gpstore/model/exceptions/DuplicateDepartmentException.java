@@ -15,7 +15,7 @@
  */
 package eu.jpereira.trainings.gpstore.model.exceptions;
 
-import eu.jpereira.trainings.gpstore.model.GPStoreException;
+import eu.jpereira.trainings.gpstore.exceptions.GPStoreException;
 
 /**
  * A Department already exists
