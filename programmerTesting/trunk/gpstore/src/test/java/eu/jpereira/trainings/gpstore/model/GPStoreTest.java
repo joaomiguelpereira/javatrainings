@@ -48,34 +48,37 @@ public class GPStoreTest {
 	public void testAddDepartment() {
 		// HINT: Create from a factory
 		// Using magic number, but will be factored into a factory
+		// Creating dummy object
 		Department dummyDepartment = new Department(10l);
 		// try to add
 		try {
 			sut.addDepartment(dummyDepartment);
 		} catch (DuplicateDepartmentException e) {
+			//If this exception is thrown, the something is going wrong
 			fail(e.getMessage());
 			e.printStackTrace();
 		}
 		// correctly added?
+		// Here we are also testing the getDepartmentCount method 
 		assertEquals(1, sut.getDepartmentCount());
 	}
 
 	@Test(expected = DuplicateDepartmentException.class)
 	public void testAddDuplicateDepartment() throws DuplicateDepartmentException {
-		// create first dummy object
+
 		// HINT: Create from a factory
 		// Using magic number, but will be factored into a factory
-
+		// create first dummy object
 		Department dummyDepartment = new Department(10l);
-		// create a new dummyDepartment with the same id
+		// create a second dummy object with the same id
 		Department sameDummyDepartment = new Department(10l);
 
 		// From a business point of view, they are the same because they have
 		// the same identity
 
-		// Add first
+		// Add first dummy
 		sut.addDepartment(dummyDepartment);
-		// Second, should throw an DuplicateDepartmentException
+		// add second dummy. Should throw an DuplicateDepartmentException, as expected in the @Test declaration
 		sut.addDepartment(sameDummyDepartment);
 
 	}
@@ -85,8 +88,6 @@ public class GPStoreTest {
 		// Create some dummy department
 		Department dummyDepartment = new Department(10l);
 		// add it to the sut
-
-		// Move this
 		try {
 			sut.addDepartment(dummyDepartment);
 		} catch (DuplicateDepartmentException e) {
@@ -95,7 +96,7 @@ public class GPStoreTest {
 		}
 		// verify it was added, double check ;)
 		assertEquals(1, sut.getDepartmentCount());
-		// test now
+		// test now that it will be removed
 		try {
 			// move magic number somewhere else
 			sut.removeDepartment(10l);
