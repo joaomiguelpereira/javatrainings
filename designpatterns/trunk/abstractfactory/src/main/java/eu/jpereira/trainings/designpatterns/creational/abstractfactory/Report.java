@@ -13,14 +13,14 @@
  *  See the License for the specific language governing permissions and
  *  limitations under the License.
  */
-package eu.jpereira.trainings.designpatterns.creational.asbtractfactory;
+package eu.jpereira.trainings.designpatterns.creational.abstractfactory;
 
-import eu.jpereira.trainings.designpatterns.creational.asbtractfactory.json.JSONReportBody;
-import eu.jpereira.trainings.designpatterns.creational.asbtractfactory.json.JSONReportFooter;
-import eu.jpereira.trainings.designpatterns.creational.asbtractfactory.json.JSONReportHeader;
-import eu.jpereira.trainings.designpatterns.creational.asbtractfactory.xml.XMLReportBody;
-import eu.jpereira.trainings.designpatterns.creational.asbtractfactory.xml.XMLReportFooter;
-import eu.jpereira.trainings.designpatterns.creational.asbtractfactory.xml.XMLReportHeader;
+import eu.jpereira.trainings.designpatterns.creational.abstractfactory.json.JSONReportBody;
+import eu.jpereira.trainings.designpatterns.creational.abstractfactory.json.JSONReportFooter;
+import eu.jpereira.trainings.designpatterns.creational.abstractfactory.json.JSONReportHeader;
+import eu.jpereira.trainings.designpatterns.creational.abstractfactory.xml.XMLReportBody;
+import eu.jpereira.trainings.designpatterns.creational.abstractfactory.xml.XMLReportFooter;
+import eu.jpereira.trainings.designpatterns.creational.abstractfactory.xml.XMLReportHeader;
 
 public class Report {
 

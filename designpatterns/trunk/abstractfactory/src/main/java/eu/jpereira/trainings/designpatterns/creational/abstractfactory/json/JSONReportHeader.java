@@ -13,9 +13,9 @@
  *  See the License for the specific language governing permissions and
  *  limitations under the License.
  */
-package eu.jpereira.trainings.designpatterns.creational.asbtractfactory.json;
+package eu.jpereira.trainings.designpatterns.creational.abstractfactory.json;
 
-import eu.jpereira.trainings.designpatterns.creational.asbtractfactory.ReportHeader;
+import eu.jpereira.trainings.designpatterns.creational.abstractfactory.ReportHeader;
 
 /**
  * @author jpereira

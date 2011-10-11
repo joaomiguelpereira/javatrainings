@@ -13,12 +13,13 @@
  *  See the License for the specific language governing permissions and
  *  limitations under the License.
  */
-package eu.jpereira.trainings.designpatterns.creational.asbtractfactory;
+package eu.jpereira.trainings.designpatterns.creational.abstractfactory;
 
 /**
  * @author jpereira
  *
  */
-public interface ReportHeader extends ReportElement{
+public interface ReportElement {
 
+	String getType();
 }

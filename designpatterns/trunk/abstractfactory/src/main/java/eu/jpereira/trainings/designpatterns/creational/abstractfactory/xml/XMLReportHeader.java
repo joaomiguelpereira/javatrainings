@@ -13,37 +13,26 @@
  *  See the License for the specific language governing permissions and
  *  limitations under the License.
  */
-package eu.jpereira.trainings.designpatterns.creational.asbtractfactory;
+package eu.jpereira.trainings.designpatterns.creational.abstractfactory.xml;
 
-import org.junit.Test;
-
-import static org.junit.Assert.*;
+import eu.jpereira.trainings.designpatterns.creational.abstractfactory.ReportHeader;
 
 /**
  * @author jpereira
  * 
  */
+public class XMLReportHeader implements ReportHeader {
 
-public class ReportTest {
-
-	@Test
-	public void testCreateJSONReport() {
-
-		Report report = new Report("JSON");
-		assertEquals("JSON", report.getBody().getType());
-		assertEquals("JSON", report.getHeader().getType());
-		assertEquals("JSON", report.getFooter().getType());
-
-	}
-
-	@Test
-	public void testCreateXMLReport() {
-
-		Report report = new Report("XML");
-		assertEquals("XML", report.getBody().getType());
-		assertEquals("XML", report.getHeader().getType());
-		assertEquals("XML", report.getFooter().getType());
-
+	/*
+	 * (non-Javadoc)
+	 * 
+	 * @see
+	 * eu.jpereira.trainings.designpatterns.creational.asbtractfactory.ReportElement
+	 * #getType()
+	 */
+	@Override
+	public String getType() {
+		return "XML";
 	}
 
 }

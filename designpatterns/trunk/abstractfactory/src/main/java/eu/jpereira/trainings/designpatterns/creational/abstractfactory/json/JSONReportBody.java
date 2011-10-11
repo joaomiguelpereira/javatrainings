@@ -13,12 +13,22 @@
  *  See the License for the specific language governing permissions and
  *  limitations under the License.
  */
-package eu.jpereira.trainings.designpatterns.creational.asbtractfactory;
+package eu.jpereira.trainings.designpatterns.creational.abstractfactory.json;
+
+import eu.jpereira.trainings.designpatterns.creational.abstractfactory.ReportBody;
 
 /**
  * @author jpereira
- *
+ * 
  */
-public interface ReportFooter extends ReportElement{
+public class JSONReportBody implements ReportBody {
+
+	/* (non-Javadoc)
+	 * @see eu.jpereira.trainings.designpatterns.creational.asbtractfactory.ReportElement#getType()
+	 */
+	@Override
+	public String getType() {
+		return "JSON";
+	}
 
 }

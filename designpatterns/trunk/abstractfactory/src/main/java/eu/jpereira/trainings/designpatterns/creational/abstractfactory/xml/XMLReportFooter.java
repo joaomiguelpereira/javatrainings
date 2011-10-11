@@ -13,13 +13,22 @@
  *  See the License for the specific language governing permissions and
  *  limitations under the License.
  */
-package eu.jpereira.trainings.designpatterns.creational.asbtractfactory;
+package eu.jpereira.trainings.designpatterns.creational.abstractfactory.xml;
+
+import eu.jpereira.trainings.designpatterns.creational.abstractfactory.ReportFooter;
 
 /**
  * @author jpereira
  *
  */
-public interface ReportElement {
+public class XMLReportFooter implements ReportFooter{
 
-	String getType();
+	/* (non-Javadoc)
+	 * @see eu.jpereira.trainings.designpatterns.creational.asbtractfactory.ReportElement#getType()
+	 */
+	@Override
+	public String getType() {
+		return "XML";
+	}
+
 }
