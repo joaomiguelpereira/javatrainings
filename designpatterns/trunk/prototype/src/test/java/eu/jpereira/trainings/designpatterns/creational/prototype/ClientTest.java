@@ -22,7 +22,7 @@ import java.util.Properties;
 
 import org.junit.Test;
 
-import eu.jpereira.trainings.designpatterns.creational.prototype.exception.CannotHaveZeroParts;
+import eu.jpereira.trainings.designpatterns.creational.prototype.exception.CannotHaveZeroPartsException;
 import eu.jpereira.trainings.designpatterns.creational.prototype.exception.CouldNotCloneLastObjectException;
 import eu.jpereira.trainings.designpatterns.creational.prototype.exception.NeedToPackLastVehicleException;
 import eu.jpereira.trainings.designpatterns.creational.prototype.exception.VehicleDoesNotHavePartsException;
@@ -43,12 +43,12 @@ public class ClientTest {
 	/**
 	 * Integration Test
 	 * @throws CouldNotCloneLastObjectException
-	 * @throws CannotHaveZeroParts
+	 * @throws CannotHaveZeroPartsException
 	 * @throws NeedToPackLastVehicleException
 	 * @throws VehicleDoesNotHavePartsException
 	 */
 	@Test
-	public void testCreateBUS() throws CouldNotCloneLastObjectException, CannotHaveZeroParts, NeedToPackLastVehicleException, VehicleDoesNotHavePartsException {
+	public void testCreateBUS() throws CouldNotCloneLastObjectException, CannotHaveZeroPartsException, NeedToPackLastVehicleException, VehicleDoesNotHavePartsException {
 		Client client = new Client();
 		
 		//create a bus car

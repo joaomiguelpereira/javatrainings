@@ -16,7 +16,7 @@
 package eu.jpereira.trainings.designpatterns.creational.prototype;
 
 import eu.jpereira.trainings.designpatterns.creational.prototype.exception.CouldNotCloneLastObjectException;
-import eu.jpereira.trainings.designpatterns.creational.prototype.exception.CannotHaveZeroParts;
+import eu.jpereira.trainings.designpatterns.creational.prototype.exception.CannotHaveZeroPartsException;
 import eu.jpereira.trainings.designpatterns.creational.prototype.exception.NeedToPackLastVehicleException;
 import eu.jpereira.trainings.designpatterns.creational.prototype.model.Vehicle;
 
@@ -42,7 +42,7 @@ public interface VehicleBuilder {
 	 * @param i
 	 * @return
 	 */
-	VehicleBuilder times(int i) throws CouldNotCloneLastObjectException, CannotHaveZeroParts;
+	VehicleBuilder times(int i) throws CouldNotCloneLastObjectException, CannotHaveZeroPartsException;
 
 	/**
 	 * 

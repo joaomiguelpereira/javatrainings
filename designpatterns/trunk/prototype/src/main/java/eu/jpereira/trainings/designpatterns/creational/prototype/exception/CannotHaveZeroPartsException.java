@@ -19,7 +19,7 @@ package eu.jpereira.trainings.designpatterns.creational.prototype.exception;
  * @author jpereira
  *
  */
-public class CannotHaveZeroParts extends Exception {
+public class CannotHaveZeroPartsException extends Exception {
 
 	/**
 	 * 

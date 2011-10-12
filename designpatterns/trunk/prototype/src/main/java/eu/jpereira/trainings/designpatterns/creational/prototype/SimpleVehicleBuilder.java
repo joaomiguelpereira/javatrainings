@@ -19,7 +19,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import eu.jpereira.trainings.designpatterns.creational.prototype.exception.CouldNotCloneLastObjectException;
-import eu.jpereira.trainings.designpatterns.creational.prototype.exception.CannotHaveZeroParts;
+import eu.jpereira.trainings.designpatterns.creational.prototype.exception.CannotHaveZeroPartsException;
 import eu.jpereira.trainings.designpatterns.creational.prototype.exception.NeedToPackLastVehicleException;
 import eu.jpereira.trainings.designpatterns.creational.prototype.model.Vehicle;
 
@@ -60,9 +60,9 @@ public class SimpleVehicleBuilder implements VehicleBuilder {
 	 * @see eu.jpereira.trainings.designpatterns.creational.prototype.VehicleBuilder#times(int)
 	 */
 	@Override
-	public VehicleBuilder times(int times) throws CouldNotCloneLastObjectException, CannotHaveZeroParts {
+	public VehicleBuilder times(int times) throws CouldNotCloneLastObjectException, CannotHaveZeroPartsException {
 		if (times==0) {
-			throw new CannotHaveZeroParts();
+			throw new CannotHaveZeroPartsException();
 		}
 		//get the last one and clone it xtimes 
 		if ( this.vehicleParts.size()>0) {
