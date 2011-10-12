@@ -25,7 +25,7 @@ import eu.jpereira.trainings.designpatterns.creational.prototype.exception.Vehic
  * @author jpereira
  * 
  */
-public class Vehicle {
+public class Vehicle implements Cloneable {
 
 	private List<VehiclePart> parts;
 
@@ -67,5 +67,13 @@ public class Vehicle {
 		}
 		return match;
 	}
+
+	@Override
+	public Object clone() throws CloneNotSupportedException {
+		//TODO: Implement clone
+		return super.clone();
+	}
+	
+	
 
 }

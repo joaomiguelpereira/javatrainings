@@ -41,6 +41,7 @@ public class Shell extends AbstractVehiclePart{
 
 	@Override
 	public VehiclePart clone() throws CloneNotSupportedException  {
+		//TODO: Implement the clone
 		return (VehiclePart)super.clone();
 	}
 
