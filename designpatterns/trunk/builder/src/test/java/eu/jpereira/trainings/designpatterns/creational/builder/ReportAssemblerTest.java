@@ -53,6 +53,19 @@ public class ReportAssemblerTest {
 		assertEquals(expected, report.getAsString());
 
 	}
+	
+	@Test
+	public void testAssembleHTMLReportBody() {
+
+		ReportAssembler assembler = new ReportAssembler();
+
+		assembler.setSaleEntry(createDummySaleEntry());
+		Report report = assembler.getReport("HTML");
+		String expected = "<span class=\"customerName\">Bob</span><span class=\"customerPhone\">1232232</span><items><item><name>Computer</name><quantity>2</quantity><price>99.9</price></item><item><name>Printer</name><quantity>1</quantity><price>79.8</price></item></items>";
+
+		assertEquals(expected, report.getAsString());
+
+	}
 
 	/**
 	 * @return
