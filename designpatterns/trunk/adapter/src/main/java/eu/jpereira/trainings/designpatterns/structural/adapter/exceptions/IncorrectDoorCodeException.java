@@ -15,11 +15,25 @@
  */
 package eu.jpereira.trainings.designpatterns.structural.adapter.exceptions;
 
+
 /**
  * @author jpereira
- *
+ * 
  */
 public class IncorrectDoorCodeException extends Exception {
+
+	/**
+	 * @param e
+	 */
+	public IncorrectDoorCodeException(Exception e) {
+		super(e);
+	}
+
+	/**
+	 * 
+	 */
+	public IncorrectDoorCodeException() {
+	}
 
 	/**
 	 * 
