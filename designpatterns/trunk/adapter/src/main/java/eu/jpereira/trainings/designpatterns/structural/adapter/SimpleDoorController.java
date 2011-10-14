@@ -79,7 +79,6 @@ public class SimpleDoorController implements DoorController {
 	 */
 	@Override
 	public int countManagedDoors() {
-		// TODO Auto-generated method stub
 		return this.managedDoors.size();
 	}
 
