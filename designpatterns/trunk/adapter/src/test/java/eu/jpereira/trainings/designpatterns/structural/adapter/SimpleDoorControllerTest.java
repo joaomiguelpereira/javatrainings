@@ -33,13 +33,13 @@ public class SimpleDoorControllerTest {
 	@Test(expected = DoorNotManagedException.class)
 	public void testShouldThrowExceptionForInexistentDoor() throws DoorNotManagedException, IncorrectDoorCodeException {
 		// Create a simple dummy door, conforming the Interface Door
-		Door mockedDoor = createMockedDoor();
+		Door aDoor = createMockedDoor();
 
 		// Add this door to the controller
 		DoorController controller = createDoorControllerUnderTest();
 		// do not add the door. Is expected an exception;
 		// can use any code, it's outside of test scope here
-		controller.openDoor(mockedDoor, getDefaultCodeForDoor());
+		controller.openDoor(aDoor, getDefaultCodeForDoor());
 	}
 
 	@Test
@@ -57,14 +57,14 @@ public class SimpleDoorControllerTest {
 	@Test
 	public void testShouldOpenDoor() throws DoorNotManagedException, IncorrectDoorCodeException {
 		// Create a simple dummy door, conforming the Interface Door
-		Door mockedDoor = createMockedDoor();
+		Door door = createMockedDoor();
 		// Add this door to the controller
 		DoorController controller = createDoorControllerUnderTest();
-		controller.addDoor(mockedDoor);
+		controller.addDoor(door);
 		// can use any code, it's outside of test scope here
-		controller.openDoor(mockedDoor, getDefaultCodeForDoor());
+		controller.openDoor(door, getDefaultCodeForDoor());
 		// ensure that the door open() was called in the targetDoor
-		verify(mockedDoor).open(getDefaultCodeForDoor());
+		verify(door).open(getDefaultCodeForDoor());
 
 	}
 

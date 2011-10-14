@@ -80,7 +80,7 @@ public class DoorTest {
 	/**
 	 * @return
 	 */
-	private Door createDoorUnderTest() {
+	protected Door createDoorUnderTest() {
 		// TODO Auto-generated method stub
 		return new SimpleDoor();
 	}
@@ -89,7 +89,7 @@ public class DoorTest {
 	/**
 	 * @return
 	 */
-	private String getDefaultDoorCode() {
+	protected String getDefaultDoorCode() {
 		return SimpleDoor.DEFAULT_DOOR_CODE;
 	}
 }
