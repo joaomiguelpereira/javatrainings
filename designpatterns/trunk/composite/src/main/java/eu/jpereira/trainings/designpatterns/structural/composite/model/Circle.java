@@ -15,7 +15,6 @@
  */
 package eu.jpereira.trainings.designpatterns.structural.composite.model;
 
-import eu.jpereira.trainings.designpatterns.structural.composite.ShapeType;
 
 
 /**
@@ -28,7 +27,7 @@ public class Circle extends CompositeShape {
 	 * @see eu.jpereira.trainings.designpatterns.structural.composite.model.Shape#getType()
 	 */
 	@Override
-	public Object getType() {
+	public ShapeType getType() {
 		return ShapeType.CIRCLE;
 	}
 

@@ -15,7 +15,6 @@
  */
 package eu.jpereira.trainings.designpatterns.structural.composite.model;
 
-import eu.jpereira.trainings.designpatterns.structural.composite.ShapeType;
 
 
 /**
@@ -28,7 +27,7 @@ public class Triangle extends CompositeShape{
 	 * @see eu.jpereira.trainings.designpatterns.structural.composite.model.Shape#getType()
 	 */
 	@Override
-	public Object getType() {
+	public ShapeType getType() {
 		// TODO Auto-generated method stub
 		return ShapeType.TRIANGLE;
 	}

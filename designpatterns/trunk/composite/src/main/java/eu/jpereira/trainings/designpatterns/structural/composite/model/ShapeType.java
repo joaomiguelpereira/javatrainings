@@ -13,7 +13,7 @@
  *  See the License for the specific language governing permissions and
  *  limitations under the License.
  */
-package eu.jpereira.trainings.designpatterns.structural.composite;
+package eu.jpereira.trainings.designpatterns.structural.composite.model;
 
 /**
  * @author windows

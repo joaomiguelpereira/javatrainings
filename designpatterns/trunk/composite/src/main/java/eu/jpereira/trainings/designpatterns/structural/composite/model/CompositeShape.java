@@ -15,25 +15,20 @@
  */
 package eu.jpereira.trainings.designpatterns.structural.composite.model;
 
-import java.util.ArrayList;
 import java.util.List;
 
-import eu.jpereira.trainings.designpatterns.structural.composite.ShapeType;
 
 /**
- * @author João Pereira
+ * @author Joao Pereira
  * 
  */
 public abstract class CompositeShape extends Shape {
 
-	// Children shapes
-	private List<Shape> shapes;
+	List<Shape> shapes;
 
 	public CompositeShape() {
 		this.shapes = createShapesList();
 	}
-
-	
 
 	/**
 	 * Remove a shape from this shape childrens
@@ -44,12 +39,9 @@ public abstract class CompositeShape extends Shape {
 	 *         was not present
 	 */
 	public boolean removeShape(Shape shape) {
-		boolean shapePresent = false;
-		if ( this.shapes.contains(shape)) {
-			this.shapes.remove(shape);
-			shapePresent = true;
-		}
-		return shapePresent;
+		// TODO: implement
+		return false;
+
 	}
 
 	/**
@@ -58,7 +50,9 @@ public abstract class CompositeShape extends Shape {
 	 * @return the total count of shapes if the shape is composite. -1 otherwise
 	 */
 	public int getShapeCount() {
-		return this.getShapes().size();
+		// TODO: implement
+		return 0;
+
 	}
 
 	/**
@@ -70,11 +64,13 @@ public abstract class CompositeShape extends Shape {
 	 *             if this shape is not a composite
 	 */
 	public void addShape(Shape shape) {
-		this.shapes.add(shape);
+		// TODO: Implement
 	}
 
 	public List<Shape> getShapes() {
-		return this.shapes;
+		// TODO: Implement
+		return null;
+
 	}
 
 	/**
@@ -82,31 +78,19 @@ public abstract class CompositeShape extends Shape {
 	 * @return
 	 */
 	public List<Shape> getShapesByType(ShapeType circle) {
-		List<Shape> returnShapes = createShapesList();
-		for (Shape shape :  this.shapes) {
-			if ( shape.getType().equals(circle)) {
-				returnShapes.add(shape);
-			}
-		}
-		return returnShapes;
+		return null;
+		// TODO: Implement
 	}
 
 	/**
 	 * Return all shapes that are leafs in the tree
+	 * 
 	 * @return
 	 */
 	public List<Shape> getLeafShapes() {
-		List<Shape> returnLeafs = createShapesList(); 
-		for ( Shape aShape: this.shapes ) {
-			if (aShape.asComposite()==null) {
-				returnLeafs.add(aShape);
-			}
-		}
-		return returnLeafs;
-		
+		// TODO: Implement
+		return null;
 	}
-
-	
 
 	/**
 	 * Factory method for the list of children of this shape
@@ -114,6 +98,7 @@ public abstract class CompositeShape extends Shape {
 	 * @return
 	 */
 	protected List<Shape> createShapesList() {
-		return new ArrayList<Shape>();
+		return null;
+		// TODO: Implement
 	}
 }

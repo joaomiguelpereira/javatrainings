@@ -24,6 +24,7 @@ import eu.jpereira.trainings.designpatterns.structural.composite.model.Line;
 import eu.jpereira.trainings.designpatterns.structural.composite.model.Rectangle;
 import eu.jpereira.trainings.designpatterns.structural.composite.model.Shape;
 import eu.jpereira.trainings.designpatterns.structural.composite.model.ShapeDoesNotSupportChildren;
+import eu.jpereira.trainings.designpatterns.structural.composite.model.ShapeType;
 import eu.jpereira.trainings.designpatterns.structural.composite.model.Triangle;
 import static org.junit.Assert.*;
 
