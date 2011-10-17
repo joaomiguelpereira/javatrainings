@@ -24,6 +24,9 @@
   * http://eclipse-tools.sourceforge.net/EclipseEmacsKeybindings_3_1.pdf
   * http://refcardz.dzone.com/refcardz/getting-started-eclipse
 
+== Programmer Testing ==
+===Slides===
+===Exercise===
 == Development tools ==
  * Eclipse - http://www.eclipse.org/
  * Maven (Use version 2) - http://maven.apache.org/
