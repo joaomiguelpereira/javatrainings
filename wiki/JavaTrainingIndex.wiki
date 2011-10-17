@@ -1,9 +1,14 @@
+
+
 = Java Training=
+
+<wiki:toc max_depth="3" />
+
 *Short Link to this wiki page*: - http://bit.ly/jbestpractices
 
 *Google Group*: - http://groups.google.com/group/jbestpractices_te
 
-<wiki:toc max_depth="3" />
+
 
 
 == Java Tools ==
