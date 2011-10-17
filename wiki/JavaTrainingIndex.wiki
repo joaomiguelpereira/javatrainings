@@ -2,7 +2,7 @@
 *Short Link to this wiki page*: - http://bit.ly/jbestpractices
 
 *Google Group*: - http://groups.google.com/group/jbestpractices_te
-==Index==
+
 <wiki:toc max_depth="3" />
 
 
