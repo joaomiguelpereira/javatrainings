@@ -1,6 +1,7 @@
 = Java Tools =
 *Short Link*: - http://bit.ly/jbestpractices
-*Google Group*: - 
+
+*Google Group*: - http://groups.google.com/group/jbestpractices_te
 
 ==Slides==
  * Eclipse - http://www.box.net/shared/in0bkfpix0udvbudb2ra
