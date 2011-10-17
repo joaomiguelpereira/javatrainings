@@ -20,3 +20,4 @@
 ===Useful Links===
  * Eclipse Shotcuts 
   * http://eclipse-tools.sourceforge.net/EclipseEmacsKeybindings_3_1.pdf
+  * http://refcardz.dzone.com/refcardz/getting-started-eclipse
