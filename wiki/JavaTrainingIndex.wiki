@@ -25,8 +25,12 @@
   * http://refcardz.dzone.com/refcardz/getting-started-eclipse
 
 == Programmer Testing ==
-===Slides===
-===Exercise===
+
+=== Slides ===
+ * http://www.box.net/shared/yti45zhuyo1duml3lh7a
+=== Exercise ===
+ * http://www.box.net/shared/otprzf6na05ovubjt21q
+
 == Development tools ==
  * Eclipse - http://www.eclipse.org/
  * Maven (Use version 2) - http://maven.apache.org/
