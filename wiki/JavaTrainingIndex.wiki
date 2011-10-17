@@ -1,0 +1,12 @@
+= Java Tools =
+
+==Slides==
+ * Eclipse - http://www.box.net/shared/in0bkfpix0udvbudb2ra
+ * Maven - http://www.box.net/shared/in0bkfpix0udvbudb2ra
+ * PMD, FindBugs and Checkstyle - http://www.box.net/shared/in0bkfpix0udvbudb2ra
+
+==Exercises==
+ * Maven - http://www.box.net/shared/684tbzj2uarjfnjupfu1
+ * PMD - http://www.box.net/shared/gn9aogg7x0thr0mirl8z
+ * FindBugs - http://www.box.net/shared/oqqajn8mtv2deal78s97
+ * ChackStle - http://www.box.net/shared/dojdh2h88a3dqtsy7zaq
