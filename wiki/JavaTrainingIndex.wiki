@@ -3,7 +3,8 @@
 
 *Google Group*: - http://groups.google.com/group/jbestpractices_te
 ==Index==
- * Java Tools
+<wiki:toc max_depth="3" />
+
 
 == Java Tools ==
 
@@ -22,3 +23,5 @@
  * Eclipse Shotcuts 
   * http://eclipse-tools.sourceforge.net/EclipseEmacsKeybindings_3_1.pdf
   * http://refcardz.dzone.com/refcardz/getting-started-eclipse
+
+== Development tools downloads ==
