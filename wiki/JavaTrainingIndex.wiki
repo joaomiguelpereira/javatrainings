@@ -27,9 +27,9 @@
 == Programmer Testing ==
 
 === Slides ===
- * http://www.box.net/shared/yti45zhuyo1duml3lh7a
+ * Programmer Testing - http://www.box.net/shared/yti45zhuyo1duml3lh7a
 === Exercise ===
- * http://www.box.net/shared/otprzf6na05ovubjt21q
+ * Programmer Testing - http://www.box.net/shared/otprzf6na05ovubjt21q
 
 == Development tools ==
  * Eclipse - http://www.eclipse.org/
