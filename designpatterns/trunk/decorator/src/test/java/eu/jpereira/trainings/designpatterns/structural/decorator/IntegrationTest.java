@@ -18,6 +18,7 @@ package eu.jpereira.trainings.designpatterns.structural.decorator;
 import org.junit.Test;
 
 import eu.jpereira.trainings.designpatterns.structural.decorator.channel.ChannelPropertyKey;
+import eu.jpereira.trainings.designpatterns.structural.decorator.channel.DefaultSocialChannelBuilder;
 import eu.jpereira.trainings.designpatterns.structural.decorator.channel.SocialChannelBuilder;
 import eu.jpereira.trainings.designpatterns.structural.decorator.channel.SocialChannelProperties;
 
@@ -31,7 +32,7 @@ public class IntegrationTest {
 	public void testSendMessage() {
 		SocialPublisher publisher = createSocialPublisher();
 		//create a ChannelBuilder
-		SocialChannelBuilder builder = new SocialChannelBuilder();
+		SocialChannelBuilder builder = new DefaultSocialChannelBuilder();
 		//Add three channels
 		publisher.addSocialChannel(builder.buildChannel(new SocialChannelProperties().setProperty(ChannelPropertyKey.NAME, "twitter")));
 		publisher.addSocialChannel(builder.buildChannel(new SocialChannelProperties().setProperty(ChannelPropertyKey.NAME, "facebook")));

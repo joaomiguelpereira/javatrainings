@@ -33,7 +33,7 @@ import static org.mockito.Mockito.*;
  * @author jpereira
  * 
  */
-public class SocialChannelBuilderTest {
+public abstract class SocialChannelBuilderTest {
 
 	@Test
 	public void testDoNotBuildChannel() {
@@ -101,7 +101,5 @@ public class SocialChannelBuilderTest {
 	/**
 	 * @return
 	 */
-	private SocialChannelBuilder createSocialChannelBuilderUnderTest() {
-		return new SocialChannelBuilder();
-	}
+	protected abstract SocialChannelBuilder createSocialChannelBuilderUnderTest();
 }

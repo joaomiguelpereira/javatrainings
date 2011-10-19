@@ -22,7 +22,7 @@ import eu.jpereira.trainings.designpatterns.structural.decorator.dummy.TestDummy
 
 /**
  * @author jpereira
- *
+ * 
  */
 public class DummySocialChannelBuilder extends SocialChannelBuilder {
 
@@ -30,7 +30,21 @@ public class DummySocialChannelBuilder extends SocialChannelBuilder {
 	 * 
 	 */
 	public DummySocialChannelBuilder() {
-		super.plugChannel( new SocialChannelProperties().setProperty(ChannelPropertyKey.NAME, "DUMMY"), TestDummyChannel.class);
+		super.plugChannel(new SocialChannelProperties().setProperty(ChannelPropertyKey.NAME, "DUMMY"), TestDummyChannel.class);
+	}
+
+	/*
+	 * (non-Javadoc)
+	 * 
+	 * @see eu.jpereira.trainings.designpatterns.structural.decorator.channel.
+	 * SocialChannelBuilder#addDefaultChannels()
+	 */
+	@Override
+	protected void addDefaultChannels() {
+		super.plugChannel(new SocialChannelProperties().setProperty(ChannelPropertyKey.NAME, TwitterChannel.NAME), TwitterChannel.class);
+		super.plugChannel(new SocialChannelProperties().setProperty(ChannelPropertyKey.NAME, FacebookChannel.NAME), FacebookChannel.class);
+		super.plugChannel(new SocialChannelProperties().setProperty(ChannelPropertyKey.NAME, LinkedinChannel.NAME), LinkedinChannel.class);
+
 	}
 
 }
