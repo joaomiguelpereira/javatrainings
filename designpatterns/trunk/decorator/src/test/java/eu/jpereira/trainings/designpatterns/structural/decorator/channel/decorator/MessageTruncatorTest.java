@@ -16,7 +16,6 @@
 package eu.jpereira.trainings.designpatterns.structural.decorator.channel.decorator;
 
 import static org.junit.Assert.assertEquals;
-import static org.mockito.Mockito.mock;
 
 import org.junit.Test;
 
@@ -25,19 +24,18 @@ import eu.jpereira.trainings.designpatterns.structural.decorator.channel.SocialC
 import eu.jpereira.trainings.designpatterns.structural.decorator.channel.SocialChannelProperties;
 import eu.jpereira.trainings.designpatterns.structural.decorator.channel.SocialChannelPropertyKey;
 import eu.jpereira.trainings.designpatterns.structural.decorator.channel.spy.TestSpySocialChannel;
-import eu.jpereira.trainings.designpatterns.structural.decorator.channel.spy.TestSpySocialChannelBuilder;
 
 /**
  * @author jpereira
  * 
  */
-public class MessageTruncatorTest {
+public class MessageTruncatorTest extends AbstractSocialChanneldDecoratorTest{
 
 	
 	@Test
 	public void testTruncate() {
 		// Create the builder
-		SocialChannelBuilder builder = createSocialChannelBuilder();
+		SocialChannelBuilder builder = createTestSpySocialChannelBuilder();
 
 		// create a spy social channel
 		SocialChannelProperties props = new SocialChannelProperties().putProperty(SocialChannelPropertyKey.NAME, TestSpySocialChannel.NAME);
@@ -45,16 +43,11 @@ public class MessageTruncatorTest {
 
 		// Now call channel.deliverMessage
 		channel.deliverMessage("this is a message");
+		
 		// Spy channel. Should get the one created before
 		TestSpySocialChannel spyChannel = (TestSpySocialChannel) builder.buildChannel(props);
 		assertEquals("this is...", spyChannel.lastMessagePublished());	
 	}
 
-	/**
-	 * @return
-	 */
-	private SocialChannelBuilder createSocialChannelBuilder() {
-
-		return new TestSpySocialChannelBuilder();
-	}
+	
 }

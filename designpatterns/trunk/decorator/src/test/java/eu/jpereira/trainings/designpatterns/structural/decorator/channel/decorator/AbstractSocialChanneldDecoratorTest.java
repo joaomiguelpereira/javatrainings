@@ -15,38 +15,21 @@
  */
 package eu.jpereira.trainings.designpatterns.structural.decorator.channel.decorator;
 
+import eu.jpereira.trainings.designpatterns.structural.decorator.channel.SocialChannelBuilder;
+import eu.jpereira.trainings.designpatterns.structural.decorator.channel.spy.TestSpySocialChannelBuilder;
 
 /**
  * @author jpereira
- * 
+ *
  */
-public class MessageTruncator extends SocialChannelDecorator {
+public abstract class AbstractSocialChanneldDecoratorTest {
 
-	private int maxLength = 0;
-
+	
 	/**
-	 * @param maxLength
+	 * @return
 	 */
-	public MessageTruncator(int maxLength) {
-		this.maxLength = maxLength;
+	protected SocialChannelBuilder createTestSpySocialChannelBuilder() {
+
+		return new TestSpySocialChannelBuilder();
 	}
-
-	/*
-	 * (non-Javadoc)
-	 * 
-	 * @see eu.jpereira.trainings.designpatterns.structural.decorator.channel.
-	 * SocialChannel#deliverMessage(java.lang.String)
-	 */
-	@Override
-	public void deliverMessage(String message) {
-		if (message.length() > maxLength) {
-			StringBuilder builder = new StringBuilder();
-			builder.append(message.substring(0, maxLength - 3));
-			builder.append("...");
-			message = builder.toString();
-		}
-		delegate.deliverMessage(message);
-
-	}
-
 }

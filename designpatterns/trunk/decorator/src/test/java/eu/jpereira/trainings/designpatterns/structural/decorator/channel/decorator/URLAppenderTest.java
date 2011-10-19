@@ -15,18 +15,37 @@
  */
 package eu.jpereira.trainings.designpatterns.structural.decorator.channel.decorator;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
 
 import org.junit.Test;
 
+import eu.jpereira.trainings.designpatterns.structural.decorator.channel.SocialChannel;
+import eu.jpereira.trainings.designpatterns.structural.decorator.channel.SocialChannelBuilder;
+import eu.jpereira.trainings.designpatterns.structural.decorator.channel.SocialChannelProperties;
+import eu.jpereira.trainings.designpatterns.structural.decorator.channel.SocialChannelPropertyKey;
+import eu.jpereira.trainings.designpatterns.structural.decorator.channel.spy.TestSpySocialChannel;
+
 /**
  * @author jpereira
- *
+ * 
  */
-public class URLAppenderTest {
+public class URLAppenderTest extends AbstractSocialChanneldDecoratorTest{
 
 	@Test
 	public void testAppendURL() {
-		fail("NOT IMPLEMENTED");
+		// Create the builder
+		SocialChannelBuilder builder = createTestSpySocialChannelBuilder();
+
+		// create a spy social channel
+		SocialChannelProperties props = new SocialChannelProperties().putProperty(SocialChannelPropertyKey.NAME, TestSpySocialChannel.NAME);
+		SocialChannel channel = builder.buildDecoratedChannel(props).with(new URLAppender("http://jpereira.eu")).getDecoratedChannel();
+
+		// Now call channel.deliverMessage
+		channel.deliverMessage("this is a message");
+		// Spy channel. Should get the one created before
+		TestSpySocialChannel spyChannel = (TestSpySocialChannel) builder.buildChannel(props);
+		assertEquals("this is a message http://jpereira.eu", spyChannel.lastMessagePublished());
 	}
+	
+	
 }

@@ -19,14 +19,49 @@ import static org.junit.Assert.*;
 
 import org.junit.Test;
 
+import eu.jpereira.trainings.designpatterns.structural.decorator.channel.SocialChannel;
+import eu.jpereira.trainings.designpatterns.structural.decorator.channel.SocialChannelBuilder;
+import eu.jpereira.trainings.designpatterns.structural.decorator.channel.SocialChannelProperties;
+import eu.jpereira.trainings.designpatterns.structural.decorator.channel.SocialChannelPropertyKey;
+import eu.jpereira.trainings.designpatterns.structural.decorator.channel.spy.TestSpySocialChannel;
+
 /**
  * @author jpereira
- *
+ * 
  */
-public class SocialChannelDecortatorIntegrationTest {
+public class SocialChannelDecortatorIntegrationTest extends AbstractSocialChanneldDecoratorTest {
 
 	@Test
-	public void testChainDecorators() {
-		
+	public void testChainTwoDecorators() {
+		// Create the builder
+		SocialChannelBuilder builder = createTestSpySocialChannelBuilder();
+
+		// create a spy social channel
+		SocialChannelProperties props = new SocialChannelProperties().putProperty(SocialChannelPropertyKey.NAME, TestSpySocialChannel.NAME);
+
+		// Chain decorators
+		SocialChannel channel = builder.buildDecoratedChannel(props).with(new MessageTruncator(10)).with(new URLAppender("http://jpereira.eu")).getDecoratedChannel();
+
+		channel.deliverMessage("this is a message");
+		// Spy channel. Should get the one created before
+		TestSpySocialChannel spyChannel = (TestSpySocialChannel) builder.buildChannel(props);
+		assertEquals("this is... http://jpereira.eu", spyChannel.lastMessagePublished());
+	}
+
+	@Test
+	public void testOtherChainTwoDecorators() {
+		// Create the builder
+		SocialChannelBuilder builder = createTestSpySocialChannelBuilder();
+
+		// create a spy social channel
+		SocialChannelProperties props = new SocialChannelProperties().putProperty(SocialChannelPropertyKey.NAME, TestSpySocialChannel.NAME);
+
+		// Chain decorators
+		SocialChannel channel = builder.buildDecoratedChannel(props).with(new URLAppender("http://jpereira.eu")).with(new MessageTruncator(30)).getDecoratedChannel();
+
+		channel.deliverMessage("this is a message");
+		// Spy channel. Should get the one created before
+		TestSpySocialChannel spyChannel = (TestSpySocialChannel) builder.buildChannel(props);
+		assertEquals("this is a message http://jp...", spyChannel.lastMessagePublished());
 	}
 }

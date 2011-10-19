@@ -15,10 +15,9 @@
  */
 package eu.jpereira.trainings.designpatterns.structural.decorator.channel;
 
-import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
+import java.util.Stack;
 
 import eu.jpereira.trainings.designpatterns.structural.decorator.channel.decorator.SocialChannelDecorator;
 
@@ -34,12 +33,15 @@ public abstract class SocialChannelBuilder {
 	private Map<String, Class<? extends SocialChannel>> pluggedChannels;
 
 	private SocialChannel decoratedChannel = null;
-	private List<SocialChannelDecorator> decorators;
+	private Stack<SocialChannelDecorator> decorators;
+	
+	//private List<SocialChannelDecorator> decorators;
+	
 	
 	public SocialChannelBuilder() {
 		this.pluggedChannels = createChannelsList();
 		this.cachedChannels = createChachedChannedlList();
-		this.decorators = createDecoratorList();
+		this.decorators = createDecoratorStack();
 		this.addDefaultChannels();
 	}
 
@@ -122,8 +124,8 @@ public abstract class SocialChannelBuilder {
 	/**
 	 * @return
 	 */
-	protected List<SocialChannelDecorator> createDecoratorList() {
-		return new ArrayList<SocialChannelDecorator>();
+	protected Stack<SocialChannelDecorator> createDecoratorStack() {
+		return new Stack<SocialChannelDecorator>();
 	}
 
 	/**
@@ -140,7 +142,7 @@ public abstract class SocialChannelBuilder {
 	 * @return
 	 */
 	public SocialChannelBuilder with(SocialChannelDecorator decorator) {
-		this.decorators.add(decorator);
+		this.decorators.push(decorator);
 		return this;
 	}
 
@@ -150,11 +152,15 @@ public abstract class SocialChannelBuilder {
 	public SocialChannel getDecoratedChannel() {
 		
 		SocialChannel aSocialChannel = this.decoratedChannel;
-
-		for ( SocialChannelDecorator aDecorator : this.decorators ) {
+		
+		while ( !this.decorators.isEmpty() ) {
+			SocialChannelDecorator aDecorator = this.decorators.pop();
 			aDecorator.setDecoratedSocialChannel(aSocialChannel);
 			aSocialChannel = aDecorator;
 		}
+
+		
+		
 		this.decoratedChannel = null;
 		return aSocialChannel;
 	}

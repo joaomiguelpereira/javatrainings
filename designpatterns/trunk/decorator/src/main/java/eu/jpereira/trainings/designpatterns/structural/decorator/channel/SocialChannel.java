@@ -22,9 +22,9 @@ package eu.jpereira.trainings.designpatterns.structural.decorator.channel;
 public interface SocialChannel {
 
 	/**
-	 * @param string
+	 * @param message
 	 */
-	void deliverMessage(String string);
+	void deliverMessage(String message);
 
 	
 }

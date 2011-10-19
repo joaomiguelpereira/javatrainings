@@ -15,37 +15,33 @@
  */
 package eu.jpereira.trainings.designpatterns.structural.decorator.channel.decorator;
 
-
 /**
  * @author jpereira
- * 
+ *
  */
-public class MessageTruncator extends SocialChannelDecorator {
+public class URLAppender extends SocialChannelDecorator {
 
-	private int maxLength = 0;
+	
+	private String url;
 
 	/**
-	 * @param maxLength
+	 * @param url
 	 */
-	public MessageTruncator(int maxLength) {
-		this.maxLength = maxLength;
+	public URLAppender(String url) {
+		this.url = url;
 	}
 
-	/*
-	 * (non-Javadoc)
-	 * 
-	 * @see eu.jpereira.trainings.designpatterns.structural.decorator.channel.
-	 * SocialChannel#deliverMessage(java.lang.String)
+	/* (non-Javadoc)
+	 * @see eu.jpereira.trainings.designpatterns.structural.decorator.channel.SocialChannel#deliverMessage(java.lang.String)
 	 */
 	@Override
 	public void deliverMessage(String message) {
-		if (message.length() > maxLength) {
-			StringBuilder builder = new StringBuilder();
-			builder.append(message.substring(0, maxLength - 3));
-			builder.append("...");
-			message = builder.toString();
-		}
-		delegate.deliverMessage(message);
+		StringBuilder builder = new StringBuilder();
+		builder.append(message);
+		builder.append(" ");
+		builder.append(this.url);
+		delegate.deliverMessage(builder.toString());
+		
 
 	}
 
