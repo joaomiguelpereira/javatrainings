@@ -15,24 +15,11 @@
  */
 package eu.jpereira.trainings.designpatterns.structural.decorator.channel;
 
-import static org.junit.Assert.*;
-
-import org.junit.Test;
-
-import eu.jpereira.trainings.designpatterns.structural.decorator.channel.SocialChannelPropertyKey;
-import eu.jpereira.trainings.designpatterns.structural.decorator.channel.SocialChannelProperties;
 /**
  * @author jpereira
  *
  */
-public class ChannelPropertiesTest {
+public enum SocialChannelPropertyKey {
+	NAME;
 
-
-	@Test
-	public void testAddProperty() {
-		SocialChannelProperties props = new SocialChannelProperties();
-		props.putProperty(SocialChannelPropertyKey.NAME, "teste");
-		
-		assertEquals("teste", props.getProperty(SocialChannelPropertyKey.NAME));
-	}
 }

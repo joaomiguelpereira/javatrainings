@@ -13,26 +13,20 @@
  *  See the License for the specific language governing permissions and
  *  limitations under the License.
  */
-package eu.jpereira.trainings.designpatterns.structural.decorator.dummy;
+package eu.jpereira.trainings.designpatterns.structural.decorator.channel.decorator;
 
-import org.junit.Ignore;
+import static org.junit.Assert.*;
 
-import eu.jpereira.trainings.designpatterns.structural.decorator.channel.SocialChannel;
+import org.junit.Test;
 
 /**
  * @author jpereira
  *
  */
-@Ignore
-public class TestDummyChannel implements SocialChannel {
+public class SocialChannelDecortatorIntegrationTest {
 
-	/* (non-Javadoc)
-	 * @see eu.jpereira.trainings.designpatterns.structural.decorator.channel.SocialChannel#deliverMessage(java.lang.String)
-	 */
-	@Override
-	public void deliverMessage(String string) {
-		// TODO Auto-generated method stub
-
+	@Test
+	public void testChainDecorators() {
+		
 	}
-
 }

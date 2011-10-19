@@ -24,20 +24,20 @@ import java.util.Map;
  */
 public class SocialChannelProperties {
 
-	private Map<ChannelPropertyKey, String> props;
+	private Map<SocialChannelPropertyKey, String> props;
 
 	/**
 	 * 
 	 */
 	public SocialChannelProperties() {
-		this.props = new HashMap<ChannelPropertyKey, String>();
+		this.props = new HashMap<SocialChannelPropertyKey, String>();
 	}
 
 	/**
 	 * @param key
 	 * @param propValue
 	 */
-	public SocialChannelProperties setProperty(ChannelPropertyKey key, String propValue) {
+	public SocialChannelProperties putProperty(SocialChannelPropertyKey key, String propValue) {
 		this.props.put(key, propValue);
 		return this;
 
@@ -47,7 +47,7 @@ public class SocialChannelProperties {
 	 * @param key
 	 * @return
 	 */
-	public String getProperty(ChannelPropertyKey key) {
+	public String getProperty(SocialChannelPropertyKey key) {
 		return this.props.get(key);
 	}
 }

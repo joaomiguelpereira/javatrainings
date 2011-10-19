@@ -13,13 +13,20 @@
  *  See the License for the specific language governing permissions and
  *  limitations under the License.
  */
-package eu.jpereira.trainings.designpatterns.structural.decorator.channel;
+package eu.jpereira.trainings.designpatterns.structural.decorator.channel.decorator;
+
+import static org.junit.Assert.*;
+
+import org.junit.Test;
 
 /**
  * @author jpereira
  *
  */
-public enum ChannelPropertyKey {
-	NAME;
+public class URLAppenderTest {
 
+	@Test
+	public void testAppendURL() {
+		fail("NOT IMPLEMENTED");
+	}
 }

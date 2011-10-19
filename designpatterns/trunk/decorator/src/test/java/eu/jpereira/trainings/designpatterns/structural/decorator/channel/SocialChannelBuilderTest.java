@@ -17,14 +17,15 @@ package eu.jpereira.trainings.designpatterns.structural.decorator.channel;
 
 import org.junit.Test;
 
-import eu.jpereira.trainings.designpatterns.structural.decorator.channel.ChannelPropertyKey;
+import eu.jpereira.trainings.designpatterns.structural.decorator.channel.SocialChannelPropertyKey;
 import eu.jpereira.trainings.designpatterns.structural.decorator.channel.FacebookChannel;
 import eu.jpereira.trainings.designpatterns.structural.decorator.channel.LinkedinChannel;
 import eu.jpereira.trainings.designpatterns.structural.decorator.channel.SocialChannel;
 import eu.jpereira.trainings.designpatterns.structural.decorator.channel.SocialChannelBuilder;
 import eu.jpereira.trainings.designpatterns.structural.decorator.channel.SocialChannelProperties;
 import eu.jpereira.trainings.designpatterns.structural.decorator.channel.TwitterChannel;
-import eu.jpereira.trainings.designpatterns.structural.decorator.dummy.TestDummyChannel;
+import eu.jpereira.trainings.designpatterns.structural.decorator.channel.dummy.DummySocialChannelBuilder;
+import eu.jpereira.trainings.designpatterns.structural.decorator.channel.dummy.TestDummyChannel;
 
 import static org.junit.Assert.*;
 import static org.mockito.Mockito.*;
@@ -47,7 +48,7 @@ public abstract class SocialChannelBuilderTest {
 		// ChannelProperties.
 		SocialChannelProperties props = new SocialChannelProperties();
 
-		SocialChannel channel = builder.buildChannel(props.setProperty(ChannelPropertyKey.NAME, TwitterChannel.NAME));
+		SocialChannel channel = builder.buildChannel(props.putProperty(SocialChannelPropertyKey.NAME, TwitterChannel.NAME));
 		assertNotNull(channel);
 		assertTrue(channel instanceof TwitterChannel);
 	}
@@ -59,7 +60,7 @@ public abstract class SocialChannelBuilderTest {
 		// ChannelProperties.
 		SocialChannelProperties props = new SocialChannelProperties();
 
-		SocialChannel channel = builder.buildChannel(props.setProperty(ChannelPropertyKey.NAME, FacebookChannel.NAME));
+		SocialChannel channel = builder.buildChannel(props.putProperty(SocialChannelPropertyKey.NAME, FacebookChannel.NAME));
 		assertNotNull(channel);
 		assertTrue(channel instanceof FacebookChannel);
 	}
@@ -70,7 +71,7 @@ public abstract class SocialChannelBuilderTest {
 		// ChannelProperties.
 		SocialChannelProperties props = new SocialChannelProperties();
 
-		SocialChannel channel = builder.buildChannel(props.setProperty(ChannelPropertyKey.NAME, LinkedinChannel.NAME));
+		SocialChannel channel = builder.buildChannel(props.putProperty(SocialChannelPropertyKey.NAME, LinkedinChannel.NAME));
 		assertNotNull(channel);
 		assertTrue(channel instanceof LinkedinChannel);
 	}
@@ -86,13 +87,13 @@ public abstract class SocialChannelBuilderTest {
 		//Use an dummyChannel
 		
 		
-		SocialChannel channel = builder.buildChannel(new SocialChannelProperties().setProperty(ChannelPropertyKey.NAME, channelName));
+		SocialChannel channel = builder.buildChannel(new SocialChannelProperties().putProperty(SocialChannelPropertyKey.NAME, channelName));
 		assertNotNull(channel);
 		assertTrue(channel instanceof TestDummyChannel);
 		
 		//Must be able to use other channels
 
-		SocialChannel channelTwitter = builder.buildChannel(new SocialChannelProperties().setProperty(ChannelPropertyKey.NAME, TwitterChannel.NAME));
+		SocialChannel channelTwitter = builder.buildChannel(new SocialChannelProperties().putProperty(SocialChannelPropertyKey.NAME, TwitterChannel.NAME));
 		assertNotNull(channelTwitter);
 		assertTrue(channelTwitter instanceof TwitterChannel);
 		

@@ -13,26 +13,24 @@
  *  See the License for the specific language governing permissions and
  *  limitations under the License.
  */
-package eu.jpereira.trainings.designpatterns.structural.decorator.channel;
+package eu.jpereira.trainings.designpatterns.structural.decorator.channel.decorator;
 
-import static org.junit.Assert.*;
+import eu.jpereira.trainings.designpatterns.structural.decorator.channel.SocialChannel;
 
-import org.junit.Test;
-
-import eu.jpereira.trainings.designpatterns.structural.decorator.channel.SocialChannelPropertyKey;
-import eu.jpereira.trainings.designpatterns.structural.decorator.channel.SocialChannelProperties;
 /**
  * @author jpereira
  *
  */
-public class ChannelPropertiesTest {
+public abstract class SocialChannelDecorator implements SocialChannel {
 
-
-	@Test
-	public void testAddProperty() {
-		SocialChannelProperties props = new SocialChannelProperties();
-		props.putProperty(SocialChannelPropertyKey.NAME, "teste");
+	protected SocialChannel delegate;
+	
+	/**
+	 * @param decoratedChannel
+	 */
+	public void setDecoratedSocialChannel(SocialChannel decoratedChannel) {
+		this.delegate = decoratedChannel;
 		
-		assertEquals("teste", props.getProperty(SocialChannelPropertyKey.NAME));
 	}
+
 }

@@ -13,12 +13,14 @@
  *  See the License for the specific language governing permissions and
  *  limitations under the License.
  */
-package eu.jpereira.trainings.designpatterns.structural.decorator.channel;
+package eu.jpereira.trainings.designpatterns.structural.decorator.channel.dummy;
 
-import eu.jpereira.trainings.designpatterns.structural.decorator.channel.ChannelPropertyKey;
+import eu.jpereira.trainings.designpatterns.structural.decorator.channel.FacebookChannel;
+import eu.jpereira.trainings.designpatterns.structural.decorator.channel.LinkedinChannel;
+import eu.jpereira.trainings.designpatterns.structural.decorator.channel.SocialChannelPropertyKey;
 import eu.jpereira.trainings.designpatterns.structural.decorator.channel.SocialChannelBuilder;
 import eu.jpereira.trainings.designpatterns.structural.decorator.channel.SocialChannelProperties;
-import eu.jpereira.trainings.designpatterns.structural.decorator.dummy.TestDummyChannel;
+import eu.jpereira.trainings.designpatterns.structural.decorator.channel.TwitterChannel;
 
 /**
  * @author jpereira
@@ -30,7 +32,7 @@ public class DummySocialChannelBuilder extends SocialChannelBuilder {
 	 * 
 	 */
 	public DummySocialChannelBuilder() {
-		super.plugChannel(new SocialChannelProperties().setProperty(ChannelPropertyKey.NAME, "DUMMY"), TestDummyChannel.class);
+		super.plugChannel(new SocialChannelProperties().putProperty(SocialChannelPropertyKey.NAME, "DUMMY"), TestDummyChannel.class);
 	}
 
 	/*
@@ -41,9 +43,9 @@ public class DummySocialChannelBuilder extends SocialChannelBuilder {
 	 */
 	@Override
 	protected void addDefaultChannels() {
-		super.plugChannel(new SocialChannelProperties().setProperty(ChannelPropertyKey.NAME, TwitterChannel.NAME), TwitterChannel.class);
-		super.plugChannel(new SocialChannelProperties().setProperty(ChannelPropertyKey.NAME, FacebookChannel.NAME), FacebookChannel.class);
-		super.plugChannel(new SocialChannelProperties().setProperty(ChannelPropertyKey.NAME, LinkedinChannel.NAME), LinkedinChannel.class);
+		super.plugChannel(new SocialChannelProperties().putProperty(SocialChannelPropertyKey.NAME, TwitterChannel.NAME), TwitterChannel.class);
+		super.plugChannel(new SocialChannelProperties().putProperty(SocialChannelPropertyKey.NAME, FacebookChannel.NAME), FacebookChannel.class);
+		super.plugChannel(new SocialChannelProperties().putProperty(SocialChannelPropertyKey.NAME, LinkedinChannel.NAME), LinkedinChannel.class);
 
 	}
 

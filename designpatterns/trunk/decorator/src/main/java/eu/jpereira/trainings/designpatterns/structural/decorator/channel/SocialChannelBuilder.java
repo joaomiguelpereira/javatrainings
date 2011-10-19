@@ -15,8 +15,12 @@
  */
 package eu.jpereira.trainings.designpatterns.structural.decorator.channel;
 
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
+
+import eu.jpereira.trainings.designpatterns.structural.decorator.channel.decorator.SocialChannelDecorator;
 
 /**
  * @author jpereira
@@ -25,12 +29,17 @@ import java.util.Map;
 public abstract class SocialChannelBuilder {
 
 	private Map<String, SocialChannel> cachedChannels;
+	
 	// Map <name
 	private Map<String, Class<? extends SocialChannel>> pluggedChannels;
 
+	private SocialChannel decoratedChannel = null;
+	private List<SocialChannelDecorator> decorators;
+	
 	public SocialChannelBuilder() {
 		this.pluggedChannels = createChannelsList();
 		this.cachedChannels = createChachedChannedlList();
+		this.decorators = createDecoratorList();
 		this.addDefaultChannels();
 	}
 
@@ -67,7 +76,7 @@ public abstract class SocialChannelBuilder {
 		// lookup channel by name
 		SocialChannel instance = null;
 
-		String channelName = channelProperties.getProperty(ChannelPropertyKey.NAME);
+		String channelName = channelProperties.getProperty(SocialChannelPropertyKey.NAME);
 		if (channelName != null && this.pluggedChannels.containsKey(channelName)) {
 
 			// Try the cache
@@ -105,8 +114,49 @@ public abstract class SocialChannelBuilder {
 	 * @param clazz
 	 */
 	protected void plugChannel(SocialChannelProperties put, Class<? extends SocialChannel> clazz) {
-		this.pluggedChannels.put(put.getProperty(ChannelPropertyKey.NAME), clazz);
+		this.pluggedChannels.put(put.getProperty(SocialChannelPropertyKey.NAME), clazz);
 
+	}
+
+
+	/**
+	 * @return
+	 */
+	protected List<SocialChannelDecorator> createDecoratorList() {
+		return new ArrayList<SocialChannelDecorator>();
+	}
+
+	/**
+	 * @param props
+	 * @return
+	 */
+	public SocialChannelBuilder buildDecoratedChannel(SocialChannelProperties props) {
+		decoratedChannel = buildChannel(props);
+		return this;
+	}
+
+	/**
+	 * @param messageTruncator
+	 * @return
+	 */
+	public SocialChannelBuilder with(SocialChannelDecorator decorator) {
+		this.decorators.add(decorator);
+		return this;
+	}
+
+	/**
+	 * @return
+	 */
+	public SocialChannel getDecoratedChannel() {
+		
+		SocialChannel aSocialChannel = this.decoratedChannel;
+
+		for ( SocialChannelDecorator aDecorator : this.decorators ) {
+			aDecorator.setDecoratedSocialChannel(aSocialChannel);
+			aSocialChannel = aDecorator;
+		}
+		this.decoratedChannel = null;
+		return aSocialChannel;
 	}
 
 }

@@ -13,26 +13,27 @@
  *  See the License for the specific language governing permissions and
  *  limitations under the License.
  */
-package eu.jpereira.trainings.designpatterns.structural.decorator.channel;
+package eu.jpereira.trainings.designpatterns.structural.decorator.channel.spy;
 
-import static org.junit.Assert.*;
+import org.junit.Ignore;
 
-import org.junit.Test;
-
-import eu.jpereira.trainings.designpatterns.structural.decorator.channel.SocialChannelPropertyKey;
+import eu.jpereira.trainings.designpatterns.structural.decorator.channel.SocialChannelBuilder;
 import eu.jpereira.trainings.designpatterns.structural.decorator.channel.SocialChannelProperties;
+import eu.jpereira.trainings.designpatterns.structural.decorator.channel.SocialChannelPropertyKey;
+
 /**
  * @author jpereira
  *
  */
-public class ChannelPropertiesTest {
+@Ignore
+public class TestSpySocialChannelBuilder extends SocialChannelBuilder {
 
-
-	@Test
-	public void testAddProperty() {
-		SocialChannelProperties props = new SocialChannelProperties();
-		props.putProperty(SocialChannelPropertyKey.NAME, "teste");
-		
-		assertEquals("teste", props.getProperty(SocialChannelPropertyKey.NAME));
+	/* (non-Javadoc)
+	 * @see eu.jpereira.trainings.designpatterns.structural.decorator.channel.SocialChannelBuilder#addDefaultChannels()
+	 */
+	@Override
+	protected void addDefaultChannels() {
+		super.plugChannel(new SocialChannelProperties().putProperty(SocialChannelPropertyKey.NAME, TestSpySocialChannel.NAME), TestSpySocialChannel.class);
 	}
+
 }

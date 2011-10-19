@@ -17,7 +17,7 @@ package eu.jpereira.trainings.designpatterns.structural.decorator;
 
 import org.junit.Test;
 
-import eu.jpereira.trainings.designpatterns.structural.decorator.channel.ChannelPropertyKey;
+import eu.jpereira.trainings.designpatterns.structural.decorator.channel.SocialChannelPropertyKey;
 import eu.jpereira.trainings.designpatterns.structural.decorator.channel.DefaultSocialChannelBuilder;
 import eu.jpereira.trainings.designpatterns.structural.decorator.channel.SocialChannelBuilder;
 import eu.jpereira.trainings.designpatterns.structural.decorator.channel.SocialChannelProperties;
@@ -34,9 +34,9 @@ public class IntegrationTest {
 		//create a ChannelBuilder
 		SocialChannelBuilder builder = new DefaultSocialChannelBuilder();
 		//Add three channels
-		publisher.addSocialChannel(builder.buildChannel(new SocialChannelProperties().setProperty(ChannelPropertyKey.NAME, "twitter")));
-		publisher.addSocialChannel(builder.buildChannel(new SocialChannelProperties().setProperty(ChannelPropertyKey.NAME, "facebook")));
-		publisher.addSocialChannel(builder.buildChannel(new SocialChannelProperties().setProperty(ChannelPropertyKey.NAME, "linkedin")));
+		publisher.addSocialChannel(builder.buildChannel(new SocialChannelProperties().putProperty(SocialChannelPropertyKey.NAME, "twitter")));
+		publisher.addSocialChannel(builder.buildChannel(new SocialChannelProperties().putProperty(SocialChannelPropertyKey.NAME, "facebook")));
+		publisher.addSocialChannel(builder.buildChannel(new SocialChannelProperties().putProperty(SocialChannelPropertyKey.NAME, "linkedin")));
 
 		
 		publisher.publish("Hello World!!");

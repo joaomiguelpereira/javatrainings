@@ -13,26 +13,26 @@
  *  See the License for the specific language governing permissions and
  *  limitations under the License.
  */
-package eu.jpereira.trainings.designpatterns.structural.decorator.channel;
+package eu.jpereira.trainings.designpatterns.structural.decorator.channel.dummy;
 
-import static org.junit.Assert.*;
+import org.junit.Ignore;
 
-import org.junit.Test;
+import eu.jpereira.trainings.designpatterns.structural.decorator.channel.SocialChannel;
 
-import eu.jpereira.trainings.designpatterns.structural.decorator.channel.SocialChannelPropertyKey;
-import eu.jpereira.trainings.designpatterns.structural.decorator.channel.SocialChannelProperties;
 /**
  * @author jpereira
  *
  */
-public class ChannelPropertiesTest {
+@Ignore
+public class TestDummyChannel implements SocialChannel {
 
+	/* (non-Javadoc)
+	 * @see eu.jpereira.trainings.designpatterns.structural.decorator.channel.SocialChannel#deliverMessage(java.lang.String)
+	 */
+	@Override
+	public void deliverMessage(String string) {
+		// TODO Auto-generated method stub
 
-	@Test
-	public void testAddProperty() {
-		SocialChannelProperties props = new SocialChannelProperties();
-		props.putProperty(SocialChannelPropertyKey.NAME, "teste");
-		
-		assertEquals("teste", props.getProperty(SocialChannelPropertyKey.NAME));
 	}
+
 }
