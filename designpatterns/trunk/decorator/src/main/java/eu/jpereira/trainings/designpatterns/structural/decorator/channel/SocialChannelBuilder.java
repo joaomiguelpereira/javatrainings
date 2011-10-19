@@ -22,7 +22,7 @@ import java.util.Map;
  * @author jpereira
  * 
  */
-public class SocialChannelBuilder {
+public abstract class SocialChannelBuilder {
 
 	private Map<String, SocialChannel> cachedChannels;
 	// Map <name
@@ -39,11 +39,7 @@ public class SocialChannelBuilder {
 	 * extending this class and calling the method plugChannel() in constructor,
 	 * for example;
 	 */
-	private void addDefaultChannels() {
-		this.pluggedChannels.put(TwitterChannel.NAME, TwitterChannel.class);
-		this.pluggedChannels.put(FacebookChannel.NAME, FacebookChannel.class);
-		this.pluggedChannels.put(LinkedinChannel.NAME, LinkedinChannel.class);
-	}
+	protected abstract void addDefaultChannels();
 
 	/**
 	 * @return
