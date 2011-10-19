@@ -1,4 +1,3 @@
-
 = Java Training=
 
 <wiki:toc max_depth="3" />
@@ -34,7 +33,9 @@
  * Programmer Testing - http://www.box.net/shared/yti45zhuyo1duml3lh7a
 === Exercise ===
  * Programmer Testing - http://www.box.net/shared/otprzf6na05ovubjt21q
-
+== OO Design Principles ==
+=== Slides ===
+ * OO Design Principles: http://www.box.net/shared/kyqpyl899x688eopiy50
 == Development tools ==
  * Eclipse - http://www.eclipse.org/
  * Maven (Use version 2) - http://maven.apache.org/
