@@ -30,7 +30,6 @@ public abstract class SocialChannelDecorator implements SocialChannel {
 	 */
 	public void setDecoratedSocialChannel(SocialChannel decoratedChannel) {
 		this.delegate = decoratedChannel;
-		
 	}
 
 }

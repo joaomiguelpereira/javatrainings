@@ -32,7 +32,6 @@ public abstract class SocialChannelBuilder {
 	// Map <name
 	private Map<String, Class<? extends SocialChannel>> pluggedChannels;
 
-	private SocialChannel decoratedChannel = null;
 	private Stack<SocialChannelDecorator> decorators;
 	
 	//private List<SocialChannelDecorator> decorators;
@@ -128,15 +127,7 @@ public abstract class SocialChannelBuilder {
 		return new Stack<SocialChannelDecorator>();
 	}
 
-	/**
-	 * @param props
-	 * @return
-	 */
-	public SocialChannelBuilder buildDecoratedChannel(SocialChannelProperties props) {
-		decoratedChannel = buildChannel(props);
-		return this;
-	}
-
+	
 	/**
 	 * @param messageTruncator
 	 * @return
@@ -147,21 +138,18 @@ public abstract class SocialChannelBuilder {
 	}
 
 	/**
+	 * @param props 
 	 * @return
 	 */
-	public SocialChannel getDecoratedChannel() {
-		
-		SocialChannel aSocialChannel = this.decoratedChannel;
+	public SocialChannel getDecoratedChannel(SocialChannelProperties props) {
+
+		SocialChannel aSocialChannel = buildChannel(props);
 		
 		while ( !this.decorators.isEmpty() ) {
 			SocialChannelDecorator aDecorator = this.decorators.pop();
 			aDecorator.setDecoratedSocialChannel(aSocialChannel);
 			aSocialChannel = aDecorator;
 		}
-
-		
-		
-		this.decoratedChannel = null;
 		return aSocialChannel;
 	}
 

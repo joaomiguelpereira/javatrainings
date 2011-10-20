@@ -38,7 +38,7 @@ public class URLAppenderTest extends AbstractSocialChanneldDecoratorTest{
 
 		// create a spy social channel
 		SocialChannelProperties props = new SocialChannelProperties().putProperty(SocialChannelPropertyKey.NAME, TestSpySocialChannel.NAME);
-		SocialChannel channel = builder.buildDecoratedChannel(props).with(new URLAppender("http://jpereira.eu")).getDecoratedChannel();
+		SocialChannel channel = builder.with(new URLAppender("http://jpereira.eu")).getDecoratedChannel(props);
 
 		// Now call channel.deliverMessage
 		channel.deliverMessage("this is a message");

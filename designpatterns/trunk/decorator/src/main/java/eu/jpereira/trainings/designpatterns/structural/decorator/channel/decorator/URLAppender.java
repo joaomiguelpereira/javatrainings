@@ -15,13 +15,14 @@
  */
 package eu.jpereira.trainings.designpatterns.structural.decorator.channel.decorator;
 
+import eu.jpereira.trainings.designpatterns.structural.decorator.channel.SocialChannel;
+
 /**
  * @author jpereira
- *
+ * 
  */
 public class URLAppender extends SocialChannelDecorator {
 
-	
 	private String url;
 
 	/**
@@ -31,8 +32,20 @@ public class URLAppender extends SocialChannelDecorator {
 		this.url = url;
 	}
 
-	/* (non-Javadoc)
-	 * @see eu.jpereira.trainings.designpatterns.structural.decorator.channel.SocialChannel#deliverMessage(java.lang.String)
+	/**
+	 * @param string
+	 * @param channel
+	 */
+	public URLAppender(String url, SocialChannel channel) {
+		this.url = url;
+		this.delegate = channel;
+	}
+
+	/*
+	 * (non-Javadoc)
+	 * 
+	 * @see eu.jpereira.trainings.designpatterns.structural.decorator.channel.
+	 * SocialChannel#deliverMessage(java.lang.String)
 	 */
 	@Override
 	public void deliverMessage(String message) {
@@ -40,8 +53,9 @@ public class URLAppender extends SocialChannelDecorator {
 		builder.append(message);
 		builder.append(" ");
 		builder.append(this.url);
-		delegate.deliverMessage(builder.toString());
-		
+		if (delegate != null) {
+			delegate.deliverMessage(builder.toString());
+		}
 
 	}
 

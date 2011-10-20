@@ -23,6 +23,7 @@ import eu.jpereira.trainings.designpatterns.structural.decorator.channel.SocialC
 import eu.jpereira.trainings.designpatterns.structural.decorator.channel.SocialChannelBuilder;
 import eu.jpereira.trainings.designpatterns.structural.decorator.channel.SocialChannelProperties;
 import eu.jpereira.trainings.designpatterns.structural.decorator.channel.SocialChannelPropertyKey;
+import eu.jpereira.trainings.designpatterns.structural.decorator.channel.TwitterChannel;
 import eu.jpereira.trainings.designpatterns.structural.decorator.channel.spy.TestSpySocialChannel;
 
 /**
@@ -40,12 +41,31 @@ public class SocialChannelDecortatorIntegrationTest extends AbstractSocialChanne
 		SocialChannelProperties props = new SocialChannelProperties().putProperty(SocialChannelPropertyKey.NAME, TestSpySocialChannel.NAME);
 
 		// Chain decorators
-		SocialChannel channel = builder.buildDecoratedChannel(props).with(new MessageTruncator(10)).with(new URLAppender("http://jpereira.eu")).getDecoratedChannel();
+		SocialChannel channel = builder.
+				with(new MessageTruncator(10)).
+				with(new URLAppender("http://jpereira.eu")).
+				getDecoratedChannel(props);
 
 		channel.deliverMessage("this is a message");
 		// Spy channel. Should get the one created before
 		TestSpySocialChannel spyChannel = (TestSpySocialChannel) builder.buildChannel(props);
 		assertEquals("this is... http://jpereira.eu", spyChannel.lastMessagePublished());
+	}
+
+	@Test
+	public void testChainTwoDecoratorsWithoutBuilder() {
+		
+		SocialChannel channel = new TestSpySocialChannel();
+		
+		SocialChannel urlAppenderChannel = new URLAppender("http://jpereira.eu", channel);
+		
+		//Now create a truncator
+		SocialChannel messageTruncatorChannel = new MessageTruncator(10, urlAppenderChannel);
+		
+		messageTruncatorChannel.deliverMessage("this is a message");
+		// Spy channel. Should get the one created before
+		TestSpySocialChannel spy = (TestSpySocialChannel)channel;
+		assertEquals("this is... http://jpereira.eu", spy.lastMessagePublished());
 	}
 
 	@Test
@@ -57,7 +77,7 @@ public class SocialChannelDecortatorIntegrationTest extends AbstractSocialChanne
 		SocialChannelProperties props = new SocialChannelProperties().putProperty(SocialChannelPropertyKey.NAME, TestSpySocialChannel.NAME);
 
 		// Chain decorators
-		SocialChannel channel = builder.buildDecoratedChannel(props).with(new URLAppender("http://jpereira.eu")).with(new MessageTruncator(30)).getDecoratedChannel();
+		SocialChannel channel = builder.with(new URLAppender("http://jpereira.eu")).with(new MessageTruncator(30)).getDecoratedChannel(props);
 
 		channel.deliverMessage("this is a message");
 		// Spy channel. Should get the one created before

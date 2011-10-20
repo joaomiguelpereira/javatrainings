@@ -39,7 +39,7 @@ public class MessageTruncatorTest extends AbstractSocialChanneldDecoratorTest{
 
 		// create a spy social channel
 		SocialChannelProperties props = new SocialChannelProperties().putProperty(SocialChannelPropertyKey.NAME, TestSpySocialChannel.NAME);
-		SocialChannel channel = builder.buildDecoratedChannel(props).with(new MessageTruncator(10)).getDecoratedChannel();
+		SocialChannel channel = builder.with(new MessageTruncator(10)).getDecoratedChannel(props);
 
 		// Now call channel.deliverMessage
 		channel.deliverMessage("this is a message");

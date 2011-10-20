@@ -15,6 +15,8 @@
  */
 package eu.jpereira.trainings.designpatterns.structural.decorator.channel.decorator;
 
+import eu.jpereira.trainings.designpatterns.structural.decorator.channel.SocialChannel;
+
 
 /**
  * @author jpereira
@@ -29,6 +31,15 @@ public class MessageTruncator extends SocialChannelDecorator {
 	 */
 	public MessageTruncator(int maxLength) {
 		this.maxLength = maxLength;
+	}
+
+	/**
+	 * @param i
+	 * @param decoratedChannel
+	 */
+	public MessageTruncator(int i, SocialChannel decoratedChannel) {
+		this.maxLength = i;
+		this.delegate = decoratedChannel;
 	}
 
 	/*
