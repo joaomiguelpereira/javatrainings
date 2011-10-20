@@ -19,6 +19,7 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Stack;
 
+import eu.jpereira.trainings.designpatterns.structural.decorator.channel.decorator.MessageTruncator;
 import eu.jpereira.trainings.designpatterns.structural.decorator.channel.decorator.SocialChannelDecorator;
 
 /**
@@ -151,6 +152,14 @@ public abstract class SocialChannelBuilder {
 			aSocialChannel = aDecorator;
 		}
 		return aSocialChannel;
+	}
+
+	/**
+	 * @param channel
+	 * @return
+	 */
+	public SocialChannelBuilder andWith(MessageTruncator channel) {
+		return with(channel);
 	}
 
 }
