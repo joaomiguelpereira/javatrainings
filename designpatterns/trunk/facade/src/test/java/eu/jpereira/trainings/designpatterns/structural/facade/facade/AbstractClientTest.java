@@ -13,7 +13,7 @@
  *  See the License for the specific language governing permissions and
  *  limitations under the License.
  */
-package eu.jpereira.trainings.designpatterns.structural.facade.client;
+package eu.jpereira.trainings.designpatterns.structural.facade.facade;
 
 import static org.mockito.Mockito.mock;
 
@@ -30,7 +30,7 @@ import eu.jpereira.trainings.designpatterns.structural.facade.service.fake.FakeC
  * @author jpereira
  * 
  */
-public class AbstractIntegrationTest {
+public class AbstractClientTest {
 
 	// Get the required services
 	protected CustomerDBService customerService;
@@ -46,7 +46,7 @@ public class AbstractIntegrationTest {
 		customerService = getMockedCustomerDBService();
 		bookService = getMockedBookDBService();
 		orderingService = getMockedOrderingService();
-		customerNotificationService = getFakeCustomerNotificationService();
+		customerNotificationService = getMockedCustomerNotificationService();
 		warehouseService = getMockedWareHouseService();
 	}
 
@@ -82,8 +82,8 @@ public class AbstractIntegrationTest {
 	 * 
 	 * @return
 	 */
-	protected CustomerNotificationService getFakeCustomerNotificationService() {
-		return new FakeCustomerNotificationService();
+	protected CustomerNotificationService getMockedCustomerNotificationService() {
+		return mock(CustomerNotificationService.class);
 	}
 
 	/**
