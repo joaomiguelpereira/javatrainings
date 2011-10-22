@@ -38,13 +38,10 @@ public class FakeCityDaoTest {
 		String cityName = "aveiro";
 		assertNotNull(dao.findBy("name", cityName));
 		assertNotNull(dao.findBy("name", cityName).findNearestStation("111", "112"));
-		assertNotNull(dao.findBy("name", cityName).findNearestStation("111", "112").getControler());
-		assertEquals("87", dao.findBy("name", cityName).findNearestStation("111", "112").getControler().getHumidityValue());
 		
-		assertEquals("26", dao.findBy("name", cityName).findNearestStation("111", "112").getControler().getWindValue());
+		assertNotNull(dao.findBy("name", cityName).findNearestStation("111", "112").getIpAddress());
 		
-		assertEquals("21", dao.findBy("name", cityName).findNearestStation("111", "112").getControler().getTemperatureValue());
-		
+				
 		
 		
 	}

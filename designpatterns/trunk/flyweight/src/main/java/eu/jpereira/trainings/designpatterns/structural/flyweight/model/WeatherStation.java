@@ -33,15 +33,7 @@ public class WeatherStation {
 		this.setLatitude(latitude);
 		this.longitude = longitude;
 	}
-	/**
-	 * @return
-	 */
-	public WeatherStationController getControler() {
-		
-		return FakeWeatherStationControllerFactory.instance().getController(this.ipAddress);
-		
-		
-	}
+	
 	public String getLatitude() {
 		return latitude;
 	}

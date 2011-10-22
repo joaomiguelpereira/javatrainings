@@ -17,6 +17,7 @@ package eu.jpereira.trainings.designpatterns.structural.flyweight.service;
 
 import eu.jpereira.trainings.designpatterns.structural.flyweight.controller.WeatherStationController;
 import eu.jpereira.trainings.designpatterns.structural.flyweight.dao.Dao;
+import eu.jpereira.trainings.designpatterns.structural.flyweight.fakes.FakeWeatherStationController;
 import eu.jpereira.trainings.designpatterns.structural.flyweight.model.City;
 import eu.jpereira.trainings.designpatterns.structural.flyweight.model.WeatherStation;
 import eu.jpereira.trainings.designpatterns.structural.flyweight.tranferobject.WeatherReading;
@@ -51,8 +52,8 @@ public class DefaultWeatherService implements WeatherService {
 			//Lookup for the neareast station
 			WeatherStation station= city.findNearestStation(latitude,longitude);
 			if (station!=null){
-				controller = station.getControler();
-				 reading = readStationController(controller);
+				String ipAddress = station.getIpAddress();
+				reading = readStationController(ipAddress);
 			}
 		}
 		return reading;
@@ -62,8 +63,10 @@ public class DefaultWeatherService implements WeatherService {
 	 * @param controller 
 	 * @return
 	 */
-	private WeatherReading readStationController(WeatherStationController controller) {
+	private WeatherReading readStationController(String ipAddress) {
 		//create a thread 
+		WeatherStationController controller = new FakeWeatherStationController(ipAddress);
+		//FakeWeatherStationControllerFactory.instance().getController(ipAddress);
 		
 		String temperature = controller.getTemperatureValue();
 		String humidity = controller.getHumidityValue();

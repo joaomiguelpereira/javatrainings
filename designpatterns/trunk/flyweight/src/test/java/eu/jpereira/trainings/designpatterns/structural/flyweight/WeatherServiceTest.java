@@ -52,8 +52,9 @@ public class WeatherServiceTest {
 		// stub returns
 		when(mockedCityDao.findBy("city", city)).thenReturn(mockedCity);
 		when(mockedCity.findNearestStation(dummyLatitude, dummyLongitude)).thenReturn(mockedWeatherStation);
-		when(mockedWeatherStation.getControler()).thenReturn(mockedWeatherStationController);
+		//when(mockedWeatherStation.getControler()).thenReturn(mockedWeatherStationController);
 
+		
 		when(mockedWeatherStationController.getHumidityValue()).thenReturn("22");
 		when(mockedWeatherStationController.getTemperatureValue()).thenReturn("22");
 		when(mockedWeatherStationController.getWindValue()).thenReturn("22");
