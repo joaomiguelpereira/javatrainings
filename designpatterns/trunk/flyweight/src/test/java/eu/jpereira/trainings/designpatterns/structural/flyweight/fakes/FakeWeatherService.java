@@ -71,12 +71,12 @@ public class FakeWeatherService implements WeatherService {
 	 */
 	private WeatherReading readStationController(String ipAddress) {
 		// TODO: Replace the instantiation of WeatherStationController with a
-		// factory call. Comment the instantiation and uncomment the factory
-		// call
-		// create a controller. Comment it
+		// factory call. Comment the instantiation and uncomment the factory call
+		
+		// TODO:. Comment it
 		WeatherStationController controller = new FakeWeatherStationController(new TemperatureSensor(), new HumiditySensor(), new WindSensor());
 		
-		//Uncomment it
+		//TODO: Uncomment it
 		//WeatherStationController controller = FakeWeatherStationControllerFactory.instance().getController(ipAddress);
 
 		String temperature = controller.getTemperatureValue(ipAddress);
