@@ -15,27 +15,31 @@
  */
 package eu.jpereira.trainings.designpatterns.structural.flyweight;
 
+import static org.junit.Assert.fail;
+
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.net.URLConnection;
+import java.util.ArrayList;
+import java.util.List;
 
 import org.eclipse.jetty.server.Server;
 import org.junit.AfterClass;
 import org.junit.BeforeClass;
-import org.junit.Ignore;
 import org.junit.Test;
-import static org.junit.Assert.*;
+
 import eu.jpereira.trainings.designpatterns.structural.flyweight.fakes.FakeHTTPHandler;
 
 /**
  * @author jpereira
  * 
  */
-public class ServerTestIntegration {
+public class ServerIntegrationTest {
 	protected static Server server;
+	private List<Thread> threads = new ArrayList<Thread>(); 
 
 	@BeforeClass
 	public static void startServer() throws Exception {
@@ -47,22 +51,26 @@ public class ServerTestIntegration {
 
 	@Test
 	public void testServer() throws IOException, InterruptedException {
+		
 		//Create some big number of clients
+		System.err.println("Testing 5 Clients....");
 		int numberOfClients = 5;
 		for (int i=0; i< numberOfClients; i++ ) {
 			Thread thread = new Thread(new TestClient());
 			thread.start();
 			thread.join();
+			threads.add(thread);
 		}
+		
+		
 	}
 
 	@AfterClass
 	public static void stopServer() throws Exception {
 		server.stop();
-
 	}
 
-	@Ignore
+	
 	private class TestClient implements Runnable {
 
 		/*
