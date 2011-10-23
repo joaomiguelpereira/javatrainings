@@ -18,8 +18,11 @@ package eu.jpereira.trainings.designpatterns.structural.flyweight.fakes;
 import java.util.HashMap;
 import java.util.Map;
 
+import eu.jpereira.trainings.designpatterns.structural.flyweight.controller.HumiditySensor;
+import eu.jpereira.trainings.designpatterns.structural.flyweight.controller.TemperatureSensor;
 import eu.jpereira.trainings.designpatterns.structural.flyweight.controller.WeatherStationController;
 import eu.jpereira.trainings.designpatterns.structural.flyweight.controller.WeatherStationControllerFactory;
+import eu.jpereira.trainings.designpatterns.structural.flyweight.controller.WindSensor;
 
 /**
  * @author jpereira
@@ -63,7 +66,8 @@ public class FakeWeatherStationControllerFactory implements WeatherStationContro
 		WeatherStationController controller = this.controllers.get(ipAddress);
 
 		if (controller == null) {
-			controller = new FakeWeatherStationController(ipAddress);
+			
+			controller = new FakeWeatherStationController(new TemperatureSensor(), new HumiditySensor(), new WindSensor());
 			this.controllers.put(ipAddress, controller);
 
 		}

@@ -55,9 +55,9 @@ public class WeatherServiceTest {
 		//when(mockedWeatherStation.getControler()).thenReturn(mockedWeatherStationController);
 
 		
-		when(mockedWeatherStationController.getHumidityValue()).thenReturn("22");
-		when(mockedWeatherStationController.getTemperatureValue()).thenReturn("22");
-		when(mockedWeatherStationController.getWindValue()).thenReturn("22");
+		when(mockedWeatherStationController.getHumidityValue("22.22.22.22")).thenReturn("22");
+		when(mockedWeatherStationController.getTemperatureValue("22.22.22.22")).thenReturn("22");
+		when(mockedWeatherStationController.getWindValue("22.22.22.22")).thenReturn("22");
 
 		WeatherReading reading = service.getWeatherReading(city, dummyLatitude, dummyLongitude);
 		assertNotNull(reading);

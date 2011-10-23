@@ -23,83 +23,18 @@ import eu.jpereira.trainings.designpatterns.structural.flyweight.controller.Wind
 
 /**
  * @author jpereira
- *
+ * 
  */
-public class FakeWeatherStationController implements WeatherStationController {
-
-	
-	private Sensor temperatureSensor;
-	private Sensor humiditySensor;
-	private Sensor windSensor;
-	
-	
-	private String ipAddress;
+public class FakeWeatherStationController extends WeatherStationController {
 
 	/**
-	 * @param ipAddress
+	 * @param temperatureSensor2
+	 * @param humiditySensor2
+	 * @param windSensor2
 	 */
-	public FakeWeatherStationController(String ipAddress) {
-		this.ipAddress = ipAddress;
-		//create instances of sensores
-		this.temperatureSensor = createTempSensor();
-		this.humiditySensor = createHumSensor();
-		this.windSensor = createWindSensor();
-		System.err.println("New Fake WeatherStationController for IP: "+this.ipAddress);
-		
-	}
-
-	/**
-	 * @return
-	 */
-	private Sensor createWindSensor() {
-
-		return new WindSensor();
-	}
-
-	/**
-	 * @return
-	 */
-	private Sensor createHumSensor() {
-
-		return new HumiditySensor();
-	}
-
-	/**
-	 * @param ipAddress2 
-	 * @return
-	 */
-	private Sensor createTempSensor() {
-
-		return new TemperatureSensor();
-	}
-
-	
-
-	/* (non-Javadoc)
-	 * @see eu.jpereira.trainings.designpatterns.creational.flyweight.controller.WeatherStationController#getTemperatureValue()
-	 */
-	@Override
-	public String getTemperatureValue() {
-		
-		return this.temperatureSensor.read(this.ipAddress);
-	}
-
-	/* (non-Javadoc)
-	 * @see eu.jpereira.trainings.designpatterns.creational.flyweight.controller.WeatherStationController#getHumidityValue()
-	 */
-	@Override
-	public String getHumidityValue() {
-		// TODO Auto-generated method stub
-		return this.humiditySensor.read(this.ipAddress);
-	}
-
-	/* (non-Javadoc)
-	 * @see eu.jpereira.trainings.designpatterns.creational.flyweight.controller.WeatherStationController#getWindValue()
-	 */
-	@Override
-	public String getWindValue() {
-
-		return this.windSensor.read(this.ipAddress);
+	public FakeWeatherStationController(TemperatureSensor temperatureSensor2, HumiditySensor humiditySensor2, WindSensor windSensor2) {
+		super(temperatureSensor2, humiditySensor2, windSensor2);
+		System.err.println("New Fake WeatherStationController for");
 	}
 
 }
