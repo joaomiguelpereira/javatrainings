@@ -13,19 +13,18 @@
  *  See the License for the specific language governing permissions and
  *  limitations under the License.
  */
-package eu.jpereira.trainings.designpatterns.structural.flyweight;
+package eu.jpereira.trainings.designpatterns.structural.flyweight.fakes;
 
 import org.eclipse.jetty.server.Server;
 import org.junit.Ignore;
 
-import eu.jpereira.trainings.designpatterns.structural.flyweight.fakes.FakeHTTPHandler;
 
 /**
  * @author jpereira
  *
  */
 @Ignore
-public class HTTPServer {
+public class FakeHTTPServer {
 	/**
 	 * @param args
 	 * @throws Exception 
