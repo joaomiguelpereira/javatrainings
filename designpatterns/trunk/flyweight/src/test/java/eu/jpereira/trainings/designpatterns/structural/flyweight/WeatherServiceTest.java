@@ -23,9 +23,9 @@ import org.junit.Test;
 
 import eu.jpereira.trainings.designpatterns.structural.flyweight.controller.WeatherStationController;
 import eu.jpereira.trainings.designpatterns.structural.flyweight.dao.CityDao;
+import eu.jpereira.trainings.designpatterns.structural.flyweight.fakes.FakeWeatherService;
 import eu.jpereira.trainings.designpatterns.structural.flyweight.model.City;
 import eu.jpereira.trainings.designpatterns.structural.flyweight.model.WeatherStation;
-import eu.jpereira.trainings.designpatterns.structural.flyweight.service.DefaultWeatherService;
 import eu.jpereira.trainings.designpatterns.structural.flyweight.service.WeatherService;
 import eu.jpereira.trainings.designpatterns.structural.flyweight.tranferobject.WeatherReading;
 
@@ -73,7 +73,7 @@ public class WeatherServiceTest {
 		mockedWeatherStation = mock(WeatherStation.class);
 		mockedWeatherStationController = mock(WeatherStationController.class);
 
-		WeatherService service = new DefaultWeatherService(mockedCityDao);
+		WeatherService service = new FakeWeatherService(mockedCityDao);
 		return service;
 	}
 

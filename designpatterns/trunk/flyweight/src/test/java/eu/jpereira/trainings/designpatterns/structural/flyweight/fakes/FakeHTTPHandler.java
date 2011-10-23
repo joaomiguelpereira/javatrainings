@@ -27,7 +27,6 @@ import org.eclipse.jetty.server.handler.AbstractHandler;
 import eu.jpereira.trainings.designpatterns.structural.flyweight.dao.Dao;
 import eu.jpereira.trainings.designpatterns.structural.flyweight.model.City;
 import eu.jpereira.trainings.designpatterns.structural.flyweight.representations.JSONWeatherReading;
-import eu.jpereira.trainings.designpatterns.structural.flyweight.service.DefaultWeatherService;
 import eu.jpereira.trainings.designpatterns.structural.flyweight.service.WeatherService;
 import eu.jpereira.trainings.designpatterns.structural.flyweight.tranferobject.WeatherReading;
 
@@ -79,7 +78,7 @@ public class FakeHTTPHandler extends AbstractHandler{
 	 * @return
 	 */
 	private WeatherService createRestService() {
-		return new DefaultWeatherService(createFakeDao());
+		return new FakeWeatherService(createFakeDao());
 	}
 
 	/**

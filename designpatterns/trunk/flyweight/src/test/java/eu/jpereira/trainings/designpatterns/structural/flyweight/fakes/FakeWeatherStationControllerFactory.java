@@ -15,9 +15,7 @@
  */
 package eu.jpereira.trainings.designpatterns.structural.flyweight.fakes;
 
-import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 
 import eu.jpereira.trainings.designpatterns.structural.flyweight.controller.WeatherStationController;
@@ -31,9 +29,8 @@ public class FakeWeatherStationControllerFactory implements WeatherStationContro
 
 	private static volatile WeatherStationControllerFactory instance = null;
 	private Map<String, WeatherStationController> controllers;
-	
-	//TODO: Remove this variable
-	private List<WeatherStationController> growList = new ArrayList<WeatherStationController>();
+
+	// TODO: Remove this variable
 
 	protected FakeWeatherStationControllerFactory() {
 		this.controllers = new HashMap<String, WeatherStationController>();
@@ -62,19 +59,14 @@ public class FakeWeatherStationControllerFactory implements WeatherStationContro
 	 */
 	@Override
 	public synchronized WeatherStationController getController(String ipAddress) {
- 
-		WeatherStationController controller = new FakeWeatherStationController(ipAddress);
-		//Hold references to the samall objects just to make things worse
-		growList.add(controller);
-		
-		
-		/*WeatherStationController controller = this.controllers.get(ipAddress);
-		
+
+		WeatherStationController controller = this.controllers.get(ipAddress);
+
 		if (controller == null) {
 			controller = new FakeWeatherStationController(ipAddress);
 			this.controllers.put(ipAddress, controller);
 
-		}*/
+		}
 		return controller;
 	}
 

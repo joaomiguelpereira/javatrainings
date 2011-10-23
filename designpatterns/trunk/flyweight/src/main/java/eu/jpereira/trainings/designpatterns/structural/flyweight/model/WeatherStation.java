@@ -15,8 +15,6 @@
  */
 package eu.jpereira.trainings.designpatterns.structural.flyweight.model;
 
-import eu.jpereira.trainings.designpatterns.structural.flyweight.controller.WeatherStationController;
-import eu.jpereira.trainings.designpatterns.structural.flyweight.fakes.FakeWeatherStationControllerFactory;
 
 /**
  * @author jpereira

@@ -13,45 +13,48 @@
  *  See the License for the specific language governing permissions and
  *  limitations under the License.
  */
-package eu.jpereira.trainings.designpatterns.structural.flyweight.service;
+package eu.jpereira.trainings.designpatterns.structural.flyweight.fakes;
 
 import eu.jpereira.trainings.designpatterns.structural.flyweight.controller.WeatherStationController;
 import eu.jpereira.trainings.designpatterns.structural.flyweight.dao.Dao;
-import eu.jpereira.trainings.designpatterns.structural.flyweight.fakes.FakeWeatherStationController;
 import eu.jpereira.trainings.designpatterns.structural.flyweight.model.City;
 import eu.jpereira.trainings.designpatterns.structural.flyweight.model.WeatherStation;
+import eu.jpereira.trainings.designpatterns.structural.flyweight.service.WeatherService;
 import eu.jpereira.trainings.designpatterns.structural.flyweight.tranferobject.WeatherReading;
 
 /**
  * @author jpereira
- *
+ * 
  */
-public class DefaultWeatherService implements WeatherService {
+public class FakeWeatherService implements WeatherService {
 
 	private Dao<City> dao;
 
 	/**
 	 * @param dao
 	 */
-	public DefaultWeatherService(Dao<City> dao) {
-	 this.dao = dao;
+	public FakeWeatherService(Dao<City> dao) {
+		this.dao = dao;
 	}
 
-	/* (non-Javadoc)
-	 * @see eu.jpereira.trainings.designpatterns.creational.flyweight.service.WeatherService#getWeatherReading(java.lang.String, java.lang.String, java.lang.String)
+	/*
+	 * (non-Javadoc)
+	 * 
+	 * @see eu.jpereira.trainings.designpatterns.creational.flyweight.service.
+	 * WeatherService#getWeatherReading(java.lang.String, java.lang.String,
+	 * java.lang.String)
 	 */
 	@Override
 	public WeatherReading getWeatherReading(String cityName, String latitude, String longitude) {
 
 		WeatherReading reading = null;
-		WeatherStationController controller = null;
-		//Find the city 
+		// Find the city
 		City city = dao.findBy("city", cityName);
-		
-		if (city!=null) {
-			//Lookup for the neareast station
-			WeatherStation station= city.findNearestStation(latitude,longitude);
-			if (station!=null){
+
+		if (city != null) {
+			// Lookup for the neareast station
+			WeatherStation station = city.findNearestStation(latitude, longitude);
+			if (station != null) {
 				String ipAddress = station.getIpAddress();
 				reading = readStationController(ipAddress);
 			}
@@ -60,13 +63,14 @@ public class DefaultWeatherService implements WeatherService {
 	}
 
 	/**
-	 * @param controller 
+	 * @param controller
 	 * @return
 	 */
 	private WeatherReading readStationController(String ipAddress) {
-		//create a thread 
+		// create a controller
 		WeatherStationController controller = new FakeWeatherStationController(ipAddress);
 		//FakeWeatherStationControllerFactory.instance().getController(ipAddress);
+
 		
 		String temperature = controller.getTemperatureValue();
 		String humidity = controller.getHumidityValue();
@@ -74,6 +78,5 @@ public class DefaultWeatherService implements WeatherService {
 		WeatherReading reading = new WeatherReading(temperature, humidity, wind);
 		return reading;
 	}
-	
 
 }
