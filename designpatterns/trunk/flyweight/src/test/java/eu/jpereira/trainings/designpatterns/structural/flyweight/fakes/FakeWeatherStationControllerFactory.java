@@ -62,15 +62,17 @@ public class FakeWeatherStationControllerFactory implements WeatherStationContro
 	 */
 	@Override
 	public synchronized WeatherStationController getController(String ipAddress) {
-
+		WeatherStationController controller = null;
+		/*
+		//Try to get from the map of available instances of controller
 		WeatherStationController controller = this.controllers.get(ipAddress);
-
+		//If does not exists, create it
 		if (controller == null) {
 			
 			controller = new FakeWeatherStationController(new TemperatureSensor(), new HumiditySensor(), new WindSensor());
 			this.controllers.put(ipAddress, controller);
 
-		}
+		}*/
 		return controller;
 	}
 
