@@ -44,7 +44,7 @@
 === Creational Design Patterns ===
  * Creational Design Patterns - http://www.box.net/shared/qjh4g3vmsxlg5ppt5byz
 
-==== Exercises ====
+==== Creational Design Patterns Exercises ====
  * Factory Method - http://www.box.net/shared/4aat3f93gmlxl95rrn0o
  * Abstract Factory - http://www.box.net/shared/jyde5qmuri5uoel6bphi
  * Builder - http://www.box.net/shared/s9khlsr5lzdmb9apsqr4
