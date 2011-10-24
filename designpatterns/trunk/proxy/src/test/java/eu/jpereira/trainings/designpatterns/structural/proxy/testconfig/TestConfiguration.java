@@ -15,10 +15,14 @@
  */
 package eu.jpereira.trainings.designpatterns.structural.proxy.testconfig;
 
+import org.junit.Ignore;
+
 /**
  * @author jpereira
  *
  */
+
+@Ignore
 public class TestConfiguration {
 
 	public static boolean fakeFailuresInController = false;
