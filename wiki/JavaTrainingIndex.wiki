@@ -36,6 +36,15 @@
 == OO Design Principles ==
 === Slides ===
  * OO Design Principles: http://www.box.net/shared/kyqpyl899x688eopiy50
+
+== Design Patterns ==
+ * Introduction to Design Patterns: : http://www.box.net/shared/7k80y4h3he3d7zqs9tbz
+ * Selecting Design Patterns: http://www.box.net/shared/0gc9ib5tjbjx5nzm681m
+
+=== Creational Design Patterns ===
+==== Slides ====
+ * Creational Design Patterns : http://www.box.net/shared/qjh4g3vmsxlg5ppt5byz
+
 == Development tools ==
  * Eclipse - http://www.eclipse.org/
  * Maven (Use version 2) - http://maven.apache.org/
