@@ -22,7 +22,7 @@ import eu.jpereira.trainings.designpatterns.structural.proxy.testconfig.TestConf
 
 /**
  * @author jpereira
- * t
+ * 
  */
 public class ResilientTrafficLightsManagerTest extends TrafficLightsManagerTest {
 
