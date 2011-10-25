@@ -75,11 +75,10 @@ public class FakeFailureTrafficLightController extends TrafficLightController {
 	 * 
 	 */
 	private void simulateFailure() throws CouldNotConnectException {
-		failures++;
-		if (System.currentTimeMillis() % 2 == 0 && failures < MAX_FAILURES) {
-			
+		
+		if ( failures < MAX_FAILURES && (System.currentTimeMillis() % 2 == 0) ) {
+			failures++;
 			System.err.println("Failing...."+ failures);
-
 			throw new CouldNotConnectException("Faked (even) exception...");
 		}
 
