@@ -17,19 +17,19 @@ package eu.jpereira.trainings.designpatterns.structural.proxy;
 
 import eu.jpereira.trainings.designpatterns.structural.proxy.model.TrafficLight;
 
-
 /**
  * @author jpereira
- *
+ * 
  */
 public class TrafficLightsManager {
 
-	private TrafficLightsFactory trafficLightDataSource;
+	private TrafficLightsFactory trafficLightFactory;
+
 	/**
-	 * @param fakeTrafficLightDataSource
+	 * @param fakeTrafficLightFactory
 	 */
-	public TrafficLightsManager(TrafficLightsFactory trafficLightDataSource) {
-		this.trafficLightDataSource = trafficLightDataSource;
+	public TrafficLightsManager(TrafficLightsFactory trafficLightFactory) {
+		this.trafficLightFactory = trafficLightFactory;
 	}
 
 	/**
@@ -37,9 +37,10 @@ public class TrafficLightsManager {
 	 * @return
 	 */
 	public TrafficLight getTrafficLight(String ipAddress) {
-		//Find the ip in the datasource
-		
-		return this.trafficLightDataSource.getTrafficLight(ipAddress);
+		// Find the ip in the some data source and use the factory to create new
+		// instances of TrafficLight
+
+		return this.trafficLightFactory.getTrafficLight(ipAddress);
 	}
 
 }
