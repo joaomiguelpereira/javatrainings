@@ -52,9 +52,19 @@
  * Singleton - http://www.box.net/shared/vj7aqf0jq95ng2n30pvq
  
 === Structural Design Patterns===
- * Creational Design Patterns Slides - http://www.box.net/shared/aunqn19la9det7947qaq
+ 
+
+ * Structural Design Patterns Slides - http://www.box.net/shared/aunqn19la9det7947qaq
 
 ==== Structural Design Patterns Exercises ====
+ * Adapter - http://www.box.net/shared/5to5v2cje0jriz5h67nn
+ * Bridge - http://www.box.net/shared/huo4led77kq47zpujsfp
+ * Composite - http://www.box.net/shared/x7qatn12101ycj9u84sx
+ * Decorator - http://www.box.net/shared/7ocyk3na5qr8a2bri28s
+ * Façade - http://www.box.net/shared/skpslfgj4pnrsxtodof7
+ * Flyweight - http://www.box.net/shared/xhap07zqqoib41ezyfrn
+ * Proxy - http://www.box.net/shared/286vurin1gq09pm9g8pq
+
 == Development tools ==
  * Eclipse - http://www.eclipse.org/
  * Maven (Use version 2) - http://maven.apache.org/
