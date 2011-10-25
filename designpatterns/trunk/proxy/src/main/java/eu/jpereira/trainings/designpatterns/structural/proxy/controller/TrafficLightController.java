@@ -21,13 +21,17 @@ import eu.jpereira.trainings.designpatterns.structural.proxy.controller.exceptio
  * @author jpereira
  * 
  */
-public abstract class TrafficLightController {
+public abstract class TrafficLightController implements ITrafficLightController{
 
 	/**
 	 * The IP Address to where this controller wil connect
 	 */
 	private String ipAddress;
 
+	//Default constructor. Used to use dynamic proxy
+	public TrafficLightController() {
+		
+	}
 	/**
 	 * Constructor
 	 * 
@@ -52,7 +56,7 @@ public abstract class TrafficLightController {
 		return ipAddress;
 	}
 
-	protected void setIpAddress(String ipAddress) {
+	public void setIpAddress(String ipAddress) {
 		this.ipAddress = ipAddress;
 	}
 }

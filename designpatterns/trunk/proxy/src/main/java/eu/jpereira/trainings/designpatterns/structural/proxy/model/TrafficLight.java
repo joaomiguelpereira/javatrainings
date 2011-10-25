@@ -22,7 +22,6 @@ import eu.jpereira.trainings.designpatterns.structural.proxy.controller.LightsCo
 import eu.jpereira.trainings.designpatterns.structural.proxy.controller.PowerCommand;
 import eu.jpereira.trainings.designpatterns.structural.proxy.controller.TrafficLightController;
 import eu.jpereira.trainings.designpatterns.structural.proxy.controller.exceptions.CouldNotConnectException;
-import eu.jpereira.trainings.designpatterns.structural.proxy.model.TrafficLight.LightColors;
 import eu.jpereira.trainings.designpatterns.structural.proxy.model.exceptions.CouldNotSendCommandException;
 
 /**
