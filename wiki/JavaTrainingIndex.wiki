@@ -42,7 +42,7 @@
  * Selecting Design Patterns: http://www.box.net/shared/0gc9ib5tjbjx5nzm681m
 
 === Creational Design Patterns ===
- * Creational Design Patterns - http://www.box.net/shared/qjh4g3vmsxlg5ppt5byz
+ * Creational Design Patterns Slides - http://www.box.net/shared/qjh4g3vmsxlg5ppt5byz
 
 ==== Creational Design Patterns Exercises ====
  * Factory Method - http://www.box.net/shared/4aat3f93gmlxl95rrn0o
@@ -51,6 +51,10 @@
  * Prototype - http://www.box.net/shared/zv664txv1nh24yrsd6gl
  * Singleton - http://www.box.net/shared/vj7aqf0jq95ng2n30pvq
  
+=== Structural Design Patterns===
+ * Creational Design Patterns Slides - http://www.box.net/shared/aunqn19la9det7947qaq
+
+==== Structural Design Patterns Exercises ====
 == Development tools ==
  * Eclipse - http://www.eclipse.org/
  * Maven (Use version 2) - http://maven.apache.org/
