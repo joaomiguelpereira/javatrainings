@@ -106,6 +106,8 @@ public class ProxyTrafficLightController extends TrafficLightController implemen
 			if (failures > retries) {
 				throw new CouldNotConnectException(lastExeption);
 			}
+			//Wait
+			Thread.currentThread().wait(this.msBetweenRetries);
 		}
 		return result;
 	}

@@ -15,8 +15,11 @@
  */
 package eu.jpereira.trainings.designpatterns.structural.proxy;
 
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertTrue;
+
 import org.junit.Before;
-import org.junit.BeforeClass;
 import org.junit.Test;
 
 import eu.jpereira.trainings.designpatterns.structural.proxy.fakes.FakeTrafficLightDataSource;
@@ -25,8 +28,6 @@ import eu.jpereira.trainings.designpatterns.structural.proxy.model.TrafficLight.
 import eu.jpereira.trainings.designpatterns.structural.proxy.model.TrafficLight.PowerStatus;
 import eu.jpereira.trainings.designpatterns.structural.proxy.model.exceptions.CouldNotSendCommandException;
 import eu.jpereira.trainings.designpatterns.structural.proxy.testconfig.TestConfiguration;
-
-import static org.junit.Assert.*;
 
 /**
  * @author jpereira

@@ -17,7 +17,6 @@ package eu.jpereira.trainings.designpatterns.structural.proxy.fakes;
 
 import eu.jpereira.trainings.designpatterns.structural.proxy.TrafficLightsFactory;
 import eu.jpereira.trainings.designpatterns.structural.proxy.model.TrafficLight;
-import eu.jpereira.trainings.designpatterns.structural.proxy.testconfig.TestConfiguration;
 
 /**
  * @author jpereira
