@@ -37,7 +37,7 @@ public class TrafficLightsManagerTest {
 
 	@Before
 	public void setUp() {
-		TestConfiguration.fakeFailuresInController = false;
+		TestConfiguration.fakeFailuresInController = true;
 	}
 
 	@Test
