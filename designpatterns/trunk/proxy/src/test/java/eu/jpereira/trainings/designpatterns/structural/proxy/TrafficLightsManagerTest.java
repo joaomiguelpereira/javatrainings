@@ -22,7 +22,7 @@ import static org.junit.Assert.assertTrue;
 import org.junit.Before;
 import org.junit.Test;
 
-import eu.jpereira.trainings.designpatterns.structural.proxy.fakes.FakeTrafficLightDataSource;
+import eu.jpereira.trainings.designpatterns.structural.proxy.fakes.FakeTrafficLightFactory;
 import eu.jpereira.trainings.designpatterns.structural.proxy.model.TrafficLight;
 import eu.jpereira.trainings.designpatterns.structural.proxy.model.TrafficLight.LightColors;
 import eu.jpereira.trainings.designpatterns.structural.proxy.model.TrafficLight.PowerStatus;
@@ -76,7 +76,7 @@ public class TrafficLightsManagerTest {
 	 * @return
 	 */
 	protected TrafficLightsManager createTrafficLightsManager() {
-		TrafficLightsManager manager = new TrafficLightsManager(new FakeTrafficLightDataSource());
+		TrafficLightsManager manager = new TrafficLightsManager(new FakeTrafficLightFactory());
 		return manager;
 	}
 }

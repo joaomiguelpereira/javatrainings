@@ -13,29 +13,24 @@
  *  See the License for the specific language governing permissions and
  *  limitations under the License.
  */
-package eu.jpereira.trainings.designpatterns.structural.proxy;
+package eu.jpereira.trainings.designpatterns.structural.proxy.fakes;
 
-import org.junit.Before;
-
-import eu.jpereira.trainings.designpatterns.structural.proxy.fakes.FakeProxyTrafficLightDataSource;
-import eu.jpereira.trainings.designpatterns.structural.proxy.testconfig.TestConfiguration;
+import eu.jpereira.trainings.designpatterns.structural.proxy.TrafficLightsFactory;
+import eu.jpereira.trainings.designpatterns.structural.proxy.model.TrafficLight;
 
 /**
  * @author windows
  *
  */
-public class ProxyTrafficLightManagerTest extends TrafficLightsManagerTest {
-	@Before
-	public void setUp() {
-		TestConfiguration.fakeFailuresInController = true;
-	}
-	
-	/**
-	 * @return
+public class FakeProxyTrafficLightFactory implements TrafficLightsFactory {
+
+	/* (non-Javadoc)
+	 * @see eu.jpereira.trainings.designpatterns.structural.proxy.TrafficLightsFactory#getTrafficLight(java.lang.String)
 	 */
 	@Override
-	protected TrafficLightsManager createTrafficLightsManager() {
-		TrafficLightsManager manager = new TrafficLightsManager(new FakeProxyTrafficLightDataSource());
-		return manager;
+	public TrafficLight getTrafficLight(String ipAddress) {
+		return new FakedProxyTrafficLight(ipAddress);
+
 	}
+
 }

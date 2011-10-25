@@ -22,7 +22,7 @@ import eu.jpereira.trainings.designpatterns.structural.proxy.model.TrafficLight;
  * @author jpereira
  *
  */
-public class FakeResilientTrafficLightDataSource implements TrafficLightsFactory {
+public class FakeResilientTrafficLightFactory implements TrafficLightsFactory {
 
 	/* (non-Javadoc)
 	 * @see eu.jpereira.trainings.designpatterns.structural.proxy.TrafficLightsFactory#getTrafficLight(java.lang.String)

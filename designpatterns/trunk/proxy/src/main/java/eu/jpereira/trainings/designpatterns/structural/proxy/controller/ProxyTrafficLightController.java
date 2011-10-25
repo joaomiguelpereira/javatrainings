@@ -22,16 +22,21 @@ import java.lang.reflect.Proxy;
 import eu.jpereira.trainings.designpatterns.structural.proxy.controller.exceptions.CouldNotConnectException;
 
 /**
- * @author windows
+ * This class is being used to wrap an proxy
+ * 
+ * @author joao
  * 
  */
 public class ProxyTrafficLightController extends TrafficLightController implements InvocationHandler {
 
-	private int retries = 3; // Default value
-	private long msBetweenRetries = 1000; // 1 second defaulr;
-
+	// java.lang.reflect.Proxy works with interfaces only
 	private ITrafficLightController proxy;
+	// The real subject
 	private ITrafficLightController realTrafficLightController;
+
+	// Specific state
+	private int retries = 3; // Default value
+	private long msBetweenRetries = 1000; // 1 second default;
 
 	/**
 	 * @param ipAddress
@@ -62,6 +67,7 @@ public class ProxyTrafficLightController extends TrafficLightController implemen
 	 */
 	@Override
 	public void sendPowerCommand(ControllerCommand command) throws CouldNotConnectException {
+		//Call the proxy, wich is an instance of java.lang.reflect.Proxy
 		proxy.sendPowerCommand(command);
 
 	}
@@ -76,6 +82,7 @@ public class ProxyTrafficLightController extends TrafficLightController implemen
 	 */
 	@Override
 	public void sendLightCommand(ControllerCommand command) throws CouldNotConnectException {
+		//Call the proxy, wich is an instance of java.lang.reflect.Proxy
 		proxy.sendLightCommand(command);
 	}
 
@@ -87,7 +94,7 @@ public class ProxyTrafficLightController extends TrafficLightController implemen
 	 */
 	@Override
 	public Object invoke(Object proxy, Method method, Object[] args) throws Throwable {
-		System.out.println("Im proxy Invoking real object method");
+		System.out.println("Im a proxy and invoke the method in a real object");
 		int failures = 0;
 		boolean success = false;
 		Exception lastExeption = null;
@@ -95,6 +102,7 @@ public class ProxyTrafficLightController extends TrafficLightController implemen
 		while (!success) {
 
 			try {
+				//Invoke the method invoked by clients, in the real subject
 				result = method.invoke(realTrafficLightController, args);
 				success = true;
 			} catch (Exception e) {
@@ -106,7 +114,7 @@ public class ProxyTrafficLightController extends TrafficLightController implemen
 			if (failures > retries) {
 				throw new CouldNotConnectException(lastExeption);
 			}
-			//Wait
+			// Wait
 			Thread.currentThread().wait(this.msBetweenRetries);
 		}
 		return result;
