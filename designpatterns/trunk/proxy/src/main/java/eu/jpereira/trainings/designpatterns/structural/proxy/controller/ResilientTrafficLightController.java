@@ -15,6 +15,8 @@
  */
 package eu.jpereira.trainings.designpatterns.structural.proxy.controller;
 
+import java.lang.reflect.Method;
+
 import eu.jpereira.trainings.designpatterns.structural.proxy.controller.exceptions.CouldNotConnectException;
 
 /**
@@ -23,18 +25,28 @@ import eu.jpereira.trainings.designpatterns.structural.proxy.controller.exceptio
  */
 public class ResilientTrafficLightController extends TrafficLightController {
 
+	//This is a reference to a real subject
 	private TrafficLightController realTrafficLightController;
+	
+	//Specific state for the proxy
 	private int retries = 3; // Default value
 	private long msBetweenRetries = 1000; // 1 second defaulr;
 
 	/**
-	 * @param ipAddress
+	 * Create a new TrafficLightController
+	 * @param ipAddress The IP Address to open a socket
 	 */
 	public ResilientTrafficLightController(String ipAddress) {
 		super(ipAddress);
 		this.realTrafficLightController = createRealTrafficLightController();
 	}
 
+	/**
+	 * 
+	 * @param ipAddress The IP Address to open a socket
+	 * @param retries The maximum number of retries, after which the exception is rethrown
+	 * @param timeoutBetweenRetries Milliseconds to wait before retry
+	 */
 	public ResilientTrafficLightController(String ipAddress, int retries, long timeoutBetweenRetries) {
 		super(ipAddress);
 		this.retries = retries;
@@ -43,10 +55,10 @@ public class ResilientTrafficLightController extends TrafficLightController {
 	}
 
 	/**
-	 * Factory method to create the real object. Can be overriden by sub classes
+	 * Factory method to create the real object. Can be overrided by sub-classes
 	 * to provide another implementation
 	 * 
-	 * @return
+	 * @return A reference to the Real Subject
 	 */
 	protected TrafficLightController createRealTrafficLightController() {
 		return new GenericTrafficLightController(this.getIpAddress());
@@ -62,13 +74,14 @@ public class ResilientTrafficLightController extends TrafficLightController {
 	 */
 	@Override
 	public void sendPowerCommand(ControllerCommand command) throws CouldNotConnectException {
+		//Proxy clients will run this code
 		int failures = 0;
 		boolean success = false;
 		Exception lastExeption = null;
-		
 		while(!success){
 
 			try {
+				//Delegate to the real sibject
 				this.realTrafficLightController.sendPowerCommand(command);
 				success=true;
 			} catch (Exception e) {
@@ -94,6 +107,7 @@ public class ResilientTrafficLightController extends TrafficLightController {
 	 */
 	@Override
 	public void sendLightCommand(ControllerCommand command) throws CouldNotConnectException {
+		//The same as sendPowerCommand
 		int failures = 0;
 		boolean success = false;
 		Exception lastExeption = null;
@@ -122,5 +136,5 @@ public class ResilientTrafficLightController extends TrafficLightController {
 		}
 
 	}
-
+	
 }
