@@ -93,7 +93,7 @@ public class IntegrationTest {
 		filterChain.doFilter(request, response);
 
 		FakeServletOutputStream fakeOut = (FakeServletOutputStream) response.getOutputStream();
-
+		//TODO: you must override the method doFilter in FakeLoggingFilter
 		assertEquals("Logging: Hello Joao", fakeOut.getStringBuilder().toString());
 
 	}
@@ -124,7 +124,7 @@ public class IntegrationTest {
 		filterChain.doFilter(request, response);
 
 		FakeServletOutputStream fakeOut = (FakeServletOutputStream) response.getOutputStream();
-
+		//TODO: you must override the method doFilter in FakeAuthorizationFilter
 		assertEquals("Authorized: Hello Joao", fakeOut.getStringBuilder().toString());
 
 	}
@@ -156,6 +156,8 @@ public class IntegrationTest {
 
 		FakeServletOutputStream fakeOut = (FakeServletOutputStream) response.getOutputStream();
 
+		
+		//TODO: you must override the method doFilter in FakeFormatFilter
 		assertEquals("Hello Joao :Formated", fakeOut.getStringBuilder().toString());
 	}
 
