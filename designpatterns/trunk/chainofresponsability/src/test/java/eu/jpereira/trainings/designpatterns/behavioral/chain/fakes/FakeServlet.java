@@ -59,16 +59,10 @@ public class FakeServlet implements Servlet {
 	 */
 	@Override
 	public void service(ServletRequest req, ServletResponse res) throws ServletException, IOException {
-		
+
 		String name = req.getAttribute("name").toString();
 		String out = "Hello " + name;
-		//res.getWriter().println("Hello from the writter");
-		//res.getWriter().close();
-		for (int i = 0; i < out.length(); i++) {
-			res.getOutputStream().write((char) out.charAt(i));
-		}
-		//res.getOutputStream().close();
-		
+		res.getOutputStream().print(out);
 
 	}
 
