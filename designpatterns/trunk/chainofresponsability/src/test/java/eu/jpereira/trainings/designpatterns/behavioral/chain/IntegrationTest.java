@@ -15,6 +15,8 @@
  */
 package eu.jpereira.trainings.designpatterns.behavioral.chain;
 
+import static org.junit.Assert.assertEquals;
+
 import java.io.IOException;
 
 import javax.servlet.Filter;
@@ -25,23 +27,17 @@ import javax.servlet.ServletResponse;
 
 import org.junit.Test;
 
-import eu.jpereira.trainings.designpatterns.behavioral.chain.fakes.FakeAuthorizationFilter;
 import eu.jpereira.trainings.designpatterns.behavioral.chain.fakes.FakeFilterChain;
-import eu.jpereira.trainings.designpatterns.behavioral.chain.fakes.FakeFormatFilter;
-import eu.jpereira.trainings.designpatterns.behavioral.chain.fakes.FakeLoggingFilter;
 import eu.jpereira.trainings.designpatterns.behavioral.chain.fakes.FakeServlet;
 import eu.jpereira.trainings.designpatterns.behavioral.chain.fakes.FakeServletOutputStream;
 import eu.jpereira.trainings.designpatterns.behavioral.chain.fakes.FakeServletRequest;
 import eu.jpereira.trainings.designpatterns.behavioral.chain.fakes.FakeServletResponse;
-
-import static org.junit.Assert.*;
 
 /**
  * @author jpereira
  * 
  */
 public class IntegrationTest {
-
 
 	@Test
 	public void testNoFilters() throws IOException, ServletException {
@@ -53,7 +49,6 @@ public class IntegrationTest {
 		Servlet targetServlet = createTargetServlet();
 		filterChain.setTargetResource(targetServlet);
 
-		
 		// Just for demonstration, add an parameter to the request and read the
 		// parameter in the response that should be a concatenation of the value
 		// in first parameter with string hello
@@ -62,7 +57,8 @@ public class IntegrationTest {
 
 		request.setAttribute("name", "Joao");
 
-		//Start the chain of filters. In this case will ony deliver the message to the servlet
+		// Start the chain of filters. In this case will ony deliver the message
+		// to the servlet
 		filterChain.doFilter(request, response);
 
 		FakeServletOutputStream fakeOut = (FakeServletOutputStream) response.getOutputStream();
@@ -93,7 +89,7 @@ public class IntegrationTest {
 
 		request.setAttribute("name", "Joao");
 
-		//Start the chain of filters
+		// Start the chain of filters
 		filterChain.doFilter(request, response);
 
 		FakeServletOutputStream fakeOut = (FakeServletOutputStream) response.getOutputStream();
@@ -124,7 +120,7 @@ public class IntegrationTest {
 
 		request.setAttribute("name", "Joao");
 
-		//Start the chain of filters
+		// Start the chain of filters
 		filterChain.doFilter(request, response);
 
 		FakeServletOutputStream fakeOut = (FakeServletOutputStream) response.getOutputStream();
@@ -132,6 +128,7 @@ public class IntegrationTest {
 		assertEquals("Authorized: Hello Joao", fakeOut.getStringBuilder().toString());
 
 	}
+
 	@Test
 	public void testAll() throws IOException, ServletException {
 
@@ -154,13 +151,14 @@ public class IntegrationTest {
 
 		request.setAttribute("name", "Joao");
 
-		//Start the chain of filters
+		// Start the chain of filters
 		filterChain.doFilter(request, response);
 
 		FakeServletOutputStream fakeOut = (FakeServletOutputStream) response.getOutputStream();
 
 		assertEquals("Hello Joao :Formated", fakeOut.getStringBuilder().toString());
 	}
+
 	@Test
 	public void testFormat() throws IOException, ServletException {
 
@@ -183,7 +181,7 @@ public class IntegrationTest {
 
 		request.setAttribute("name", "Joao");
 
-		//Start the chain of filters
+		// Start the chain of filters
 		filterChain.doFilter(request, response);
 
 		FakeServletOutputStream fakeOut = (FakeServletOutputStream) response.getOutputStream();
@@ -210,31 +208,41 @@ public class IntegrationTest {
 	 * @return
 	 */
 	private Filter createAuthorizationFilter() {
-		
-		return new FakeAuthorizationFilter();
+		return null;
+		// TODO: Implement FakeAuthorizationFilter that extends from
+		// AbstractFilter and return a new instance of that type.
+		// Uncomment the following line and create the filter.
+
+		// return new FakeAuthorizationFilter();
 	}
 
 	/**
 	 * @return
 	 */
 	private Filter createFormatFilter() {
-		
-		return new FakeFormatFilter();
+		return null;
+		// TODO: Implement FakeFormatFilter that extends from AbstractFilter and
+		// return a new instance of that type.
+		// Uncomment the following line and create the filter.
+		// return new FakeFormatFilter();
 	}
 
 	/**
 	 * @return
 	 */
 	private Filter createLogginFilter() {
-		
-		return new FakeLoggingFilter();
+		return null;
+		// TODO: Implement FakeLoggingFilter that extends from AbstractFilter
+		// and return a new instance of that type.
+		// Uncomment the following line and create the filter.
+		// return new FakeLoggingFilter();
 	}
 
 	/**
 	 * @return
 	 */
 	private Servlet createTargetServlet() {
-		
+
 		return new FakeServlet();
 	}
 
