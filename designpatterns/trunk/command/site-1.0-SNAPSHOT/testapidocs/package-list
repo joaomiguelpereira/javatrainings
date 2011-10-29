@@ -1,0 +1,4 @@
+eu.jpereira.trainings.designpatterns.behavioral.command.fakes
+eu.jpereira.trainings.designpatterns.behavioral.command.model
+eu.jpereira.trainings.designpatterns.behavioral.command.service
+eu.jpereira.trainings.designpatterns.behavioral.command.spies
