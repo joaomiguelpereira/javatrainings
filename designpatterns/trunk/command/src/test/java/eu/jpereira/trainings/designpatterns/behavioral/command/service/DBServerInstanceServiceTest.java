@@ -13,7 +13,7 @@
  *  See the License for the specific language governing permissions and
  *  limitations under the License.
  */
-package eu.jpereira.trainings.designpatterns.behavioral.command.model;
+package eu.jpereira.trainings.designpatterns.behavioral.command.service;
 
 import static org.junit.Assert.assertEquals;
 
@@ -21,6 +21,9 @@ import org.junit.Test;
 
 import eu.jpereira.trainings.designpatterns.behavioral.command.fakes.FakeDBServerInstanceCommandFactory;
 import eu.jpereira.trainings.designpatterns.behavioral.command.fakes.FakeInstanceGroupDAO;
+import eu.jpereira.trainings.designpatterns.behavioral.command.model.CommandFactory;
+import eu.jpereira.trainings.designpatterns.behavioral.command.model.CouldNotConnectException;
+import eu.jpereira.trainings.designpatterns.behavioral.command.model.DBServerInstanceStatus;
 import eu.jpereira.trainings.designpatterns.behavioral.command.model.DAO.DBServerInstanceGroupDAO;
 import eu.jpereira.trainings.designpatterns.behavioral.command.scheduler.CommandScheduler;
 import eu.jpereira.trainings.designpatterns.behavioral.command.scheduler.Schedule;
@@ -86,7 +89,6 @@ public class DBServerInstanceServiceTest {
 		service.startGroup("moon", getSchedule());
 
 		// All instance should be started
-		assertEquals(DBServerInstanceStatus.STARTED, service.getInstanceStatus("22.22.22.12", "moon"));
 		assertEquals(DBServerInstanceStatus.STARTED, service.getInstanceStatus("22.22.22.13", "moon"));
 		assertEquals(DBServerInstanceStatus.STARTED, service.getInstanceStatus("22.22.22.14", "moon"));
 

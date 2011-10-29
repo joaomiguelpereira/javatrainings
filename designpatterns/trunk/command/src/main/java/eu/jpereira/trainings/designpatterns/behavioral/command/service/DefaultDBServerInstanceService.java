@@ -23,6 +23,7 @@ import eu.jpereira.trainings.designpatterns.behavioral.command.model.DBServerIns
 import eu.jpereira.trainings.designpatterns.behavioral.command.model.DAO.DBServerInstanceGroupDAO;
 import eu.jpereira.trainings.designpatterns.behavioral.command.model.DAO.DBServerInstanceGroupNotFoundException;
 import eu.jpereira.trainings.designpatterns.behavioral.command.model.command.Command;
+import eu.jpereira.trainings.designpatterns.behavioral.command.model.command.CommandJob;
 import eu.jpereira.trainings.designpatterns.behavioral.command.model.command.results.QueryInstanceStatusResult;
 import eu.jpereira.trainings.designpatterns.behavioral.command.scheduler.CommandScheduler;
 import eu.jpereira.trainings.designpatterns.behavioral.command.scheduler.Schedule;
@@ -43,8 +44,6 @@ public class DefaultDBServerInstanceService implements DBServerInstanceService {
 		this.commandFactory = commandFactory;
 	}
 
-	
-
 	/*
 	 * (non-Javadoc)
 	 * 
@@ -55,43 +54,21 @@ public class DefaultDBServerInstanceService implements DBServerInstanceService {
 	 */
 	@Override
 	public void startGroup(String groupName, Schedule schedule) throws CouldNotConnectException, GroupNotFoundException {
-		
+
 		DBServerInstanceGroup group = findGroup(groupName);
+		// Create a new JOB
+		// TODO: Move this to a job manager object
+		CommandJob job = new CommandJob();
+		for (DBServerInstance instance : group.getInstances()) {
+			// The command
 
-		for (DBServerInstance instance : group.getInstances() ) {
 			Command startCommand = commandFactory.createStartCommand(instance);
-			this.scheduler.schedule(startCommand, schedule);
+			job.addCommand(startCommand);
+
 		}
-		
-				
-		
+		this.scheduler.schedule(job, schedule);
 
 	}
-
-	/**
-	 * @param groupName
-	 * @return
-	 * @throws GroupNotFoundException 
-	 */
-	private DBServerInstanceGroup findGroup(String groupName) throws GroupNotFoundException {
-		DBServerInstanceGroup group = null;
-		// get the group
-		// get the Group by the groupName
-
-		try {
-			group = serverInstanceGroupDAO.findByName(groupName);
-		} catch (DBServerInstanceGroupNotFoundException e) {
-			// TODO Log
-			e.printStackTrace();
-			// throw encapsulated exception
-			throw new GroupNotFoundException(e);
-		}
-		
-		return group;
-
-	}
-
-
 
 	/*
 	 * (non-Javadoc)
@@ -103,16 +80,22 @@ public class DefaultDBServerInstanceService implements DBServerInstanceService {
 	 */
 	@Override
 	public void stopGroup(String groupName, Schedule schedule) throws CouldNotConnectException, GroupNotFoundException {
-		DBServerInstanceGroup group = findGroup(groupName);
 
-		for (DBServerInstance instance : group.getInstances() ) {
+		DBServerInstanceGroup group = findGroup(groupName);
+		// Create a new JOB
+		// TODO: Move this to a job manager object
+		CommandJob job = new CommandJob();
+		for (DBServerInstance instance : group.getInstances()) {
+			// The command
+
 			Command stopCommand = commandFactory.createStopCommand(instance);
-			this.scheduler.schedule(stopCommand, schedule);
+			job.addCommand(stopCommand);
+
 		}
-		
-				
+		this.scheduler.schedule(job, schedule);
 
 	}
+
 	/*
 	 * (non-Javadoc)
 	 * 
@@ -128,8 +111,6 @@ public class DefaultDBServerInstanceService implements DBServerInstanceService {
 		scheduler.schedule(startCommand, schedule);
 	}
 
-	
-	
 	/*
 	 * (non-Javadoc)
 	 * 
@@ -194,6 +175,29 @@ public class DefaultDBServerInstanceService implements DBServerInstanceService {
 			throw new InstanceNotFoundException();
 		}
 		return instance;
+
+	}
+
+	/**
+	 * @param groupName
+	 * @return
+	 * @throws GroupNotFoundException
+	 */
+	private DBServerInstanceGroup findGroup(String groupName) throws GroupNotFoundException {
+		DBServerInstanceGroup group = null;
+		// get the group
+		// get the Group by the groupName
+
+		try {
+			group = serverInstanceGroupDAO.findByName(groupName);
+		} catch (DBServerInstanceGroupNotFoundException e) {
+			// TODO Log
+			e.printStackTrace();
+			// throw encapsulated exception
+			throw new GroupNotFoundException(e);
+		}
+
+		return group;
 
 	}
 

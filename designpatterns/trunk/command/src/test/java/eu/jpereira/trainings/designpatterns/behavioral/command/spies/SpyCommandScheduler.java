@@ -20,6 +20,7 @@ import java.util.List;
 
 import eu.jpereira.trainings.designpatterns.behavioral.command.model.CouldNotConnectException;
 import eu.jpereira.trainings.designpatterns.behavioral.command.model.command.Command;
+import eu.jpereira.trainings.designpatterns.behavioral.command.model.command.CommandJob;
 import eu.jpereira.trainings.designpatterns.behavioral.command.scheduler.CommandScheduler;
 import eu.jpereira.trainings.designpatterns.behavioral.command.scheduler.Schedule;
 
@@ -30,6 +31,7 @@ import eu.jpereira.trainings.designpatterns.behavioral.command.scheduler.Schedul
 public class SpyCommandScheduler implements CommandScheduler {
 
 	private List<Command> scheduledCommand = new ArrayList<Command>();
+	private List<CommandJob> scheduledJobs = new ArrayList<CommandJob>();
 
 	/*
 	 * (non-Javadoc)
@@ -48,10 +50,35 @@ public class SpyCommandScheduler implements CommandScheduler {
 		try {
 			command.execute();
 		} catch (CouldNotConnectException e) {
-			//In this fake, execution could not fail
+			// In this fake, execution could not fail
 			e.printStackTrace();
 			throw new RuntimeException(e);
 		}
+	}
+
+	/*
+	 * (non-Javadoc)
+	 * 
+	 * @see eu.jpereira.trainings.designpatterns.behavioral.command.scheduler.
+	 * CommandScheduler
+	 * #schedule(eu.jpereira.trainings.designpatterns.behavioral.
+	 * command.model.command.CommandJob,
+	 * eu.jpereira.trainings.designpatterns.behavioral
+	 * .command.scheduler.Schedule)
+	 */
+	@Override
+	public void schedule(CommandJob job, Schedule schedule) {
+		this.scheduledJobs.add(job);
+		for (Command command : job.getCommands()) {
+			try {
+				command.execute();
+			} catch (CouldNotConnectException e) {
+				// In this fake, execution could not fail
+				e.printStackTrace();
+				throw new RuntimeException(e);
+			}
+		}
+
 	}
 
 }
