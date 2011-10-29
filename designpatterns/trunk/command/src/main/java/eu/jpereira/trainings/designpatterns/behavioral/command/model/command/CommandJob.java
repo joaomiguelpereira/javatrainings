@@ -20,11 +20,15 @@ import java.util.Collection;
 import java.util.Collections;
 import java.util.List;
 
+import eu.jpereira.trainings.designpatterns.behavioral.command.model.CouldNotConnectException;
+import eu.jpereira.trainings.designpatterns.behavioral.command.model.DBServerInstance;
+import eu.jpereira.trainings.designpatterns.behavioral.command.model.command.results.DBServerInstanceResult;
+
 /**
  * @author jpereira
  *
  */
-public class CommandJob {
+public class CommandJob implements Command{
 
 	private List<Command> commands;
 	
@@ -38,6 +42,28 @@ public class CommandJob {
 	
 	public Collection<Command> getCommands() {
 		return Collections.unmodifiableCollection(commands);
+	}
+
+	/* (non-Javadoc)
+	 * @see eu.jpereira.trainings.designpatterns.behavioral.command.model.command.Command#execute()
+	 */
+	@Override
+	public void execute() throws CouldNotConnectException {
+		//for each command, execute it. 
+		//Can store the result
+		for (Command command : this.commands ) {
+			command.execute();
+		}
+		
+	}
+
+	/* (non-Javadoc)
+	 * @see eu.jpereira.trainings.designpatterns.behavioral.command.model.command.Command#getResult()
+	 */
+	@Override
+	public DBServerInstanceResult getResult() {
+		//Can store the result
+		return null;
 	}
 	
 }

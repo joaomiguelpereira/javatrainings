@@ -38,10 +38,6 @@ public interface CommandScheduler {
 	 */
 	void schedule(Command command, Schedule schedule);
 
-	/**
-	 * @param job
-	 * @param schedule
-	 */
-	void schedule(CommandJob job, Schedule schedule);
+
 
 }
