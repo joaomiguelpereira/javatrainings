@@ -19,7 +19,7 @@ mvn eclipse:eclipse
 }}}
 
  # Open API Javadocs - http://code.google.com/p/javatrainings/source/browse/designpatterns/trunk/command/site-1.0-SNAPSHOT/apidocs/index.html
-
+ # Analise javadocs and code
  # Open test javadocs - http://code.google.com/p/javatrainings/source/browse/designpatterns/trunk/command/site-1.0-SNAPSHOT/testapidocs/index.html 
 
  # Follow the steps described
