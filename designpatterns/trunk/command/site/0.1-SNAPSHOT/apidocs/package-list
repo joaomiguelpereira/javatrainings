@@ -1,0 +1,7 @@
+eu.jpereira.trainings.designpatterns.behavioral.command.model
+eu.jpereira.trainings.designpatterns.behavioral.command.model.DAO
+eu.jpereira.trainings.designpatterns.behavioral.command.model.command
+eu.jpereira.trainings.designpatterns.behavioral.command.model.command.results
+eu.jpereira.trainings.designpatterns.behavioral.command.model.exceptions
+eu.jpereira.trainings.designpatterns.behavioral.command.scheduler
+eu.jpereira.trainings.designpatterns.behavioral.command.service
