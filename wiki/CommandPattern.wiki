@@ -9,7 +9,7 @@ cd  ${project.dir}
 
 svn checkout http://javatrainings.googlecode.com/svn/designpatterns/trunk/command
 }}}
- # Enter the created directory and run the tests to check that everything is ok. 
+ # Enter the created directory and run the tests to check that everything is ok. (Erros in the tests is OK and only means that you should fix them)
 {{{
 mvn test
 }}}
