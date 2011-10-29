@@ -5,7 +5,10 @@
 cd  ${project.dir}
 }}}
  # Checkout the code from code.google.com
+{{{
+
 svn checkout http://javatrainings.googlecode.com/svn/designpatterns/trunk/command
+}}}
  # Enter the created directory and run the tests to check that everything is ok. 
 {{{
 mvn test
@@ -15,9 +18,7 @@ mvn test
 mvn eclipse:eclipse
 }}}
 
-
-
-# Open API Javadocs - http://code.google.com/p/javatrainings/source/browse/designpatterns/trunk/command/site-1.0-SNAPSHOT/apidocs/index.html
+ # Open API Javadocs - http://code.google.com/p/javatrainings/source/browse/designpatterns/trunk/command/site-1.0-SNAPSHOT/apidocs/index.html
 
  # Open test javadocs - http://code.google.com/p/javatrainings/source/browse/designpatterns/trunk/command/site-1.0-SNAPSHOT/testapidocs/index.html 
 
