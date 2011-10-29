@@ -18,11 +18,11 @@ mvn test
 mvn eclipse:eclipse
 }}}
 
- # Open API Javadocs - http://mentalpattern.com/trainings/designpatterns/code/command/site/apidocs/
+ # Open API Javadocs - http://jpereira.eu/labs//trainings/designpatterns/code/command/site/apidocs/
  
  # Analyze javadocs and code
 
 
 
- # Open Javadoc for <b>QueryInstanceStatusCommandTest</b> -  http://mentalpattern.com/trainings/designpatterns/code/command/site/testapidocs/eu/jpereira/trainings/designpatterns/behavioral/command/model/QueryInstanceStatusCommandTest.html
+ # Open Javadoc for <b>QueryInstanceStatusCommandTest</b> -  http://jpereira.eu/labs/trainings/designpatterns/code/command/site/testapidocs/eu/jpereira/trainings/designpatterns/behavioral/command/model/QueryInstanceStatusCommandTest.html
  # Follow the steps described
