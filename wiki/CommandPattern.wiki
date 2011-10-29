@@ -22,9 +22,3 @@ mvn eclipse:eclipse
  # Open test javadocs - http://code.google.com/p/javatrainings/source/browse/designpatterns/trunk/command/site-1.0-SNAPSHOT/testapidocs/index.html 
 
  # Follow the steps described
-= Details =
-
-Add your content here.  Format your content with:
-  * Text in *bold* or _italic_
-  * Headings, paragraphs, and lists
-  * Automatic links to other wiki pages
