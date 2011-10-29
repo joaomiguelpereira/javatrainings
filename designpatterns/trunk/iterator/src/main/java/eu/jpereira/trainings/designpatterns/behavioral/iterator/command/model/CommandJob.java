@@ -23,7 +23,6 @@ import java.util.List;
 
 import eu.jpereira.trainings.designpatterns.behavioral.iterator.command.model.exceptions.CouldNotConnectException;
 import eu.jpereira.trainings.designpatterns.behavioral.iterator.command.model.results.DBServerInstanceResult;
-import eu.jpereira.trainings.designpatterns.behavioral.iterator.commands.model.Command;
 
 /**
  * A CommandJob is a composite of {@link Command}

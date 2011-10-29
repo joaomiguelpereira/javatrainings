@@ -21,11 +21,11 @@ import static org.mockito.Mockito.when;
 
 import org.junit.Test;
 
+import eu.jpereira.trainings.designpatterns.behavioral.iterator.command.model.Command;
 import eu.jpereira.trainings.designpatterns.behavioral.iterator.command.model.QueryInstanceStatusCommand;
 import eu.jpereira.trainings.designpatterns.behavioral.iterator.command.model.exceptions.CouldNotConnectException;
 import eu.jpereira.trainings.designpatterns.behavioral.iterator.command.model.results.DBServerInstanceResult;
 import eu.jpereira.trainings.designpatterns.behavioral.iterator.command.scheduler.CommandScheduler;
-import eu.jpereira.trainings.designpatterns.behavioral.iterator.commands.model.Command;
 import eu.jpereira.trainings.designpatterns.behavioral.iterator.commands.model.CommandFactory;
 import eu.jpereira.trainings.designpatterns.behavioral.iterator.commands.model.DBServerInstance;
 import eu.jpereira.trainings.designpatterns.behavioral.iterator.commands.model.DBServerInstanceStatus;

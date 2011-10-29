@@ -15,10 +15,10 @@
  */
 package eu.jpereira.trainings.designpatterns.behavioral.iterator.fakes;
 
+import eu.jpereira.trainings.designpatterns.behavioral.iterator.command.model.Command;
 import eu.jpereira.trainings.designpatterns.behavioral.iterator.command.model.QueryInstanceStatusCommand;
 import eu.jpereira.trainings.designpatterns.behavioral.iterator.command.model.StartInstanceCommand;
 import eu.jpereira.trainings.designpatterns.behavioral.iterator.command.model.StopInstanceCommand;
-import eu.jpereira.trainings.designpatterns.behavioral.iterator.commands.model.Command;
 import eu.jpereira.trainings.designpatterns.behavioral.iterator.commands.model.CommandFactory;
 import eu.jpereira.trainings.designpatterns.behavioral.iterator.commands.model.DBServerInstance;
 

@@ -15,7 +15,6 @@
  */
 package eu.jpereira.trainings.designpatterns.behavioral.iterator.command.model;
 
-import eu.jpereira.trainings.designpatterns.behavioral.iterator.commands.model.Command;
 import eu.jpereira.trainings.designpatterns.behavioral.iterator.commands.model.DBServerInstanceGroup;
 
 /**

@@ -15,7 +15,7 @@
  */
 package eu.jpereira.trainings.designpatterns.behavioral.iterator.command.scheduler;
 
-import eu.jpereira.trainings.designpatterns.behavioral.iterator.commands.model.Command;
+import eu.jpereira.trainings.designpatterns.behavioral.iterator.command.model.Command;
 
 /**
  * A command scheduler will accept Commands and execute the at the time

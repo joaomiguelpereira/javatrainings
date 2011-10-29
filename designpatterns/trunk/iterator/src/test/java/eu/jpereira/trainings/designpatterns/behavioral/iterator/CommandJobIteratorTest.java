@@ -19,8 +19,8 @@ import java.util.Iterator;
 
 import org.junit.Test;
 
+import eu.jpereira.trainings.designpatterns.behavioral.iterator.command.model.Command;
 import eu.jpereira.trainings.designpatterns.behavioral.iterator.command.model.CommandJob;
-import eu.jpereira.trainings.designpatterns.behavioral.iterator.commands.model.Command;
 
 import static org.mockito.Mockito.*;
 import static org.junit.Assert.*;

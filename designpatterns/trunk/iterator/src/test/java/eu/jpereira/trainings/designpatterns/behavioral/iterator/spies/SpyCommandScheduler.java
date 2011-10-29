@@ -18,10 +18,10 @@ package eu.jpereira.trainings.designpatterns.behavioral.iterator.spies;
 import java.util.ArrayList;
 import java.util.List;
 
+import eu.jpereira.trainings.designpatterns.behavioral.iterator.command.model.Command;
 import eu.jpereira.trainings.designpatterns.behavioral.iterator.command.model.exceptions.CouldNotConnectException;
 import eu.jpereira.trainings.designpatterns.behavioral.iterator.command.scheduler.CommandScheduler;
 import eu.jpereira.trainings.designpatterns.behavioral.iterator.command.scheduler.Schedule;
-import eu.jpereira.trainings.designpatterns.behavioral.iterator.commands.model.Command;
 
 /**
  * @author jpereira

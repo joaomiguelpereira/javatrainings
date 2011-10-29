@@ -15,6 +15,8 @@
  */
 package eu.jpereira.trainings.designpatterns.behavioral.iterator.commands.model;
 
+import eu.jpereira.trainings.designpatterns.behavioral.iterator.command.model.Command;
+
 /**
  * A Factory of Commands. You could group them by node ip, group or whatever to
  * better manager the instances created by the factory. You could also re-use

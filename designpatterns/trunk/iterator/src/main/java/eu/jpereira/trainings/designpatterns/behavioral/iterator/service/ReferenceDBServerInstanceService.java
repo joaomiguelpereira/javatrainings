@@ -17,12 +17,12 @@ package eu.jpereira.trainings.designpatterns.behavioral.iterator.service;
 
 import eu.jpereira.trainings.designpatterns.behavioral.iteratoor.command.DAO.DBServerInstanceGroupDAO;
 import eu.jpereira.trainings.designpatterns.behavioral.iteratoor.command.DAO.DBServerInstanceGroupNotFoundException;
+import eu.jpereira.trainings.designpatterns.behavioral.iterator.command.model.Command;
 import eu.jpereira.trainings.designpatterns.behavioral.iterator.command.model.CommandJob;
 import eu.jpereira.trainings.designpatterns.behavioral.iterator.command.model.exceptions.CouldNotConnectException;
 import eu.jpereira.trainings.designpatterns.behavioral.iterator.command.model.results.QueryInstanceStatusResult;
 import eu.jpereira.trainings.designpatterns.behavioral.iterator.command.scheduler.CommandScheduler;
 import eu.jpereira.trainings.designpatterns.behavioral.iterator.command.scheduler.Schedule;
-import eu.jpereira.trainings.designpatterns.behavioral.iterator.commands.model.Command;
 import eu.jpereira.trainings.designpatterns.behavioral.iterator.commands.model.CommandFactory;
 import eu.jpereira.trainings.designpatterns.behavioral.iterator.commands.model.DBServerInstance;
 import eu.jpereira.trainings.designpatterns.behavioral.iterator.commands.model.DBServerInstanceGroup;
