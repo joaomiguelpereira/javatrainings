@@ -98,7 +98,6 @@ public class CommandJob implements Command, Iterable<Command> {
 	 */
 	@Override
 	public Iterator<Command> iterator() {
-		// TODO Auto-generated method stub
 		return this.commands.iterator();
 	}
 
