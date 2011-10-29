@@ -18,7 +18,6 @@ package eu.jpereira.trainings.designpatterns.behavioral.iterator.command.model;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Collections;
-import java.util.Iterator;
 import java.util.List;
 
 import eu.jpereira.trainings.designpatterns.behavioral.iterator.command.model.exceptions.CouldNotConnectException;
@@ -31,7 +30,8 @@ import eu.jpereira.trainings.designpatterns.behavioral.iterator.command.model.re
  * 
  */
 
-public class CommandJob implements Command, Iterable<Command> {
+//TODO: EXERCISE implement Iterable<Command> and implement the method iterator()
+public class CommandJob implements Command{
 
 	private List<Command> commands;
 
@@ -93,12 +93,5 @@ public class CommandJob implements Command, Iterable<Command> {
 		return null;
 	}
 
-	/* (non-Javadoc)
-	 * @see java.lang.Iterable#iterator()
-	 */
-	@Override
-	public Iterator<Command> iterator() {
-		return this.commands.iterator();
-	}
 
 }

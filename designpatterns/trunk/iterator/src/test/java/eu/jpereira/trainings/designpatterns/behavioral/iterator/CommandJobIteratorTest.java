@@ -15,15 +15,13 @@
  */
 package eu.jpereira.trainings.designpatterns.behavioral.iterator;
 
-import java.util.Iterator;
+import static org.junit.Assert.assertEquals;
+import static org.mockito.Mockito.mock;
 
 import org.junit.Test;
 
 import eu.jpereira.trainings.designpatterns.behavioral.iterator.command.model.Command;
 import eu.jpereira.trainings.designpatterns.behavioral.iterator.command.model.CommandJob;
-
-import static org.mockito.Mockito.*;
-import static org.junit.Assert.*;
 /**
  * @author jpereira
  *
@@ -36,14 +34,18 @@ public class CommandJobIteratorTest {
 	public void testIterator() {
 		CommandJob job = createCommandJob();
 		
-		assertNotNull(job.iterator());
-		Iterator<Command> it = job.iterator();
+		//TODO: EXERCISE uncomment
+		//assertNotNull(job.iterator());
+		//TODO: EXERCISE uncomment
+		//Iterator<Command> it = job.iterator();
 		int count = 0;
 		//Iterate 
-		while ( it.hasNext() ) {
+		//TODO: EXERCISE Iterate over the iterator returned from job.iterator()
+		
+		/*while ( it.hasNext() ) {
 			count++;
 			Command command = it.next();
-		}
+		}*/
 		assertEquals(3, count);
 	}
 
