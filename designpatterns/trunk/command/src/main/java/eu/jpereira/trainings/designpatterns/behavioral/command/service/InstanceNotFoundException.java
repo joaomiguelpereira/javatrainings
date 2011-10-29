@@ -16,6 +16,7 @@
 package eu.jpereira.trainings.designpatterns.behavioral.command.service;
 
 /**
+ * If an instance could not be found with some IP
  * @author jpereira
  *
  */

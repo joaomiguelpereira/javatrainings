@@ -13,11 +13,14 @@
  *  See the License for the specific language governing permissions and
  *  limitations under the License.
  */
-package eu.jpereira.trainings.designpatterns.behavioral.command.model;
+package eu.jpereira.trainings.designpatterns.behavioral.command.model.exceptions;
 
 /**
+ * When trying to add an instance to a group that already has an instance with
+ * the same ip
+ * 
  * @author jpereira
- *
+ * 
  */
 public class NotUniqueDBInstanceException extends Exception {
 

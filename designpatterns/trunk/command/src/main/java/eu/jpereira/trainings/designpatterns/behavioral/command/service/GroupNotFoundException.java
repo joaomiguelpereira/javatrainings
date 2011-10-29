@@ -18,6 +18,7 @@ package eu.jpereira.trainings.designpatterns.behavioral.command.service;
 import eu.jpereira.trainings.designpatterns.behavioral.command.model.DAO.DBServerInstanceGroupNotFoundException;
 
 /**
+ * If a The group with a given name could not be found
  * @author jpereira
  *
  */

@@ -16,10 +16,13 @@
 package eu.jpereira.trainings.designpatterns.behavioral.command.model.command.results;
 
 import eu.jpereira.trainings.designpatterns.behavioral.command.model.DBServerInstanceStatus;
+import eu.jpereira.trainings.designpatterns.behavioral.command.model.command.QueryInstanceStatusCommand;
 
 /**
+ * A Result of executing a {@link QueryInstanceStatusCommand} command
+ * 
  * @author jpereira
- *
+ * 
  */
 public class QueryInstanceStatusResult extends DBServerInstanceResult<DBServerInstanceStatus> {
 
@@ -28,7 +31,7 @@ public class QueryInstanceStatusResult extends DBServerInstanceResult<DBServerIn
 	 */
 	public QueryInstanceStatusResult(DBServerInstanceStatus result) {
 		super(result);
-		
+
 	}
 
 }

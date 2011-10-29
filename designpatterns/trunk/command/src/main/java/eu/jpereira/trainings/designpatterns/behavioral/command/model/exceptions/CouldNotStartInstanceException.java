@@ -13,17 +13,18 @@
  *  See the License for the specific language governing permissions and
  *  limitations under the License.
  */
-package eu.jpereira.trainings.designpatterns.behavioral.command.model;
+package eu.jpereira.trainings.designpatterns.behavioral.command.model.exceptions;
 
 /**
+ * When an instance could not be started
  * @author jpereira
  *
  */
-public class CouldNotConnectException extends Exception {
+public class CouldNotStartInstanceException extends Exception {
 
 	/**
 	 * 
 	 */
-	private static final long serialVersionUID = 6819853323125765858L;
+	private static final long serialVersionUID = 3521679001179715642L;
 
 }

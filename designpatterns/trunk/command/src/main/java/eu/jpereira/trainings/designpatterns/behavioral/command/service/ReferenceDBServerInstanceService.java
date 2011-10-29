@@ -16,29 +16,27 @@
 package eu.jpereira.trainings.designpatterns.behavioral.command.service;
 
 import eu.jpereira.trainings.designpatterns.behavioral.command.model.CommandFactory;
-import eu.jpereira.trainings.designpatterns.behavioral.command.model.CouldNotConnectException;
 import eu.jpereira.trainings.designpatterns.behavioral.command.model.DBServerInstance;
 import eu.jpereira.trainings.designpatterns.behavioral.command.model.DBServerInstanceGroup;
 import eu.jpereira.trainings.designpatterns.behavioral.command.model.DBServerInstanceStatus;
 import eu.jpereira.trainings.designpatterns.behavioral.command.model.DAO.DBServerInstanceGroupDAO;
 import eu.jpereira.trainings.designpatterns.behavioral.command.model.DAO.DBServerInstanceGroupNotFoundException;
-import eu.jpereira.trainings.designpatterns.behavioral.command.model.command.Command;
-import eu.jpereira.trainings.designpatterns.behavioral.command.model.command.CommandJob;
-import eu.jpereira.trainings.designpatterns.behavioral.command.model.command.results.QueryInstanceStatusResult;
+import eu.jpereira.trainings.designpatterns.behavioral.command.model.exceptions.CouldNotConnectException;
 import eu.jpereira.trainings.designpatterns.behavioral.command.scheduler.CommandScheduler;
 import eu.jpereira.trainings.designpatterns.behavioral.command.scheduler.Schedule;
 
 /**
+ * A Reference Implementation of a {@link DBServerInstanceService}
  * @author jpereira
  * 
  */
-public class DefaultDBServerInstanceService implements DBServerInstanceService {
+public class ReferenceDBServerInstanceService implements DBServerInstanceService {
 
 	private DBServerInstanceGroupDAO serverInstanceGroupDAO;
 	private CommandScheduler scheduler;
 	private CommandFactory commandFactory;
 
-	public DefaultDBServerInstanceService(DBServerInstanceGroupDAO dao, CommandScheduler scheduler, CommandFactory commandFactory) {
+	public ReferenceDBServerInstanceService(DBServerInstanceGroupDAO dao, CommandScheduler scheduler, CommandFactory commandFactory) {
 		this.serverInstanceGroupDAO = dao;
 		this.scheduler = scheduler;
 		this.commandFactory = commandFactory;
@@ -54,20 +52,21 @@ public class DefaultDBServerInstanceService implements DBServerInstanceService {
 	 */
 	@Override
 	public void startGroup(String groupName, Schedule schedule) throws CouldNotConnectException, GroupNotFoundException {
-
+		//TODO: EXERCISE: Uncomment implementation
+		/*
 		DBServerInstanceGroup group = findGroup(groupName);
 		// Create a new JOB
-		// TODO: Move this to a job manager object
+		// TODO: IGNORE THIS IN THE EXERCISE: Move this to a job manager object
 		CommandJob job = new CommandJob();
 		for (DBServerInstance instance : group.getInstances()) {
 			// The command
-
+			
 			Command startCommand = commandFactory.createStartCommand(instance);
 			job.addCommand(startCommand);
 
 		}
 		this.scheduler.schedule(job, schedule);
-
+	*/
 	}
 
 	/*
@@ -80,10 +79,12 @@ public class DefaultDBServerInstanceService implements DBServerInstanceService {
 	 */
 	@Override
 	public void stopGroup(String groupName, Schedule schedule) throws CouldNotConnectException, GroupNotFoundException {
-
+		//TODO: EXERCISE: Uncomment implementation
+		
+		/*
 		DBServerInstanceGroup group = findGroup(groupName);
 		// Create a new JOB
-		// TODO: Move this to a job manager object
+		// TODO: IGNORE THIS IN THE EXERCISE: Move this to a job manager object		
 		CommandJob job = new CommandJob();
 		for (DBServerInstance instance : group.getInstances()) {
 			// The command
@@ -93,7 +94,7 @@ public class DefaultDBServerInstanceService implements DBServerInstanceService {
 
 		}
 		this.scheduler.schedule(job, schedule);
-
+	*/
 	}
 
 	/*
@@ -104,11 +105,13 @@ public class DefaultDBServerInstanceService implements DBServerInstanceService {
 	 */
 	@Override
 	public void startInstance(String ipAddress, String groupName, Schedule schedule) throws CouldNotConnectException, GroupNotFoundException, InstanceNotFoundException {
-
+		//TODO: EXERCISE: Uncomment implementation
+		/*
 		// Create a command from a factory
 		Command startCommand = commandFactory.createStartCommand(findInstance(ipAddress, groupName));
 		// Send to scheduler
 		scheduler.schedule(startCommand, schedule);
+		*/
 	}
 
 	/*
@@ -120,11 +123,13 @@ public class DefaultDBServerInstanceService implements DBServerInstanceService {
 	@Override
 	public void stopInstance(String ipAddress, String groupName, Schedule schedule) throws CouldNotConnectException, GroupNotFoundException, InstanceNotFoundException {
 
+		//TODO: EXERCISE: Uncomment implementation
+		/*
 		// Create a command from a factory
 		Command startCommand = commandFactory.createStopCommand(findInstance(ipAddress, groupName));
 		// Send to scheduler
 		scheduler.schedule(startCommand, schedule);
-
+	*/
 	}
 
 	/*
@@ -136,16 +141,18 @@ public class DefaultDBServerInstanceService implements DBServerInstanceService {
 	 */
 	@Override
 	public DBServerInstanceStatus getInstanceStatus(String ipAddress, String groupName) throws CouldNotConnectException, GroupNotFoundException, InstanceNotFoundException {
+		//TODO: EXERCISE: Uncomment implementation
+		/*
 		// Create a command from a factory
-
 		Command startCommand = commandFactory.createQueryInstanceStatusCommand(findInstance(ipAddress, groupName));
 
 		// Execute sync, now
 		startCommand.execute();
-		// TODO: FIX the cast
+		// TODO: IGNORE THIS IN THE EXECISE: FIX the cast
 		QueryInstanceStatusResult result = (QueryInstanceStatusResult) startCommand.getResult();
 		return result.getResult();
-
+		 */
+		return null;
 	}
 
 	/**
@@ -163,7 +170,7 @@ public class DefaultDBServerInstanceService implements DBServerInstanceService {
 		try {
 			group = serverInstanceGroupDAO.findByName(groupName);
 		} catch (DBServerInstanceGroupNotFoundException e) {
-			// TODO Log
+			//Just Log
 			e.printStackTrace();
 			// throw encapsulated exception
 			throw new GroupNotFoundException(e);
@@ -191,7 +198,7 @@ public class DefaultDBServerInstanceService implements DBServerInstanceService {
 		try {
 			group = serverInstanceGroupDAO.findByName(groupName);
 		} catch (DBServerInstanceGroupNotFoundException e) {
-			// TODO Log
+			// Just Log
 			e.printStackTrace();
 			// throw encapsulated exception
 			throw new GroupNotFoundException(e);

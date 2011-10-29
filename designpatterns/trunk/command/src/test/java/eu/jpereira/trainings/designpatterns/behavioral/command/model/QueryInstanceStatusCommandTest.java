@@ -15,26 +15,55 @@
  */
 package eu.jpereira.trainings.designpatterns.behavioral.command.model;
 
-import static org.junit.Assert.assertEquals;
 import static org.mockito.Mockito.mock;
-import static org.mockito.Mockito.when;
+import static org.junit.Assert.*;
 
 import org.junit.Test;
 
-import eu.jpereira.trainings.designpatterns.behavioral.command.model.CouldNotConnectException;
-import eu.jpereira.trainings.designpatterns.behavioral.command.model.DBServerInstance;
-import eu.jpereira.trainings.designpatterns.behavioral.command.model.DBServerInstanceStatus;
-import eu.jpereira.trainings.designpatterns.behavioral.command.model.command.Command;
-import eu.jpereira.trainings.designpatterns.behavioral.command.model.command.QueryInstanceStatusCommand;
-import eu.jpereira.trainings.designpatterns.behavioral.command.model.command.results.DBServerInstanceResult;
+import eu.jpereira.trainings.designpatterns.behavioral.command.scheduler.CommandScheduler;
+import eu.jpereira.trainings.designpatterns.behavioral.command.service.ReferenceDBServerInstanceService;
+import eu.jpereira.trainings.designpatterns.behavioral.command.spies.SpyCommandScheduler;
+
 /**
+ * <b>Start up test.</b>
+ * 
+ * 
+ * <ul>
+ * <li>
+ * In this file find, the TODOs and follow the instructions. 
+ * </li>
+ * <li>Next, create a new java interface called Command in {@link eu.jpereira.trainings.designpatterns.behavioral.command.model.command} package
+ * </li>
+ * <li>
+ * Go to every class in {@link eu.jpereira.trainings.designpatterns.behavioral.command.model.command}, find the TODos: and follow the instructions
+ * </li>
+ * 
+ * <li>Fix the Unit Testing framework. Open {@link SpyCommandScheduler} and follow the TODOs</li>
+ * <li>Create the Command Factory. Open {@link CommandFactory} and follow the TODOs</li>
+ * <li>Code the CommandScheduler. Open {@link CommandScheduler} and follow the TODOs</li>
+ * <li>Code the Service. Open {@link ReferenceDBServerInstanceService} and follow TODOs</li>
+ * </ul>
+ * 
+ * <p>YOU'RE REQUIRED ONLY TO COMPLETE THE TODOS MARKED WITH <b>EXERCISE</b></p>
+ * 
  * @author jpereira
- *
  */
+
+
 public class QueryInstanceStatusCommandTest {
 	
 	
-	@SuppressWarnings("unchecked")
+	/**
+	 * After uncommenting all other tests, remove this
+	 */
+	@Test
+	public void deleteThisTest() {
+		fail("Go to class QueryInstanceStatusCommandTest and find the TODO. Complete the TODOs and start fixing the errors by following the TODOs in other Classes. Remove this test!");
+	
+	}
+	
+	//TODO: EXERCISE: Uncomment implementation
+	/*@SuppressWarnings("unchecked")
 	@Test
 	public void testGetServerInstanceStatus() throws CouldNotConnectException {
 		DBServerInstance instance = createMockedDBServerInstance();
@@ -47,7 +76,7 @@ public class QueryInstanceStatusCommandTest {
 		DBServerInstanceStatus status = result.getResult();
 		
 		assertEquals(DBServerInstanceStatus.UNKNOW, status );
-	}
+	}*/
 
 	/**
 	 * @return

@@ -16,6 +16,7 @@
 package eu.jpereira.trainings.designpatterns.behavioral.command.model.DAO;
 
 /**
+ * If the instance coul not be found
  * @author jpereira
  *
  */

@@ -20,10 +20,10 @@ import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
 
-import eu.jpereira.trainings.designpatterns.behavioral.command.model.CouldNotConnectException;
 import eu.jpereira.trainings.designpatterns.behavioral.command.model.DBServerInstance;
 import eu.jpereira.trainings.designpatterns.behavioral.command.model.DBServerInstanceGroup;
-import eu.jpereira.trainings.designpatterns.behavioral.command.model.NotUniqueDBInstanceException;
+import eu.jpereira.trainings.designpatterns.behavioral.command.model.exceptions.CouldNotConnectException;
+import eu.jpereira.trainings.designpatterns.behavioral.command.model.exceptions.NotUniqueDBInstanceException;
 
 /**
  * @author jpereira
@@ -99,7 +99,7 @@ public class SpyDBServerInstanceGroup implements DBServerInstanceGroup {
 	 */
 	@Override
 	public DBServerInstance getInstance(String ipAddress) {
-		// TODO Auto-generated method stub
+		
 		return this.instances.get(ipAddress);
 	}
 

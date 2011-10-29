@@ -15,8 +15,6 @@
  */
 package eu.jpereira.trainings.designpatterns.behavioral.command.scheduler;
 
-import eu.jpereira.trainings.designpatterns.behavioral.command.model.command.Command;
-import eu.jpereira.trainings.designpatterns.behavioral.command.model.command.CommandJob;
 
 /**
  * A command scheduler will accept Commands and execute the at the time
@@ -27,6 +25,8 @@ import eu.jpereira.trainings.designpatterns.behavioral.command.model.command.Com
  */
 public interface CommandScheduler {
 
+	//TODO: EXERCISE: Uncomment the public interface
+	
 	/**
 	 * Schedules a command to execute
 	 * 
@@ -36,7 +36,7 @@ public interface CommandScheduler {
 	 *            the {@link Schedule} instance that will drive the scheduling
 	 *            of command execution
 	 */
-	void schedule(Command command, Schedule schedule);
+	//void schedule(Command command, Schedule schedule);
 
 
 

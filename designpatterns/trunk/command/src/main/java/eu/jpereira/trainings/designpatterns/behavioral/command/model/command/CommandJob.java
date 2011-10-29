@@ -15,39 +15,46 @@
  */
 package eu.jpereira.trainings.designpatterns.behavioral.command.model.command;
 
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.Collections;
-import java.util.List;
-
-import eu.jpereira.trainings.designpatterns.behavioral.command.model.CouldNotConnectException;
-import eu.jpereira.trainings.designpatterns.behavioral.command.model.DBServerInstance;
-import eu.jpereira.trainings.designpatterns.behavioral.command.model.command.results.DBServerInstanceResult;
 
 /**
+ * A CommandJob is a composite of {@link Command}
  * @author jpereira
  *
  */
-public class CommandJob implements Command{
 
-	private List<Command> commands;
+
+//TODO: EXERCISE: This class should implement Command
+public class CommandJob{
+
+	//TODO: EXERCISE: Uncomment the follwing line
+	//private List<Command> commands;
 	
-	public CommandJob() {
+	//TODO: EXERCISE: Uncomment implementation
+	
+	/*public CommandJob() {
 		this.commands = new ArrayList<Command>();
-	}
+	}*/
 	
-	public void addCommand(Command command) {
+	
+	//TODO: EXERCISE: Uncomment implementation
+	
+	/*public void addCommand(Command command) {
 		this.commands.add(command);
-	}
+	}*/
 	
-	public Collection<Command> getCommands() {
+	//TODO: EXERCISE: Uncomment implementation
+	
+	
+	/*public Collection<Command> getCommands() {
 		return Collections.unmodifiableCollection(commands);
-	}
+	}*/
 
+	
 	/* (non-Javadoc)
 	 * @see eu.jpereira.trainings.designpatterns.behavioral.command.model.command.Command#execute()
 	 */
-	@Override
+	//TODO: EXERCISE: Uncomment implementation
+	/*@Override
 	public void execute() throws CouldNotConnectException {
 		//for each command, execute it. 
 		//Can store the result
@@ -55,15 +62,16 @@ public class CommandJob implements Command{
 			command.execute();
 		}
 		
-	}
+	}*/
 
 	/* (non-Javadoc)
 	 * @see eu.jpereira.trainings.designpatterns.behavioral.command.model.command.Command#getResult()
 	 */
-	@Override
+	//TODO: EXERCISE: Uncomment implementation
+	/*@Override
 	public DBServerInstanceResult getResult() {
 		//Can store the result
 		return null;
-	}
+	}*/
 	
 }

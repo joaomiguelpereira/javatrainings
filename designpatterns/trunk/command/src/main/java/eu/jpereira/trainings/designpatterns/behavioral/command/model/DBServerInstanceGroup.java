@@ -17,6 +17,9 @@ package eu.jpereira.trainings.designpatterns.behavioral.command.model;
 
 import java.util.Collection;
 
+import eu.jpereira.trainings.designpatterns.behavioral.command.model.exceptions.CouldNotConnectException;
+import eu.jpereira.trainings.designpatterns.behavioral.command.model.exceptions.NotUniqueDBInstanceException;
+
 /**
  * This class represents a group of DB Server instances
  * 

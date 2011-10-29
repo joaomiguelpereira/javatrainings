@@ -15,6 +15,8 @@
  */
 package eu.jpereira.trainings.designpatterns.behavioral.command.model;
 
+import eu.jpereira.trainings.designpatterns.behavioral.command.model.exceptions.CouldNotConnectException;
+
 /**
  * 
  * This class models a Database Server instance running on a network node. A

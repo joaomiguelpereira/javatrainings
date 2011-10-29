@@ -22,13 +22,13 @@ import org.junit.Test;
 import eu.jpereira.trainings.designpatterns.behavioral.command.fakes.FakeDBServerInstanceCommandFactory;
 import eu.jpereira.trainings.designpatterns.behavioral.command.fakes.FakeInstanceGroupDAO;
 import eu.jpereira.trainings.designpatterns.behavioral.command.model.CommandFactory;
-import eu.jpereira.trainings.designpatterns.behavioral.command.model.CouldNotConnectException;
 import eu.jpereira.trainings.designpatterns.behavioral.command.model.DBServerInstanceStatus;
 import eu.jpereira.trainings.designpatterns.behavioral.command.model.DAO.DBServerInstanceGroupDAO;
+import eu.jpereira.trainings.designpatterns.behavioral.command.model.exceptions.CouldNotConnectException;
 import eu.jpereira.trainings.designpatterns.behavioral.command.scheduler.CommandScheduler;
 import eu.jpereira.trainings.designpatterns.behavioral.command.scheduler.Schedule;
 import eu.jpereira.trainings.designpatterns.behavioral.command.service.DBServerInstanceService;
-import eu.jpereira.trainings.designpatterns.behavioral.command.service.DefaultDBServerInstanceService;
+import eu.jpereira.trainings.designpatterns.behavioral.command.service.ReferenceDBServerInstanceService;
 import eu.jpereira.trainings.designpatterns.behavioral.command.service.GroupNotFoundException;
 import eu.jpereira.trainings.designpatterns.behavioral.command.service.InstanceNotFoundException;
 import eu.jpereira.trainings.designpatterns.behavioral.command.spies.SpyCommandScheduler;
@@ -123,7 +123,7 @@ public class DBServerInstanceServiceTest {
 		DBServerInstanceGroupDAO serverInstanceGroupDAO = createInstanceGroupDao();
 		CommandScheduler scheduler = createScheduler();
 		CommandFactory commandFactory = createFactory();
-		return new DefaultDBServerInstanceService(serverInstanceGroupDAO, scheduler, commandFactory);
+		return new ReferenceDBServerInstanceService(serverInstanceGroupDAO, scheduler, commandFactory);
 	}
 
 	/**

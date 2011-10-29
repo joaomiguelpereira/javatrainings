@@ -17,7 +17,10 @@ package eu.jpereira.trainings.designpatterns.behavioral.command.model.DAO;
 
 import eu.jpereira.trainings.designpatterns.behavioral.command.model.DBServerInstanceGroup;
 
+
+
 /**
+ * The Data Access Object to get a reference to a {@link DBServerInstanceGroup}
  * @author jpereira
  *
  */

@@ -15,11 +15,12 @@
  */
 package eu.jpereira.trainings.designpatterns.behavioral.command.model.command;
 
-import eu.jpereira.trainings.designpatterns.behavioral.command.model.CouldNotConnectException;
 import eu.jpereira.trainings.designpatterns.behavioral.command.model.DBServerInstance;
 import eu.jpereira.trainings.designpatterns.behavioral.command.model.command.results.DBServerInstanceResult;
+import eu.jpereira.trainings.designpatterns.behavioral.command.model.exceptions.CouldNotConnectException;
 
 /**
+ * Encapsulates a start instance request
  * @author jpereira
  *
  */
@@ -35,18 +36,22 @@ public class StartInstanceCommand extends DBServerInstanceCommand {
 
 	}
 
+	//TODO: EXERCISE: Uncomment 
+	/*
 	@Override
 	public void execute() throws CouldNotConnectException {
 		receiver.startInstance();
-	}
+	}*/
 
 	/* (non-Javadoc)
 	 * @see eu.jpereira.trainings.designpatterns.behavioral.command.model.command.Command#getResult()
 	 */
+	//TODO: EXERCISE: Uncomment 
+	/*
 	@SuppressWarnings("rawtypes")
 	@Override
 	public DBServerInstanceResult getResult() {
 		return null;
-	}
+	}*/
 
 }

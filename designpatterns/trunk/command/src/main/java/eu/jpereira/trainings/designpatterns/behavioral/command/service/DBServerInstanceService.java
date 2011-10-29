@@ -15,9 +15,9 @@
  */
 package eu.jpereira.trainings.designpatterns.behavioral.command.service;
 
-import eu.jpereira.trainings.designpatterns.behavioral.command.model.CouldNotConnectException;
 import eu.jpereira.trainings.designpatterns.behavioral.command.model.DBServerInstance;
 import eu.jpereira.trainings.designpatterns.behavioral.command.model.DBServerInstanceStatus;
+import eu.jpereira.trainings.designpatterns.behavioral.command.model.exceptions.CouldNotConnectException;
 import eu.jpereira.trainings.designpatterns.behavioral.command.scheduler.Schedule;
 
 /**
@@ -35,7 +35,7 @@ public interface DBServerInstanceService {
 	 * @param ipAddress
 	 *            the IP of the {@link DBServerInstance}
 	 * @param groupName The Group Name that has the {@link DBServerInstance}
-	 * @param schedule TODO
+	 * @param schedule The Schedule
 	 * @throws CouldNotConnectException
 	 *             If some error occurs while connecting to the
 	 *             {@link DBServerInstance}
@@ -50,12 +50,12 @@ public interface DBServerInstanceService {
 	 * @param ipAddress
 	 *            the IP of the {@link DBServerInstance}
 	 * @param groupName The Group Name that has the {@link DBServerInstance}
-	 * @param schedule TODO
+	 * @param schedule The Schedule
 	 * @throws CouldNotConnectException
 	 *             If some error occurs while connecting to the
 	 *             {@link DBServerInstance}
-	 * @throws GroupNotFoundException TODO
-	 * @throws InstanceNotFoundException TODO
+	 * @throws GroupNotFoundException If no group exists with that name
+	 * @throws InstanceNotFoundException If the instance could not be found
 	 */
 	void stopInstance(String ipAddress, String groupName, Schedule schedule) throws CouldNotConnectException, GroupNotFoundException, InstanceNotFoundException;
 
@@ -69,8 +69,8 @@ public interface DBServerInstanceService {
 	 * @throws CouldNotConnectException
 	 *             If some error occurs while connecting to the
 	 *             {@link DBServerInstance}
-	 * @throws GroupNotFoundException TODO
-	 * @throws InstanceNotFoundException TODO
+	 * @throws GroupNotFoundException If the goups could not be found
+	 * @throws InstanceNotFoundException if the Instance could not be found
 	 *             
 	 */
 	DBServerInstanceStatus getInstanceStatus(String ipAddress, String groupName) throws CouldNotConnectException, GroupNotFoundException, InstanceNotFoundException;
@@ -84,7 +84,7 @@ public interface DBServerInstanceService {
 	 * @throws CouldNotConnectException
 	 *             If some error occurs while connection to one of the instances
 	 *             in the group
-	 * @throws GroupNotFoundException TODO
+	 * @throws GroupNotFoundException If the Group could not be found
 	 */
 	void startGroup(String groupName, Schedule schedule) throws CouldNotConnectException, GroupNotFoundException;
 
@@ -97,7 +97,7 @@ public interface DBServerInstanceService {
 	 * @throws CouldNotConnectException
 	 *             If some error occurs while connection to one of the instances
 	 *             in the group
-	 * @throws GroupNotFoundException TODO
+	 * @throws GroupNotFoundException If the Group could not be found
 	 */
 
 	void stopGroup(String groupName, Schedule schedule) throws CouldNotConnectException, GroupNotFoundException;

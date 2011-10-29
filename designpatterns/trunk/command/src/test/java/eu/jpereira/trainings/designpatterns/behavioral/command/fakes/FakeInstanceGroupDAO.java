@@ -24,6 +24,7 @@ import eu.jpereira.trainings.designpatterns.behavioral.command.model.DAO.DBServe
 import eu.jpereira.trainings.designpatterns.behavioral.command.spies.SpyDBServerInstanceGroup;
 
 /**
+ * A Data Access Object to get a reference to {@link DBServerInstanceGroup}
  * @author jpereira
  *
  */

@@ -15,10 +15,10 @@
  */
 package eu.jpereira.trainings.designpatterns.behavioral.command.spies;
 
-import eu.jpereira.trainings.designpatterns.behavioral.command.model.CouldNotConnectException;
 import eu.jpereira.trainings.designpatterns.behavioral.command.model.DBServerInstance;
 import eu.jpereira.trainings.designpatterns.behavioral.command.model.DBServerInstanceProperties;
 import eu.jpereira.trainings.designpatterns.behavioral.command.model.DBServerInstanceStatus;
+import eu.jpereira.trainings.designpatterns.behavioral.command.model.exceptions.CouldNotConnectException;
 
 /**
  * @author jpereira
@@ -41,7 +41,7 @@ public class SpyDBServerInstance implements DBServerInstance {
 	 */
 	@Override
 	public String getIpAddress() {
-		// TODO Auto-generated method stub
+		
 		return this.ipAddress;
 	}
 
@@ -50,7 +50,7 @@ public class SpyDBServerInstance implements DBServerInstance {
 	 */
 	@Override
 	public DBServerInstanceProperties getConnectionDetails() {
-		// TODO Auto-generated method stub
+		
 		return null;
 	}
 
