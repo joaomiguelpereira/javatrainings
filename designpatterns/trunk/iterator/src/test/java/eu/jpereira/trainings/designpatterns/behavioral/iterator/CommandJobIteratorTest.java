@@ -34,7 +34,7 @@ public class CommandJobIteratorTest {
 	public void testIterator() {
 		CommandJob job = createCommandJob();
 		
-		//TODO: EXERCISE uncomment
+		//TODO: EXERCISE uncomment. Go to CommandJob and complete the TODOs
 		//assertNotNull(job.iterator());
 		//TODO: EXERCISE uncomment
 		//Iterator<Command> it = job.iterator();
