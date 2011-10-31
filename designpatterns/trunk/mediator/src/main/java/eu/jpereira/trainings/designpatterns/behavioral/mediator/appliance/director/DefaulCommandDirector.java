@@ -31,7 +31,7 @@ import eu.jpereira.trainings.designpatterns.behavioral.mediator.command.Undoable
  */
 public class DefaulCommandDirector implements CommandDirector {
 
-	// Fail Startegy
+	// Fail Strategy
 	protected FailStategy failStrategy = null;
 	protected List<Command> commands = null;
 	private Stack<Command> executedCommands;
