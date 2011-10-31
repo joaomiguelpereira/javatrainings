@@ -138,6 +138,9 @@ public class CommandDirectorTest {
 	 * @return
 	 */
 	protected CommandDirector createCommandDirector() {
-		return new DefaulCommandDirector();
+		//TODO: 1) Go DefaultCommandDirector and follow the TODOs. Come back here and return an instance of DefaultCommandDirector 
+		return null;
+		//TODO: Uncomment after complete TODO 1
+		//return new DefaulCommandDirector();
 	}
 }
