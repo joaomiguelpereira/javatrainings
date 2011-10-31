@@ -17,6 +17,5 @@ mvn test
 {{{
 mvn eclipse:eclipse
 }}}
-
  # Analyse package 
  # In Eclipse Project, analyse code
