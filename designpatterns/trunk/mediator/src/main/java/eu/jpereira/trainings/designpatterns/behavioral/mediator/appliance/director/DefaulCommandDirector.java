@@ -29,6 +29,11 @@ import eu.jpereira.trainings.designpatterns.behavioral.mediator.command.Undoable
  * A default implemenatation of a {@link CommandDirector}
  * @author jpereira
  *
+ *
+ *TODO: (DO IT LAST) Add method void addExceptionCommands(Class<? extends Throwable> exClass, Command...commands) to Interface {@link CommandDirector}
+ *and implement it. It's a map of exception classes to a list of commands that should run whenever an exception of the type exClass is thrown.
+ * Implement first a test for this method
+ * 
  * 
  * TODO: Implement {@link CommandDirector}.
  * public class DefaultCommandDirector implements CommandDirector 
