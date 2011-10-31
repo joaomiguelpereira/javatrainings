@@ -1,0 +1,21 @@
+= Introduction =
+
+ # Go to the  ${project.dir} directory
+{{{
+cd  ${project.dir}
+}}}
+ # Checkout the code from code.google.com
+{{{
+
+svn checkout http://javatrainings.googlecode.com/svn/designpatterns/trunk/memento
+}}}
+ # Enter the created directory and run the tests to check that everything is ok. 
+{{{
+mvn test
+}}}
+ # Enter the created folder and generate the eclipse project
+{{{
+mvn eclipse:eclipse
+}}}
+
+ # Analyse package 
