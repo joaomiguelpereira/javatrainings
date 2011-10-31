@@ -17,5 +17,5 @@ mvn test
 {{{
 mvn eclipse:eclipse
 }}}
- # Analyse package 
+ # Analyse package http://jpereira.eu/labs/trainings/designpatterns/code/memento/site/apidocs/eu/jpereira/trainings/designpatterns/behavioral/memento/appliance/snapshot/package-summary.html
  # In Eclipse Project, analyse code
