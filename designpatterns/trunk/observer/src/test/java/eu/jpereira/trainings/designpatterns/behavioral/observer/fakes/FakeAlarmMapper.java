@@ -20,7 +20,7 @@ import eu.jpereira.trainings.designpatterns.behavioral.observer.event.Alarm;
 import eu.jpereira.trainings.designpatterns.behavioral.observer.event.ApplianceEvent;
 import eu.jpereira.trainings.designpatterns.behavioral.observer.event.EventData;
 import eu.jpereira.trainings.designpatterns.behavioral.observer.event.alarm.TemperatureAlarm;
-import eu.jpereira.trainings.designpatterns.behavioral.observer.mapper.EventMapper;
+import eu.jpereira.trainings.designpatterns.behavioral.observer.mapper.AbstractEventMapper;
 import eu.jpereira.trainings.designpatterns.behavioral.observer.mapper.MapperChain;
 
 /**
@@ -31,7 +31,7 @@ import eu.jpereira.trainings.designpatterns.behavioral.observer.mapper.MapperCha
  * @author jpereira
  * 
  */
-public class FakeAlarmMapper implements EventMapper {
+public class FakeAlarmMapper extends AbstractEventMapper {
 
 	
 	/*
@@ -58,6 +58,7 @@ public class FakeAlarmMapper implements EventMapper {
 			Alarm alarm = createAlarm(data.getProperty("alarmName"),data.getEvent().getSourceAppliance());
 			alarm.setAditionalInfo(data.getProperty("aditionalInfo"));
 			data.setEvent(alarm);
+			updateObservers(alarm);
 		}
 		
 		chain.doMap(data);

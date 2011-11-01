@@ -28,7 +28,7 @@ import eu.jpereira.trainings.designpatterns.behavioral.observer.event.EventData;
  * @author jpereira
  * 
  */
-public class ApplianceEventMapper implements EventMapper {
+public class ApplianceEventMapper extends AbstractEventMapper {
 
 	private ApplianceDAO applianceDao = null;
 
@@ -71,4 +71,5 @@ public class ApplianceEventMapper implements EventMapper {
 
 	}
 
+	
 }

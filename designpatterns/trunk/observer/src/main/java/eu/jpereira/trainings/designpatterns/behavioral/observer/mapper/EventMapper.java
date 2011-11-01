@@ -16,13 +16,14 @@
 package eu.jpereira.trainings.designpatterns.behavioral.observer.mapper;
 
 import eu.jpereira.trainings.designpatterns.behavioral.observer.event.EventData;
+import eu.jpereira.trainings.designpatterns.behavioral.observer.observers.ApplianceEventObservable;
 
 /**
  * Interface for mappers in the chain
  * @author jpereira
  * 
  */
-public interface EventMapper {
+public interface EventMapper extends ApplianceEventObservable{
 	
 	/**
 	 * Handles the mapping process

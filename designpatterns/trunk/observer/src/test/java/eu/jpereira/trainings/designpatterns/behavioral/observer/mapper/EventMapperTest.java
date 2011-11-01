@@ -21,19 +21,17 @@ import static org.junit.Assert.assertTrue;
 
 import org.junit.Test;
 
-import eu.jpereira.trainings.designpatterns.behavioral.observer.appliance.dao.ApplianceDAO;
 import eu.jpereira.trainings.designpatterns.behavioral.observer.event.Alarm;
 import eu.jpereira.trainings.designpatterns.behavioral.observer.event.EventData;
 import eu.jpereira.trainings.designpatterns.behavioral.observer.event.statechange.StateChangeEvent;
 import eu.jpereira.trainings.designpatterns.behavioral.observer.fakes.FakeAlarmMapper;
-import eu.jpereira.trainings.designpatterns.behavioral.observer.fakes.FakeApplianceDAO;
 import eu.jpereira.trainings.designpatterns.behavioral.observer.fakes.FakeStateChangeMapper;
 
 /**
  * @author jpereira
  * 
  */
-public class EventMapperTest {
+public class EventMapperTest extends AbstractMapperTest{
 
 	@Test
 	public void testAlarm() {
@@ -78,36 +76,5 @@ public class EventMapperTest {
 	}
 	
 
-	/**
-	 * @return
-	 */
-	private ApplianceDAO createApplianceDAO() {
-		return new FakeApplianceDAO();
-	}
-
-	/**
-	 * @return
-	 */
-	private EventData createAlarmEventData() {
-		EventData data = new EventData();
-		data.setProperty("applianceMacAddress", "AA.BB.CC");
-		data.setProperty("type", "alarm");
-		data.setProperty("alarmName", "highTemp");
-		data.setProperty("aditionalInfo", "400");
-		return data;
-	}
 	
-	/**
-	 * @return
-	 */
-	private EventData createStateChangeEventData() {
-		EventData data = new EventData();
-		data.setProperty("applianceMacAddress", "AA.BB.CC");
-		data.setProperty("type", "stateChange");
-		data.setProperty("attributeName", "temperature");
-		data.setProperty("attributeLastValue", "350");
-		data.setProperty("attributeNewValue", "400");
-		return data;
-	}
-
 }

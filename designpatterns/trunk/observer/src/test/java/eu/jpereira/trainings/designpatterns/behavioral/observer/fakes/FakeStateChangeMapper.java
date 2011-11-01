@@ -20,6 +20,7 @@ import eu.jpereira.trainings.designpatterns.behavioral.observer.event.ApplianceE
 import eu.jpereira.trainings.designpatterns.behavioral.observer.event.AttributeChangeEvent;
 import eu.jpereira.trainings.designpatterns.behavioral.observer.event.EventData;
 import eu.jpereira.trainings.designpatterns.behavioral.observer.event.statechange.StateChangeEvent;
+import eu.jpereira.trainings.designpatterns.behavioral.observer.mapper.AbstractEventMapper;
 import eu.jpereira.trainings.designpatterns.behavioral.observer.mapper.EventMapper;
 import eu.jpereira.trainings.designpatterns.behavioral.observer.mapper.MapperChain;
 
@@ -31,7 +32,7 @@ import eu.jpereira.trainings.designpatterns.behavioral.observer.mapper.MapperCha
  * @author jpereira
  * 
  */
-public class FakeStateChangeMapper implements EventMapper {
+public class FakeStateChangeMapper extends AbstractEventMapper {
 
 	/*
 	 * (non-Javadoc)
@@ -55,6 +56,8 @@ public class FakeStateChangeMapper implements EventMapper {
 		if (data.getProperty("type").equals("stateChange")) {
 			StateChangeEvent event = createStateChangeEvent(data);
 			data.setEvent(event);
+			//Notify any observers
+			updateObservers(event);
 		}
 
 		chain.doMap(data);
