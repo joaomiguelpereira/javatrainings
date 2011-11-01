@@ -69,7 +69,6 @@ public class FakeStateChangeMapper extends AbstractEventMapper {
 	 * @return
 	 */
 	private StateChangeEvent createStateChangeEvent(EventData data) {
-		// TODO Auto-generated method stub
 		AttributeChangeEvent event = new AttributeChangeEvent(data.getEvent().getSourceAppliance());
 		
 		return event;

@@ -33,11 +33,17 @@ public abstract class Alarm extends ApplianceEvent {
 	}
 
 	/**
-	 * @param property
+	 * @return the additionalInfo
 	 */
-	public void setAditionalInfo(String property) {
-		this.additionalInfo= property;
-		
+	public String getAdditionalInfo() {
+		return additionalInfo;
+	}
+
+	/**
+	 * @param additionalInfo the additionalInfo to set
+	 */
+	public void setAdditionalInfo(String additionalInfo) {
+		this.additionalInfo = additionalInfo;
 	}
 
 }

@@ -56,7 +56,7 @@ public class FakeAlarmMapper extends AbstractEventMapper {
 		//check if the event is an alarm
 		if (data.getProperty("type").equals("alarm")) {
 			Alarm alarm = createAlarm(data.getProperty("alarmName"),data.getEvent().getSourceAppliance());
-			alarm.setAditionalInfo(data.getProperty("aditionalInfo"));
+			alarm.setAdditionalInfo(data.getProperty("aditionalInfo"));
 			data.setEvent(alarm);
 			updateObservers(alarm);
 		}

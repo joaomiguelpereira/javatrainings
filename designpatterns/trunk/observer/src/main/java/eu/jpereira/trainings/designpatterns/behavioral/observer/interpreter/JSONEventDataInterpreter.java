@@ -35,7 +35,6 @@ public class JSONEventDataInterpreter implements EventDataInterpreter {
 	 */
 	@Override
 	public EventData interpret(String message) {
-		// TODO Auto-generated method stub
 		return null;
 	}
 
