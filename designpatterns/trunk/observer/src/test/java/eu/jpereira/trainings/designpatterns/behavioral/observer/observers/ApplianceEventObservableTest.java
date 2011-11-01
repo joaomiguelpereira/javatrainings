@@ -26,6 +26,7 @@ import eu.jpereira.trainings.designpatterns.behavioral.observer.event.EventData;
 import eu.jpereira.trainings.designpatterns.behavioral.observer.event.statechange.StateChangeEvent;
 import eu.jpereira.trainings.designpatterns.behavioral.observer.fakes.FakeAlarmMapper;
 import eu.jpereira.trainings.designpatterns.behavioral.observer.fakes.FakeStateChangeMapper;
+import eu.jpereira.trainings.designpatterns.behavioral.observer.mapper.AbstractEventMapper;
 import eu.jpereira.trainings.designpatterns.behavioral.observer.mapper.AbstractMapperTest;
 import eu.jpereira.trainings.designpatterns.behavioral.observer.mapper.ApplianceEventMapper;
 import eu.jpereira.trainings.designpatterns.behavioral.observer.mapper.EventMapper;
@@ -35,6 +36,13 @@ import static org.mockito.Mockito.*;
 /**
  * @author windows
  * 
+ * 
+ * 
+ * TODO: 
+ * - Go to {@link EventMapper} and follow the TODO for this exercise
+ * - Go {@link AbstractEventMapper} and implement the interfaces from {@link ApplianceEventObservable}
+ * - Go to this class and find the TODOs
+ *  
  */
 public class ApplianceEventObservableTest extends AbstractMapperTest {
 
@@ -54,12 +62,14 @@ public class ApplianceEventObservableTest extends AbstractMapperTest {
 		
 		//Attach observers to observables
 		
+		//TODO Exercise: Uncomment the following block
+		
+		/*
 		stateChangeMapper.addObserver(applianceStore);
 		stateChangeMapper.addObserver(applianceLogger);
-	
 		alarmMapper.addObserver(applianceStore);
 		alarmMapper.addObserver(applianceLogger);
-
+		 */
 		
 		
 		//Add to chain
@@ -97,12 +107,13 @@ public class ApplianceEventObservableTest extends AbstractMapperTest {
 		EventMapper alarmMapper = new FakeAlarmMapper();
 		
 		//Attach observers to observables
-		
+		//TODO Exercise: Uncomment the following block of code
+		/*
 		stateChangeMapper.addObserver(applianceStore);
 		stateChangeMapper.addObserver(applianceLogger);
-	
 		alarmMapper.addObserver(applianceStore);
 		alarmMapper.addObserver(applianceLogger);
+		*/
 
 		
 		

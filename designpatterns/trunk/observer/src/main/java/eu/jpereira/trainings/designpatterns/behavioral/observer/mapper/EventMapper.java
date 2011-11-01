@@ -22,8 +22,10 @@ import eu.jpereira.trainings.designpatterns.behavioral.observer.observers.Applia
  * Interface for mappers in the chain
  * @author jpereira
  * 
+ * 
+ * TODO Exercise: extend from {@link ApplianceEventObservable}
  */
-public interface EventMapper extends ApplianceEventObservable{
+public interface EventMapper{
 	
 	/**
 	 * Handles the mapping process

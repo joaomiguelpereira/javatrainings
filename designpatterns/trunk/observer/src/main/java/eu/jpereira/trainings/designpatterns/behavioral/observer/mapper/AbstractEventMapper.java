@@ -19,12 +19,14 @@ import java.util.ArrayList;
 import java.util.List;
 
 import eu.jpereira.trainings.designpatterns.behavioral.observer.event.ApplianceEvent;
+import eu.jpereira.trainings.designpatterns.behavioral.observer.observers.ApplianceEventObservable;
 import eu.jpereira.trainings.designpatterns.behavioral.observer.observers.ApplianceEventObserver;
 
 /**
  * @author windows
  * 
- */
+ * TODO Exercise: Implement the methods from {@link ApplianceEventObservable} here in this class
+ */ 
 public abstract class AbstractEventMapper implements EventMapper {
 
 	private List<ApplianceEventObserver> observers;
@@ -39,32 +41,6 @@ public abstract class AbstractEventMapper implements EventMapper {
 		observers = new ArrayList<ApplianceEventObserver>();
 	}
 
-	/*
-	 * (non-Javadoc)
-	 * 
-	 * @see eu.jpereira.trainings.designpatterns.behavioral.observer.observers.
-	 * ApplianceEventObservable
-	 * #addObserver(eu.jpereira.trainings.designpatterns.
-	 * behavioral.observer.observers.ApplianceEventObserver)
-	 */
-	@Override
-	public void addObserver(ApplianceEventObserver observer) {
-		this.observers.add(observer);
-
-	}
-
-	/*
-	 * (non-Javadoc)
-	 * 
-	 * @see eu.jpereira.trainings.designpatterns.behavioral.observer.observers.
-	 * ApplianceEventObservable
-	 * #removeObserver(eu.jpereira.trainings.designpatterns
-	 * .behavioral.observer.observers.ApplianceEventObserver)
-	 */
-	@Override
-	public void removeObserver(ApplianceEventObserver observer) {
-		this.observers.remove(observer);
-
-	}
+	
 
 }
