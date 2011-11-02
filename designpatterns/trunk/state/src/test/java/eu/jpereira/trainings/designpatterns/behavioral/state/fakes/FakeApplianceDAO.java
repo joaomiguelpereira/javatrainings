@@ -21,6 +21,7 @@ import java.util.Map;
 import eu.jpereira.trainings.designpatterns.behavioral.state.appliance.Appliance;
 import eu.jpereira.trainings.designpatterns.behavioral.state.appliance.Toaster;
 import eu.jpereira.trainings.designpatterns.behavioral.state.appliance.dao.ApplianceDAO;
+import eu.jpereira.trainings.designpatterns.behavioral.state.appliance.state.ApplianceState;
 
 /**
  * @author jpereira
@@ -31,7 +32,7 @@ public class FakeApplianceDAO implements ApplianceDAO {
 	static Map<String, Appliance> appliances = new HashMap<String, Appliance>();
 	
 	static {
-		Appliance toaster = new Toaster();
+		Appliance toaster = new Toaster(ApplianceState.OFF);
 		toaster.setIpAddress("12.12.12.12");
 		toaster.setMacAddress("AA.BB.CC");
 		appliances.put(toaster.getMacAddress(), toaster);

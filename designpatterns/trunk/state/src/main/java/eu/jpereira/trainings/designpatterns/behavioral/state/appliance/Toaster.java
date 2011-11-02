@@ -24,6 +24,13 @@ import eu.jpereira.trainings.designpatterns.behavioral.state.appliance.state.App
  */
 public class Toaster extends AbstractAppliance {
 
+	/**
+	 * @param initialState
+	 */
+	public Toaster(ApplianceState initialState) {
+		super(initialState);
+	}
+
 	/*
 	 * (non-Javadoc)
 	 * 
@@ -60,12 +67,7 @@ public class Toaster extends AbstractAppliance {
 	 */
 	@Override
 	public void turnOn() throws ApplianceCommunicationException {
-		if (this.getState().equals(ApplianceState.OFF)) {
-			// Complex logic to connect to socket, or delegation to other
-			// component
-			// Dummy, will onle change starte to ON
-			this.applianceState = ApplianceState.ON;
-		}
+		this.applianceStateBehavior = this.applianceStateBehavior.turnOn();
 	}
 
 	/*
@@ -77,10 +79,8 @@ public class Toaster extends AbstractAppliance {
 	 */
 	@Override
 	public void turnOff() throws ApplianceCommunicationException {
-		if (this.getState().equals(ApplianceState.STOPPED)) {
-			// Complex logic here
-			this.applianceState = ApplianceState.OFF;
-		}
+		this.applianceStateBehavior = this.applianceStateBehavior.turnOff();
+
 	}
 
 	/*
@@ -92,10 +92,7 @@ public class Toaster extends AbstractAppliance {
 	 */
 	@Override
 	public void start() throws ApplianceCommunicationException {
-		if (this.applianceState.equals(ApplianceState.STOPPED) || this.applianceState.equals(ApplianceState.ON)) {
-			//Complex logic here
-			this.applianceState = ApplianceState.STARTED;
-		}
+		this.applianceStateBehavior = this.applianceStateBehavior.start();
 	}
 
 	/*
@@ -107,12 +104,6 @@ public class Toaster extends AbstractAppliance {
 	 */
 	@Override
 	public void stop() throws ApplianceCommunicationException {
-		if ( this.applianceState.equals(ApplianceState.STARTED)) {
-			//COmplex logic here
-			this.applianceState = ApplianceState.STOPPED;
-		}
-
+		this.applianceStateBehavior = this.applianceStateBehavior.stop();
 	}
-
-
 }

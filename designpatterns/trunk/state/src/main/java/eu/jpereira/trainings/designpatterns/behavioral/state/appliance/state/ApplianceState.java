@@ -17,9 +17,41 @@ package eu.jpereira.trainings.designpatterns.behavioral.state.appliance.state;
 
 /**
  * @author jpereira
- *
+ * 
  */
 public enum ApplianceState {
-	OFF, ON, STOPPED, STARTED
+	OFF {
+		public ApplianceStateBehavior getStateBehavior() {
+			return new OffState();
+		}
+	},
+	ON {
+		public ApplianceStateBehavior getStateBehavior() {
+			return new OnState();
+		}
+	},
+	STOPPED {
+		public ApplianceStateBehavior getStateBehavior() {
+			return new StoppedState();
+		}
+	},
+	STARTED {
+		public ApplianceStateBehavior getStateBehavior() {
+			return new StartedState();
+		}
+	},
+	UNKNOW {
+		public ApplianceStateBehavior getStateBehavior() {
+			return new UnknowState();
+		}
+	};
+
+	/**
+	 * Default
+	 * @return
+	 */
+	public ApplianceStateBehavior getStateBehavior() {
+		return UNKNOW.getStateBehavior();
+	}
 
 }

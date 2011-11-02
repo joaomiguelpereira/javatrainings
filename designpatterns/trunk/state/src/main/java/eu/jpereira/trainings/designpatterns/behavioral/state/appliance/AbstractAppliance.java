@@ -16,6 +16,7 @@
 package eu.jpereira.trainings.designpatterns.behavioral.state.appliance;
 
 import eu.jpereira.trainings.designpatterns.behavioral.state.appliance.state.ApplianceState;
+import eu.jpereira.trainings.designpatterns.behavioral.state.appliance.state.ApplianceStateBehavior;
 
 
 /**
@@ -24,10 +25,14 @@ import eu.jpereira.trainings.designpatterns.behavioral.state.appliance.state.App
  */
 public abstract class AbstractAppliance implements Appliance {
 
-	protected ApplianceState applianceState = null;
+	protected ApplianceStateBehavior applianceStateBehavior = null;
 	protected String ipAddress;
 	protected String macAddress;
 
+	
+	public AbstractAppliance(ApplianceState initialState) {
+		this.applianceStateBehavior = initialState.getStateBehavior();
+	}
 	/*
 	 * (non-Javadoc)
 	 * 
@@ -74,7 +79,7 @@ public abstract class AbstractAppliance implements Appliance {
 
 	@Override
 	public ApplianceState getState() {
-		return this.applianceState;
+		return this.applianceStateBehavior.getState();
 	}
 	
 	
