@@ -1,0 +1,82 @@
+/**
+ * Copyright 2011 Joao Miguel Pereira
+ *
+ *  Licensed under the Apache License, Version 2.0 (the "License");
+ *  you may not use this file except in compliance with the License.
+ *  You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ *  Unless required by applicable law or agreed to in writing, software
+ *  distributed under the License is distributed on an "AS IS" BASIS,
+ *  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ *  See the License for the specific language governing permissions and
+ *  limitations under the License.
+ */
+package eu.jpereira.trainings.designpatterns.behavioral.visitor.mapper;
+
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.assertTrue;
+
+import org.junit.Test;
+
+import eu.jpereira.trainings.designpatterns.behavioral.visitor.event.Alarm;
+import eu.jpereira.trainings.designpatterns.behavioral.visitor.event.EventData;
+import eu.jpereira.trainings.designpatterns.behavioral.visitor.event.statechange.StateChangeEvent;
+import eu.jpereira.trainings.designpatterns.behavioral.visitor.fakes.FakeAlarmMapper;
+import eu.jpereira.trainings.designpatterns.behavioral.visitor.fakes.FakeStateChangeMapper;
+import eu.jpereira.trainings.designpatterns.behavioral.visitor.mapper.ApplianceEventMapper;
+import eu.jpereira.trainings.designpatterns.behavioral.visitor.mapper.MapperChain;
+
+/**
+ * @author jpereira
+ * 
+ */
+public class EventMapperTest extends AbstractMapperTest{
+
+	@Test
+	public void testAlarm() {
+
+		// Create a new MapperChain
+		MapperChain chain = new MapperChain();
+
+		chain.addToChain(new ApplianceEventMapper(createApplianceDAO()));
+		chain.addToChain(new FakeStateChangeMapper());
+		chain.addToChain(new FakeAlarmMapper());
+
+		// create dummy EventData
+		EventData eventData = createAlarmEventData();
+
+		chain.doMap(eventData);
+		assertNotNull(eventData);
+		assertNotNull(eventData.getEvent().getSourceAppliance());
+		assertEquals("12.12.12.12", eventData.getEvent().getSourceAppliance().getIpAddress());
+		assertTrue(eventData.getEvent() instanceof Alarm);
+	}
+
+	
+	@Test
+	public void testStateChange() {
+
+		// Create a new MapperChain
+		MapperChain chain = new MapperChain();
+
+		chain.addToChain(new ApplianceEventMapper(createApplianceDAO()));
+		chain.addToChain(new FakeStateChangeMapper());
+		chain.addToChain(new FakeAlarmMapper());
+
+		// create dummy EventData
+		EventData eventData = createStateChangeEventData();
+
+		chain.doMap(eventData);
+		assertNotNull(eventData);
+		assertNotNull(eventData.getEvent().getSourceAppliance());
+		assertEquals("12.12.12.12", eventData.getEvent().getSourceAppliance().getIpAddress());
+
+		assertTrue(eventData.getEvent() instanceof StateChangeEvent);
+	}
+	
+
+	
+}
