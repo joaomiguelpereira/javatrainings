@@ -18,8 +18,18 @@ package eu.jpereira.trainings.designpatterns.behavioral.state.appliance.state;
 /**
  * @author jpereira
  * 
+ * TODO Exercise: Complete the steps in this file
  */
 public enum ApplianceState {
+	
+	
+	//TODO: Comment the following definitions 
+	OFF, ON, STOPPED, STARTED, UNKNOW;
+	
+	//TODO: Uncomment the following block of code
+	/*
+	
+	
 	OFF {
 		public ApplianceStateBehavior getStateBehavior() {
 			return new OffState();
@@ -45,13 +55,13 @@ public enum ApplianceState {
 			return new UnknowState();
 		}
 	};
-
+   */
 	/**
 	 * Default
 	 * @return
 	 */
 	public ApplianceStateBehavior getStateBehavior() {
-		return UNKNOW.getStateBehavior();
+		return null;
 	}
 
 }

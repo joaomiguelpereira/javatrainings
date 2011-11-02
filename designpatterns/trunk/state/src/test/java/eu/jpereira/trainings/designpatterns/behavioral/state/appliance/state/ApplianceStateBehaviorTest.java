@@ -23,7 +23,16 @@ import eu.jpereira.trainings.designpatterns.behavioral.state.appliance.Toaster;
 
 import static org.junit.Assert.*;
 /**
- * @author windows
+ * @author jpereira
+ * 
+ * TODO Exercise: 
+ *  - Go to {@link eu.jpereira.trainings.designpatterns.behavioral.state.appliance.state} package and analyze it
+ *  - Go to {@link ApplianceState} and follow the steps described in the file
+ *  - go to {@link Toaster}, which is the one we're testing, find the TODOs in that file and follow them
+ *  - Go to {@link OffState}, find the TODOs in that file and follow them
+ *  - Go to {@link OnState}, find the TODOs in that file and follow them
+ *  - Gor to {@link StartedState}, find the TODOs in that file and follow them 
+ *  
  *
  */
 public class ApplianceStateBehaviorTest {

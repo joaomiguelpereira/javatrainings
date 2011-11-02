@@ -16,7 +16,9 @@
 package eu.jpereira.trainings.designpatterns.behavioral.state.appliance.state;
 
 /**
- * @author windows
+ * @author jpereira
+ * 
+ * TODO: Find the TODOs in this file and complete them
  *
  */
 public class OffState implements ApplianceStateBehavior {
@@ -36,8 +38,10 @@ public class OffState implements ApplianceStateBehavior {
 	@Override
 	public ApplianceStateBehavior start() {
 		
-		//Do notjing, can't go to started stated when in ogg
-		return this;
+		//Do nothing, can't go to started when off. Must return the same state
+		//TODO: Return a reference to this object
+		return null;
+		
 		
 	}
 
@@ -46,8 +50,9 @@ public class OffState implements ApplianceStateBehavior {
 	 */
 	@Override
 	public ApplianceStateBehavior stop() {
-		//Do nothing. Can't go to stopped stated when OFF
-		return this;
+		//Do nothing. Can't go from OFF to STOPPED
+		//TODO: Return a reference to this object
+		return null;
 	}
 
 	/* (non-Javadoc)
@@ -55,9 +60,10 @@ public class OffState implements ApplianceStateBehavior {
 	 */
 	@Override
 	public ApplianceStateBehavior turnOn() {
-		//Do complex logic
-		//Return new state
-		return ApplianceState.ON.getStateBehavior();
+		//Can go from OFF state (this) to ON state
+		//TODO: Return the behavior for ON .Example: return ApplianceState.ON.getStateBehavior();
+		
+		return null;
 	}
 
 	/* (non-Javadoc)

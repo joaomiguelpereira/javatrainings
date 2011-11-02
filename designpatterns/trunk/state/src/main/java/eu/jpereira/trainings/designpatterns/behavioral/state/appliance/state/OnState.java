@@ -16,8 +16,9 @@
 package eu.jpereira.trainings.designpatterns.behavioral.state.appliance.state;
 
 /**
- * @author windows
+ * @author jpereira
  *
+ *TODO: Find TODOs in this file and complete them
  */
 public class OnState implements ApplianceStateBehavior {
 
@@ -26,8 +27,8 @@ public class OnState implements ApplianceStateBehavior {
 	 */
 	@Override
 	public ApplianceState getState() {
-		
-		return ApplianceState.ON;
+		return null;
+		//TODO: return the correnponding state enum. This represents the ON State, so return ApplianceState.ON;
 	}
 
 	/* (non-Javadoc)
@@ -35,8 +36,9 @@ public class OnState implements ApplianceStateBehavior {
 	 */
 	@Override
 	public ApplianceStateBehavior start() {
-	
-		return ApplianceState.STARTED.getStateBehavior();
+		//TODO: return the STARTED Behavior ApplianceState.STARTED.getStateBehavior()
+		return null;
+		
 	}
 
 	/* (non-Javadoc)
