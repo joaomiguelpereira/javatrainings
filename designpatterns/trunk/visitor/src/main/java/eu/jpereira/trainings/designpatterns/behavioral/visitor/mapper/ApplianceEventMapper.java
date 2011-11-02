@@ -20,6 +20,7 @@ import eu.jpereira.trainings.designpatterns.behavioral.visitor.appliance.dao.App
 import eu.jpereira.trainings.designpatterns.behavioral.visitor.event.ApplianceEvent;
 import eu.jpereira.trainings.designpatterns.behavioral.visitor.event.EventData;
 import eu.jpereira.trainings.designpatterns.behavioral.visitor.event.EventType;
+import eu.jpereira.trainings.designpatterns.behavioral.visitor.event.filtering.EventFilter;
 
 /**
  * This mapper just instantiate an {@link ApplianceEvent} with the correct
@@ -64,6 +65,12 @@ public class ApplianceEventMapper extends AbstractEventMapper {
 				@Override
 				public EventType getType() {
 					return EventType.EVENT;
+				}
+
+				@Override
+				public void runFilter(EventFilter filter) {
+					// TODO Auto-generated method stub
+					
 				}
 				
 			});

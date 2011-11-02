@@ -16,6 +16,7 @@
 package eu.jpereira.trainings.designpatterns.behavioral.visitor.event;
 
 import eu.jpereira.trainings.designpatterns.behavioral.visito.appliance.Appliance;
+import eu.jpereira.trainings.designpatterns.behavioral.visitor.event.filtering.EventFilter;
 
 /**
  * @author jpereira
@@ -24,7 +25,7 @@ import eu.jpereira.trainings.designpatterns.behavioral.visito.appliance.Applianc
 public abstract class Alarm extends ApplianceEvent {
 
 	private String additionalInfo;
-
+	
 	/**
 	 * @param sourceAppliance
 	 */
@@ -50,6 +51,14 @@ public abstract class Alarm extends ApplianceEvent {
 	public EventType getType() {
 		return EventType.ALARM;
 	}
+
+	@Override
+	public void runFilter(EventFilter filter) {
+		filter.filter(this);
+		
+	}
+	
+	
 	
 	
 

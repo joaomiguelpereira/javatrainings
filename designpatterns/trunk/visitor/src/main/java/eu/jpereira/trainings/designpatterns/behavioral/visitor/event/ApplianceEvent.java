@@ -16,13 +16,14 @@
 package eu.jpereira.trainings.designpatterns.behavioral.visitor.event;
 
 import eu.jpereira.trainings.designpatterns.behavioral.visito.appliance.Appliance;
+import eu.jpereira.trainings.designpatterns.behavioral.visitor.event.filtering.Filterable;
 
 /**
  * Defines the interface for represent event sent from appliances
  * @author jpereira
  *
  */
-public abstract class ApplianceEvent {
+public abstract class ApplianceEvent implements Filterable {
 	
 	
 	private Appliance sourceAppliance;

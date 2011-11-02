@@ -17,6 +17,7 @@ package eu.jpereira.trainings.designpatterns.behavioral.visitor.event.alarm;
 
 import eu.jpereira.trainings.designpatterns.behavioral.visito.appliance.Appliance;
 import eu.jpereira.trainings.designpatterns.behavioral.visitor.event.Alarm;
+import eu.jpereira.trainings.designpatterns.behavioral.visitor.event.filtering.EventFilter;
 
 /**
  * @author jpereira
@@ -24,6 +25,7 @@ import eu.jpereira.trainings.designpatterns.behavioral.visitor.event.Alarm;
  */
 public class HumidityAlarm extends Alarm {
 
+	private Float humidityValue;
 	/**
 	 * @param sourceAppliance
 	 */
@@ -31,5 +33,18 @@ public class HumidityAlarm extends Alarm {
 		super(sourceAppliance);
 
 	}
+	/**
+	 * @return the humidityValue
+	 */
+	public Float getHumidityValue() {
+		return humidityValue;
+	}
+	/**
+	 * @param humidityValue the humidityValue to set
+	 */
+	public void setHumidityValue(Float humidityValue) {
+		this.humidityValue = humidityValue;
+	}
+	
 
 }

@@ -20,9 +20,10 @@ import eu.jpereira.trainings.designpatterns.behavioral.visitor.event.Alarm;
 
 /**
  * @author jpereira
- *
+ * 
  */
 public class TemperatureAlarm extends Alarm {
+	private Long temperatureValue;
 
 	/**
 	 * @param sourceAppliance
@@ -30,5 +31,22 @@ public class TemperatureAlarm extends Alarm {
 	public TemperatureAlarm(Appliance sourceAppliance) {
 		super(sourceAppliance);
 	}
+
+	/**
+	 * @return the temperatureValue
+	 */
+	public Long getTemperatureValue() {
+		return temperatureValue;
+	}
+
+	/**
+	 * @param temperatureValue
+	 *            the temperatureValue to set
+	 */
+	public void setTemperatureValue(Long temperatureValue) {
+		this.temperatureValue = temperatureValue;
+	}
+
+
 
 }

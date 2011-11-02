@@ -15,21 +15,16 @@
  */
 package eu.jpereira.trainings.designpatterns.behavioral.visitor.alarming;
 
-import javax.swing.plaf.basic.BasicInternalFrameTitlePane.MoveAction;
+import static org.junit.Assert.assertEquals;
+import static org.mockito.Mockito.mock;
 
 import org.junit.Test;
 
 import eu.jpereira.trainings.designpatterns.behavioral.visito.appliance.Appliance;
-import eu.jpereira.trainings.designpatterns.behavioral.visitor.event.Alarm;
-import eu.jpereira.trainings.designpatterns.behavioral.visitor.event.ApplianceEvent;
 import eu.jpereira.trainings.designpatterns.behavioral.visitor.event.alarm.HumidityAlarm;
 import eu.jpereira.trainings.designpatterns.behavioral.visitor.event.alarm.LowBateryAlarm;
 import eu.jpereira.trainings.designpatterns.behavioral.visitor.event.alarm.TemperatureAlarm;
 import eu.jpereira.trainings.designpatterns.behavioral.visitor.event.statechange.StateChangeEvent;
-
-
-import static org.mockito.Mockito.*;
-import static org.junit.Assert.*;
 /**
  * @author jpereira
  *

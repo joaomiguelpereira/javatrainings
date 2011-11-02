@@ -18,6 +18,7 @@ package eu.jpereira.trainings.designpatterns.behavioral.visitor.event.statechang
 import eu.jpereira.trainings.designpatterns.behavioral.visito.appliance.Appliance;
 import eu.jpereira.trainings.designpatterns.behavioral.visitor.event.ApplianceEvent;
 import eu.jpereira.trainings.designpatterns.behavioral.visitor.event.EventType;
+import eu.jpereira.trainings.designpatterns.behavioral.visitor.event.filtering.EventFilter;
 
 /**
  * @author jpereira
@@ -39,6 +40,15 @@ public class StateChangeEvent extends ApplianceEvent {
 	@Override
 	public EventType getType() {
 		return  EventType.STATE_CHANGE;
+	}
+
+	/* (non-Javadoc)
+	 * @see eu.jpereira.trainings.designpatterns.behavioral.visitor.event.filtering.Filterable#runFilter(eu.jpereira.trainings.designpatterns.behavioral.visitor.event.filtering.EventFilter)
+	 */
+	@Override
+	public void runFilter(EventFilter filter) {
+		filter.filter(this);
+		
 	}
 
 	

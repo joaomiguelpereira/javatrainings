@@ -21,6 +21,7 @@ import java.util.LinkedList;
 import eu.jpereira.trainings.designpatterns.behavioral.visitor.event.Alarm;
 import eu.jpereira.trainings.designpatterns.behavioral.visitor.event.ApplianceEvent;
 import eu.jpereira.trainings.designpatterns.behavioral.visitor.event.EventType;
+import eu.jpereira.trainings.designpatterns.behavioral.visitor.event.filtering.EventFilter;
 import eu.jpereira.trainings.designpatterns.behavioral.visitor.observers.ApplianceEventObserver;
 
 /**
@@ -49,17 +50,9 @@ public class AlarmMemoryStore implements ApplianceEventObserver {
 		// Keep alarms only
 		if (EventType.ALARM.asAlarm(event) != null) {
 			this.alarms.add(EventType.ALARM.asAlarm(event));
-			keepThreshold();
+
 		}
 
-	}
-
-	/**
-	 * Keet the threshold
-	 */
-	private void keepThreshold() {
-		// TODO Auto-generated method stub
-		
 	}
 
 	/**
@@ -67,6 +60,17 @@ public class AlarmMemoryStore implements ApplianceEventObserver {
 	 */
 	public Object getAlarmCount() {
 		return this.alarms.size();
+	}
+
+	/**
+	 * @param filter
+	 */
+	public void filter(EventFilter filter) {
+		// go to each alarm and pass the filter
+		for (Alarm alarm : this.alarms) {
+			alarm.runFilter(filter);
+		}
+
 	}
 
 }
