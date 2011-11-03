@@ -17,7 +17,6 @@ package eu.jpereira.trainings.designpatterns.behavioral.visitor.event.alarm;
 
 import eu.jpereira.trainings.designpatterns.behavioral.visito.appliance.Appliance;
 import eu.jpereira.trainings.designpatterns.behavioral.visitor.event.Alarm;
-import eu.jpereira.trainings.designpatterns.behavioral.visitor.event.filtering.EventFilter;
 
 /**
  * @author jpereira
