@@ -2,7 +2,7 @@
 
 <wiki:toc max_depth="3" />
 
-*Short Link to this wiki page*: - http://bit.ly/jbestpractices
+*Short Link to this wiki page*: - http://bit.ly/jeetrainings
 
 *Google Group*: - http://groups.google.com/group/jbestpractices_te
 
