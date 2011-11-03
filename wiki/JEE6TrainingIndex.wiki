@@ -1,13 +1,68 @@
-#summary One-sentence summary of this page.
+= Java Enterprise Edition Training=
 
-= Introduction =
+<wiki:toc max_depth="3" />
 
-Add your content here.
+*Short Link to this wiki page*: - http://bit.ly/jbestpractices
+
+*Google Group*: - http://groups.google.com/group/jbestpractices_te
 
 
-= Details =
 
-Add your content here.  Format your content with:
-  * Text in *bold* or _italic_
-  * Headings, paragraphs, and lists
-  * Automatic links to other wiki pages
+
+
+== Design Patterns ==
+ * Introduction to Design Patterns: : http://www.box.net/shared/7k80y4h3he3d7zqs9tbz
+ * Selecting Design Patterns: http://www.box.net/shared/0gc9ib5tjbjx5nzm681m
+
+=== Creational Design Patterns ===
+ * Creational Design Patterns Slides - http://www.box.net/shared/qjh4g3vmsxlg5ppt5byz
+
+==== Creational Design Patterns Exercises ====
+ * Factory Method - http://www.box.net/shared/4aat3f93gmlxl95rrn0o
+ * Abstract Factory - http://www.box.net/shared/jyde5qmuri5uoel6bphi
+ * Builder - http://www.box.net/shared/s9khlsr5lzdmb9apsqr4
+ * Prototype - http://www.box.net/shared/zv664txv1nh24yrsd6gl
+ * Singleton - http://www.box.net/shared/vj7aqf0jq95ng2n30pvq
+ 
+=== Structural Design Patterns===
+ 
+ * Structural Design Patterns Slides - http://www.box.net/shared/aunqn19la9det7947qaq
+
+==== Structural Design Patterns Exercises ====
+ * Adapter - http://www.box.net/shared/5to5v2cje0jriz5h67nn
+ * Bridge - http://www.box.net/shared/huo4led77kq47zpujsfp
+ * Composite - http://www.box.net/shared/x7qatn12101ycj9u84sx
+ * Decorator - http://www.box.net/shared/7ocyk3na5qr8a2bri28s
+ * Façade - http://www.box.net/shared/skpslfgj4pnrsxtodof7
+ * Flyweight - http://www.box.net/shared/xhap07zqqoib41ezyfrn
+ * Proxy - http://www.box.net/shared/286vurin1gq09pm9g8pq
+
+
+ 
+=== Behavioral Design Patterns===
+ 
+ * Behavioral Design Patterns Slides  - http://www.box.net/shared/rzm2d61nlkhp2q96cz20
+
+==== Behavioral Design Patterns Exercises ====
+ * Chain of Responsibility - http://www.box.net/shared/x0qmaif4cx75zy9tdko5
+ * Command - http://www.box.net/shared/x5lfhxfqj6ef386ekejl
+ * Interpreter - See https://github.com/sirthias/parboiled/wiki, http://www.antlr.org/, http://javacc.java.net/ and http://download.oracle.com/javase/6/docs/api/java/util/regex/package-summary.html
+ * Iterator - http://www.box.net/shared/brtmyslci5kennsdrg5i
+ * Mediator - http://www.box.net/shared/5axcidsxh50r0d04td0x
+ * Memento - No exercise
+ * Observer - http://www.box.net/shared/hayo18by3auskskklfoa
+ * State - http://www.box.net/shared/yp5dkpkpzby7px3rfvac
+ * Strategy - http://www.box.net/shared/5abxmah0xz2i5ud70517
+ * Template Method - No exercise
+ * Visitor - http://www.box.net/shared/n83az800lhteuejho9t9
+
+
+
+== Development tools ==
+ * Eclipse - http://www.eclipse.org/
+ * Maven (Use version 2) - http://maven.apache.org/
+ * PMD - http://pmd.sourceforge.net/
+ * FindBugs - http://findbugs.sourceforge.net/
+ * Checkstyle - http://checkstyle.sourceforge.net/
+ * Junit - http://junit.sourceforge.net/
+ * Mockito - http://code.google.com/p/mockito/
