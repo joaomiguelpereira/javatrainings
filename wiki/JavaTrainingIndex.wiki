@@ -68,7 +68,7 @@
  
 === Behavioral Design Patterns===
  
- * Behavioral Design Patterns Slides Part 1 - http://www.box.net/shared/ararksztxbtpmvnfliby
+ * Behavioral Design Patterns Slides  - http://www.box.net/shared/rzm2d61nlkhp2q96cz20
 
 ==== Behavioral Design Patterns Exercises ====
  * Chain of Responsibility - http://www.box.net/shared/x0qmaif4cx75zy9tdko5
@@ -76,6 +76,13 @@
  * Interpreter - See https://github.com/sirthias/parboiled/wiki, http://www.antlr.org/, http://javacc.java.net/ and http://download.oracle.com/javase/6/docs/api/java/util/regex/package-summary.html
  * Iterator - http://www.box.net/shared/brtmyslci5kennsdrg5i
  * Mediator - http://www.box.net/shared/5axcidsxh50r0d04td0x
+ * Memento - No exercise
+ * Observer - http://www.box.net/shared/hayo18by3auskskklfoa
+ * State - http://www.box.net/shared/yp5dkpkpzby7px3rfvac
+ * Strategy - http://www.box.net/shared/5abxmah0xz2i5ud70517
+ * Template Method - No exercise
+ * Visitor - http://www.box.net/shared/n83az800lhteuejho9t9
+
 
 
 == Development tools ==
