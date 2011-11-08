@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	template="/WEB-INF/templates/default.xhtml">
+
+	<ui:define name="content">
+		<h1>Widtdraw Sample - Decorators</h1>
+		<p><h:link value="Back Home" outcome="/home" /></p>
+		<h:form id="account">
+			<table>
+				<tr colspan="2">
+					<td>
+						<label for="withdrawAmmount">Ammount: </label>
+					</td>
+					<td><h:inputText id="withdrawAmmount" value="#{accountManager.withdrawAmmount}"></h:inputText></td>
+				</tr>
+				<tr>
+					<td>Standard Account Balance</td>
+					
+					<td>
+						<h:outputText value="#{accountManager.stdAccount.balance}" style="font-weight:bold" />
+					</td>
+					<td>
+						<h:commandLink value="Withdraw"
+						action="#{accountManager.withdraw('Standard')}"></h:commandLink>
+					</td>
+					
+				</tr>
+
+				<tr>
+					<td>Student Account Balance</td>
+					<td><h:outputText
+						value="#{accountManager.studentAccount.balance}"
+						style="font-weight:bold" /></td>
+					<td><h:commandLink value="Withdraw"
+						action="#{accountManager.withdraw('Student')}"></h:commandLink></td>
+					
+				</tr>
+
+				<tr>
+					<td>Good Account Balance</td>
+					<td><h:outputText value="#{accountManager.goodAccount.balance}"
+						style="font-weight:bold" /></td>
+					<td><h:commandLink value="Withdraw"
+						action="#{accountManager.withdraw('Good')}"></h:commandLink></td>
+				</tr>
+
+			</table>
+		</h:form>
+
+	</ui:define>
+</ui:composition>
