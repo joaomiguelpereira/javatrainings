@@ -9,9 +9,9 @@
 == Contexts and Dependency Injection (JSR 299) ==
 
 === Exercices ===
-* Injection - http://www.box.net/shared/vlq4h44obpka032vpbgn
-* Producers - http://www.box.net/shared/ahmoeutuaqezaq1xe559
-* Interceptors - http://www.box.net/shared/7yo05eo36o8tziekhrzj
-* Stereotypes - http://www.box.net/shared/6dlokv66smovlmnvjxju
-* Decorators - http://www.box.net/shared/ithovpueh54v20f6i9hk
-* Events - http://www.box.net/shared/e3crn89qqf58hetsh98i
+ * Injection - http://www.box.net/shared/vlq4h44obpka032vpbgn
+ * Producers - http://www.box.net/shared/ahmoeutuaqezaq1xe559
+ * Interceptors - http://www.box.net/shared/7yo05eo36o8tziekhrzj
+ * Stereotypes - http://www.box.net/shared/6dlokv66smovlmnvjxju
+ * Decorators - http://www.box.net/shared/ithovpueh54v20f6i9hk
+ * Events - http://www.box.net/shared/e3crn89qqf58hetsh98i
