@@ -21,3 +21,6 @@
  * Stereotypes - http://www.box.net/shared/6dlokv66smovlmnvjxju
  * Decorators - http://www.box.net/shared/ithovpueh54v20f6i9hk
  * Events - http://www.box.net/shared/e3crn89qqf58hetsh98i
+
+=== EJB 3.1 ===
+ * Async EJB - http://www.box.net/shared/ek998ezbp3vf2eidgdcm
