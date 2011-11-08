@@ -6,9 +6,15 @@
 
 *Google Group*: - http://groups.google.com/group/jbestpractices_te
 
-== Contexts and Dependency Injection (JSR 299) ==
- * Slides - http://www.box.net/shared/041iekccbd9oho0oxyyj
-=== Exercices ===
+== Introduction ==
+ * JEE6 Core Concepts and Principles - http://www.box.net/shared/31vfchgzebn4xecmobtp
+ * Overview of Transactions - http://www.box.net/shared/64616svzyeodrak496yc
+ * Introduction to EJB 3.1 - http://www.box.net/shared/bskzco73oh5inb5rao1h
+
+ * Contexts and Dependency Injection (JSR299) - http://www.box.net/shared/041iekccbd9oho0oxyyj
+
+== Exercices ==
+=== JSR 299 ===
  * Injection - http://www.box.net/shared/vlq4h44obpka032vpbgn
  * Producers - http://www.box.net/shared/ahmoeutuaqezaq1xe559
  * Interceptors - http://www.box.net/shared/7yo05eo36o8tziekhrzj
