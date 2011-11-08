@@ -7,7 +7,7 @@
 *Google Group*: - http://groups.google.com/group/jbestpractices_te
 
 == Contexts and Dependency Injection (JSR 299) ==
-
+ * Slides - http://www.box.net/shared/041iekccbd9oho0oxyyj
 === Exercices ===
  * Injection - http://www.box.net/shared/vlq4h44obpka032vpbgn
  * Producers - http://www.box.net/shared/ahmoeutuaqezaq1xe559
