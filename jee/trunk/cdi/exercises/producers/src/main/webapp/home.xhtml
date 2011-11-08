@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	template="/WEB-INF/templates/default.xhtml">
+	<ui:define name="content">
+		<h1>Producers Exercise</h1>
+		<p></p>
+		<h:form id="lottery">
+		<table>
+		<!-- Start of Block 1 -->
+		
+			<tr>
+				<td>
+					<h:commandLink value="Get EuroMillion Result: " action="#{lotteryManager.euroMillion.generateResult}"></h:commandLink>
+				</td>
+				<td>
+					<strong><h:outputText value="#{lotteryManager.euroMillion.result}"></h:outputText></strong>
+				</td>
+			</tr>
+		
+		<!-- End of Block 1 -->
+		
+		<!-- Start of Block 2 -->
+		
+			
+			<tr>
+				<td>
+					<h:commandLink value="Get Joker Result:" action="#{lotteryManager.joker.generateResult}"></h:commandLink>
+				</td>
+				<td>
+					<strong><h:outputText value="#{lotteryManager.joker.result}"></h:outputText></strong>
+				</td>
+			</tr>
+			
+	
+		<!-- End of Block 2 -->
+		<!-- Start of Block 3 -->
+		
+			 
+			<tr>
+				<td>
+					<h:commandLink value="Get String Result:" action="#{lotteryManager.stringKey.generateResult}"></h:commandLink>
+				</td>
+				<td>
+					<strong><h:outputText value="#{lotteryManager.stringKey.result}"></h:outputText></strong>
+				</td>
+			</tr>
+		
+		<!-- End of Block 3 -->
+		</table>
+		 
+		</h:form>
+		
+	</ui:define>
+</ui:composition>
