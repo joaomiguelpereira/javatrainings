@@ -9,8 +9,9 @@
 == Introduction ==
  * JEE6 Core Concepts and Principles - http://www.box.net/shared/31vfchgzebn4xecmobtp
  * Overview of Transactions - http://www.box.net/shared/64616svzyeodrak496yc
- * Introduction to EJB 3.1 - http://www.box.net/shared/bskzco73oh5inb5rao1h
  * Contexts and Dependency Injection (JSR299) - http://www.box.net/shared/041iekccbd9oho0oxyyj
+ * Introduction to EJB 3.1 - http://www.box.net/shared/bskzco73oh5inb5rao1h
+ * JEE6 Testing - http://www.box.net/shared/1p0ivbtr7s3ebrcarmne
 
 == Exercices ==
 === JSR 299 ===
