@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	template="/WEB-INF/templates/default.xhtml">
+
+	<ui:define name="content">
+		<h1>New Author</h1>
+		<h:link value="List Authors" outcome="/authors/list" />
+		<h:form id="newAuthor">
+			<table>
+				<tr>
+					<td><label for="firstName">First name</label></td>
+					<td>
+					<h:inputText id="firstName" value="#{authorBean.firstName}"></h:inputText>
+					
+					<h:message for="firstName" errorClass="invalid"/>
+					</td>
+				</tr>
+				<tr>
+					<td><label for="lastName">Last name</label></td>
+					<td><h:inputText id="lastName" value="#{authorBean.lastName}"/>
+					<h:message for="lastName" errorClass="invalid"/>
+					</td>
+				</tr>
+				
+
+				<tr>
+					<td><label for="country">Country</label></td>
+					<td><h:inputText id="country" value="#{authorBean.country}"/>
+					<h:message for="country" errorClass="invalid"/>
+					</td>
+				</tr>
+				<tr>
+					<td><label for="region">Region</label></td>
+					<td><h:inputText id="region" value="#{authorBean.region}"/>
+					<h:message for="region" errorClass="invalid"/>
+					</td>
+				</tr>
+				<tr>
+					<td><h:commandLink id="save" action="#{authorBean.save()}" value="Save Author"></h:commandLink></td>
+					<td><h:link outcome="/authors/list" value="cancel"/></td>
+				</tr>
+			</table>
+		</h:form>
+	</ui:define>
+</ui:composition>
