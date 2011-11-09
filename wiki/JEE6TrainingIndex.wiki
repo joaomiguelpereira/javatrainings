@@ -23,4 +23,5 @@
  * Events - http://www.box.net/shared/e3crn89qqf58hetsh98i
 
 === EJB 3.1 ===
+ * Singleton EJB - http://www.box.net/shared/71eayngz9rm1k0v4s6x4
  * Async EJB - http://www.box.net/shared/ek998ezbp3vf2eidgdcm
