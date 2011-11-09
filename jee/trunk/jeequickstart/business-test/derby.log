@@ -1,0 +1,8 @@
+----------------------------------------------------------------
+2011-11-06 22:07:05.154 GMT:
+Booting Derby version The Apache Software Foundation - Apache Derby - 10.6.2.1 - (999685): instance a816c00e-0133-7aeb-ab67-000003b59ea8 
+on database directory C:\Documents and Settings\windows\Local Settings\Temp\gfembed6529443449509557053tmp\lib\databases\quickstart  with class loader sun.misc.Launcher$AppClassLoader@35ce36 
+Loaded from file:/c:/mvn_repo/org/glassfish/extras/glassfish-embedded-all/3.1/glassfish-embedded-all-3.1.jar
+java.vendor=Sun Microsystems Inc.
+java.runtime.version=1.6.0_27-b07
+Database Class Loader started - derby.database.classpath=''
