@@ -1,13 +1,15 @@
 #summary One-sentence summary of this page.
 
-= Introduction =
+= Java Platform, Entreprise Edition 6=
 
-Add your content here.
+<wiki:toc max_depth="3" />
 
+== Enterprise Application Architectures ==
+  * Presentation - http://www.box.com/s/230lha4n9boki4ocmib5
 
-= Details =
+== Architecture ==
+  * Architecture Presentation- http://www.box.com/s/tvc4efjhshnlm11atvkp
+  * Core Concepts and Principles presentation - http://www.box.com/s/7j07r5kb9bgs6oe46mjt
 
-Add your content here.  Format your content with:
-  * Text in *bold* or _italic_
-  * Headings, paragraphs, and lists
-  * Automatic links to other wiki pages
+== EJB Overview ==
+  * Presentation - http://www.box.com/s/gnq5dqaua4zbli9d91k3
