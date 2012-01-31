@@ -1,4 +1,4 @@
-#summary One-sentence summary of this page.
+#Full course
 
 = Java Platform, Entreprise Edition 6=
 
@@ -13,3 +13,6 @@
 
 == EJB Overview ==
   * Presentation - http://www.box.com/s/gnq5dqaua4zbli9d91k3
+
+== Implementing EJB 3.1 Session Beans ==
+  * Presentation - http://www.box.com/s/ggekaasia0a4o9frilih
