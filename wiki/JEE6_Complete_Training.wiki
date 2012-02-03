@@ -1,4 +1,4 @@
-#Full course
+#JEE6 Course
 
 = Java Platform, Entreprise Edition 6=
 
@@ -16,3 +16,12 @@
 
 == Implementing EJB 3.1 Session Beans ==
   * Presentation - http://www.box.com/s/ggekaasia0a4o9frilih
+
+== Java Persistence API ==
+  * Presentation - http://www.box.com/s/tib04bnxb3r53eediqdj
+
+== Transactions ==
+  * Presentation - http://www.box.com/s/prrm11pe7m1vfs955zdq
+
+== Asynchronous Java EE Applications and Messaging ==
+  * Presentation - http://www.box.com/s/1cxki8xy8oayq72pohmd
