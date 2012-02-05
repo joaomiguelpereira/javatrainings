@@ -2,6 +2,8 @@
 
 = Java Platform, Entreprise Edition 6=
 
+Complete this survey: https://docs.google.com/spreadsheet/viewform?formkey=dFNEeFNIYTAzbmFNWV9aRDdCME9LTEE6MQ
+
 <wiki:toc max_depth="3" />
 
 == Enterprise Application Architectures ==
