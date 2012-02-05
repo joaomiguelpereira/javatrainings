@@ -134,7 +134,8 @@
 					<groupId>org.jboss.as.plugins</groupId>
 					<artifactId>jboss-as-maven-plugin</artifactId>
 
-					<version>7.0.0.Final</version>
+									<version>7.1.0.CR1b</version>
+
 					<configuration>
 						<hostname>localhost</hostname>
 						<port>9999</port>
