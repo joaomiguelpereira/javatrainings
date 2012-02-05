@@ -28,6 +28,10 @@ Complete this survey: https://docs.google.com/spreadsheet/viewform?formkey=dFNEe
 
 == Implementing EJB 3.1 Session Beans ==
   * Presentation - http://www.box.com/s/ggekaasia0a4o9frilih
+  * Exercises:
+    * 06 - Singleton EJB - http://www.box.com/s/jogld7yf9o6nlov8rrny
+    * 07 - Async EJB - http://www.box.com/s/1xhog3dy5ykbgnxlcsgd
+   
 
 == Java Persistence API ==
   * Presentation - http://www.box.com/s/tib04bnxb3r53eediqdj
