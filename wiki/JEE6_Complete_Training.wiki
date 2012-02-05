@@ -28,3 +28,7 @@
 
 == Asynchronous Java EE Applications and Messaging ==
   * Presentation - http://www.box.com/s/1cxki8xy8oayq72pohmd
+
+== Windows VM ==
+  * MySql user/pass: root/jee6
+  * JBoss Console: admin/123123
