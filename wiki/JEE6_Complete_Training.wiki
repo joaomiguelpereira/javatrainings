@@ -1,4 +1,4 @@
-#JEE6 Course
+#JEE6 Course (Short Link: http://bit.ly/jee601)
 
 = Java Platform, Entreprise Edition 6=
 
