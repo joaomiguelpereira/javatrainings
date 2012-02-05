@@ -5,7 +5,7 @@
 
 	<groupId>eu.jpereira.training.jee6.cdi</groupId>
 	<artifactId>cdi</artifactId>
-	<version>1.0.0-SNAPSHOT</version>
+	<version>1.0.0-FINAL</version>
 	<packaging>pom</packaging>
 	<name>cdi</name>
 	<url>http://jpereira.eu</url>
