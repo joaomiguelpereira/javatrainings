@@ -15,9 +15,6 @@ Complete this survey: https://docs.google.com/spreadsheet/viewform?formkey=dFNEe
   * Architecture Presentation- http://www.box.com/s/tvc4efjhshnlm11atvkp
   * Core Concepts and Principles presentation - http://www.box.com/s/7j07r5kb9bgs6oe46mjt
 
-== EJB Overview ==
-  * Presentation - http://www.box.com/s/gnq5dqaua4zbli9d91k3
-
 == Contexts and Dependency Injection (JSR 299) == 
   * Presentation - http://www.box.com/s/hsjzf327kt4caqr34k62
   * Exercises:
@@ -27,6 +24,9 @@ Complete this survey: https://docs.google.com/spreadsheet/viewform?formkey=dFNEe
     * Stereotypes - http://www.box.com/s/e32dybke3ig08nctsct0
     * Decorators - http://www.box.com/s/khdc66al6gp6tfen1tz1
     * Events - http://www.box.com/s/1lbk4m6ucn095kvlamc5
+
+== EJB Overview ==
+  * Presentation - http://www.box.com/s/gnq5dqaua4zbli9d91k3
 
 == Implementing EJB 3.1 Session Beans ==
   * Presentation - http://www.box.com/s/ggekaasia0a4o9frilih
