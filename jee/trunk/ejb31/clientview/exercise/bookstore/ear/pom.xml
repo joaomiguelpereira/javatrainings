@@ -15,14 +15,7 @@
 		This module builds the EAR to deploy in JBoss
 	</description>
 
-	<properties>
-		<jboss.home>${env.JBOSS_HOME}</jboss.home>
-		<jboss.domain>default</jboss.domain>
-	</properties>
-
 	<dependencies>
-
-
 		<dependency>
 			<groupId>${project.groupId}</groupId>
 			<artifactId>ejb</artifactId>
@@ -39,15 +32,6 @@
 	</dependencies>
 	<build>
 		<plugins>
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-compiler-plugin</artifactId>
-				<version>2.3.2</version>
-				<configuration>
-					<source>1.6</source>
-					<target>1.6</target>
-				</configuration>
-			</plugin>
 			<!-- Configure EAR Plugin -->
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
@@ -59,7 +43,6 @@
 					<version>6</version>
 					<defaultLibBundleDir>lib</defaultLibBundleDir>
 					<displayName>${application.displayName}</displayName>
-					<finalName>${application.finalName}</finalName>
 
 					<!-- Specify the modules to include in the EAR -->
 					<modules>
@@ -81,20 +64,12 @@
 				</configuration>
 			</plugin>
 
-			<!-- Configure the JBoss AS Maven deploy plugin -->
 			<plugin>
-				<groupId>org.codehaus.mojo</groupId>
-				<artifactId>jboss-maven-plugin</artifactId>
-				<version>1.5.0</version>
-				<configuration>
-					<jbossHome>${jboss.home}</jbossHome>
-					<serverName>${jboss.domain}</serverName>
-					<fileNames>
-						<fileName>${project.build.directory}/${application.finalName}.ear</fileName>
-					</fileNames>
-				</configuration>
+				<groupId>org.jboss.as.plugins</groupId>
+				<artifactId>jboss-as-maven-plugin</artifactId>
+
 			</plugin>
+
 		</plugins>
 	</build>
-
 </project>
