@@ -8,7 +8,7 @@
 		<!-- You can force a non-default JPA provider using one of these declarations -->
 		<!-- <provider>org.hibernate.ejb.HibernatePersistence</provider> <provider>org.eclipse.persistence.jpa.PersistenceProvider</provider> -->
 		<!-- Use this data source name for JBoss AS -->
-		<jta-data-source>java:/DefaultDS</jta-data-source>
+		<jta-data-source>java:jboss/datasources/ExampleDS</jta-data-source>
 		<properties>
 			<!-- Properties for Hibernate (default provider for JBoss AS) -->
 			<property name="hibernate.hbm2ddl.auto" value="create-drop" />
