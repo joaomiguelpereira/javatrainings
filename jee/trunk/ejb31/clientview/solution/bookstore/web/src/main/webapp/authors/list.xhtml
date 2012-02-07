@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	template="/WEB-INF/templates/default.xhtml">
+
+	<ui:define name="content">
+		<h1>List all authors</h1>
+		<h:link value="Home" outcome="/home" />
+		<table>
+			<thead>
+				<tr>
+					<th>Name</th>
+					<th>Country</th>
+					<th>Region</th>
+					<th>Born Date</th>
+					<th>Death Date</th>
+				</tr>
+			</thead>
+			<ui:repeat value="#{authors.allAuthors}" var="author">
+				<tr>
+					<td>#{author.fullName}</td>
+					<td>#{author.country}</td>
+					<td>#{author.region}</td>
+					<td>#{author.bornDate}</td>
+					<td>#{author.deathDate}</td>
+				</tr>
+			</ui:repeat> 
+
+		</table>
+
+	</ui:define>
+
+</ui:composition>
