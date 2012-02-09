@@ -69,6 +69,6 @@ Complete this survey: https://docs.google.com/spreadsheet/viewform?formkey=dFNEe
 === JEE Testing ===
   * Presentation - http://www.box.com/s/ecn0sk13t4gbnm4oifx5
 
-== Windows VM ==
+== Windows/Ububtu VM ==
   * MySql user/pass: root/jee6
   * JBoss Console: admin/123123
