@@ -1,4 +1,4 @@
-package pt.training.jee6.bookstore.model;
+package eu.jpereira.trainings.jee.clientview.bookstore.model;
 
 import java.io.Serializable;
 import java.util.Date;
