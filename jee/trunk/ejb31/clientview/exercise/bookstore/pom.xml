@@ -6,7 +6,7 @@
 	<!-- Parent POM and Multi-module -->
 	<groupId>eu.jpereira.trainings.jee.clientview.bookstore</groupId>
 	<artifactId>bookstore</artifactId>
-	<version>1.0-FINAL</version>
+	<version>1.0-EXERCISE</version>
 	<packaging>pom</packaging>
 	<name>bookstore</name>
 
@@ -26,8 +26,8 @@
 
 		<hibernate.version>3.6.0.Final</hibernate.version>
 		<application.finalName>bookstore</application.finalName>
-		<application.displayName>bookstore-final</application.displayName>
-		<application.web.contextRoot>/bookstore-final</application.web.contextRoot>
+		<application.displayName>bookstore</application.displayName>
+		<application.web.contextRoot>/bookstore</application.web.contextRoot>
 	</properties>
 
 	<dependencyManagement>
