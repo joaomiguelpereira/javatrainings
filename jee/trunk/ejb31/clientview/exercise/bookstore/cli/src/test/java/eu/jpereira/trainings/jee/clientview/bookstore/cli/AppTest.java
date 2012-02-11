@@ -1,4 +1,4 @@
-package pt.training.jee6.bookstore;
+package eu.jpereira.trainings.jee.clientview.bookstore.cli;
 
 import junit.framework.Test;
 import junit.framework.TestCase;
