@@ -1,4 +1,4 @@
-package pt.training.jee6.bookstore.service.authors;
+package eu.jpereira.trainings.jee.clientview.bookstore.service.authors;
 
 import java.util.ArrayList;
 import java.util.Date;
@@ -6,7 +6,8 @@ import java.util.List;
 
 import javax.ejb.Stateless;
 
-import pt.training.jee6.bookstore.model.Author;
+import eu.jpereira.trainings.jee.clientview.bookstore.model.Author;
+
 
 @Stateless
 public class AuthorServiceBean implements AuthorService {

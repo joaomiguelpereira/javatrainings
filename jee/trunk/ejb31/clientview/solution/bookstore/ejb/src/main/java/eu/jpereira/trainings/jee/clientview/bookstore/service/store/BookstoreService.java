@@ -1,10 +1,11 @@
-package pt.training.jee6.bookstore.service.bookstore;
+package eu.jpereira.trainings.jee.clientview.bookstore.service.store;
 
 import java.util.List;
 
 import javax.ejb.Remote;
 
-import pt.training.jee6.bookstore.model.Author;
+import eu.jpereira.trainings.jee.clientview.bookstore.model.Author;
+
 
 @Remote
 public interface BookstoreService {

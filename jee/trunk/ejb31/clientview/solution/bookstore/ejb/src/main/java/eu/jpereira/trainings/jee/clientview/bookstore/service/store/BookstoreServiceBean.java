@@ -1,12 +1,13 @@
-package pt.training.jee6.bookstore.service.bookstore;
+package eu.jpereira.trainings.jee.clientview.bookstore.service.store;
 
 import java.util.List;
 
 import javax.ejb.EJB;
 import javax.ejb.Stateless;
 
-import pt.training.jee6.bookstore.model.Author;
-import pt.training.jee6.bookstore.service.authors.AuthorService;
+import eu.jpereira.trainings.jee.clientview.bookstore.model.Author;
+import eu.jpereira.trainings.jee.clientview.bookstore.service.authors.AuthorService;
+
 
 @Stateless
 public class BookstoreServiceBean implements BookstoreService {
