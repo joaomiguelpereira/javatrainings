@@ -3,8 +3,6 @@ package eu.jpereira.trainings.jee.clientview.bookstore.cli;
 import java.security.Security;
 import java.util.List;
 
-import javax.naming.NamingException;
-
 import org.jboss.sasl.JBossSaslProvider;
 
 import eu.jpereira.trainings.jee.clientview.bookstore.model.Author;
@@ -35,17 +33,17 @@ public class CliApp {
 		invokeStatelessBean();
 	}
 
+	
 	/**
-	 * Looks up a stateless bean and invokes on it
-	 * 
-	 * @throws NamingException
+	 * invoke the test EJB
+	 * @throws Exception
 	 */
 	private static void invokeStatelessBean() throws Exception {
 		// Let's lookup the remote stateless BookstoreService
 		BookstoreService booktoreService = ServiceLocator.instance
 				.getBookstoreService();
 
-		List<Author> authors = booktoreService.findAuthor("ssas");
+		List<Author> authors = booktoreService.findAuthor("Dummy");
 		for (Author author : authors) {
 			System.out.println(author.getFullName());
 		}
