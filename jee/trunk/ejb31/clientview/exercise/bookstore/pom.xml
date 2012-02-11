@@ -4,9 +4,9 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<!-- Parent POM and Multi-module -->
-	<groupId>pt.training.jee6.bookstore</groupId>
+	<groupId>eu.jpereira.trainings.jee.clientview.bookstore</groupId>
 	<artifactId>bookstore</artifactId>
-	<version>1.0-SNAPSHOT</version>
+	<version>1.0-FINAL</version>
 	<packaging>pom</packaging>
 	<name>bookstore</name>
 
@@ -26,8 +26,8 @@
 
 		<hibernate.version>3.6.0.Final</hibernate.version>
 		<application.finalName>bookstore</application.finalName>
-		<application.displayName>bookstore</application.displayName>
-		<application.web.contextRoot>/bookstore</application.web.contextRoot>
+		<application.displayName>bookstore-final</application.displayName>
+		<application.web.contextRoot>/bookstore-final</application.web.contextRoot>
 	</properties>
 
 	<dependencyManagement>
@@ -100,6 +100,14 @@
 				<artifactId>geronimo-validation_1.0_spec</artifactId>
 				<version>1.0-CR5</version>
 				<scope>provided</scope>
+			</dependency>
+
+			<dependency>
+				<groupId>org.jboss.spec</groupId>
+				<artifactId>jboss-javaee-web-6.0</artifactId>
+				<version>2.0.0.Final</version>
+				<type>pom</type>
+				<scope>import</scope>
 			</dependency>
 		</dependencies>
 	</dependencyManagement>
