@@ -1,4 +1,4 @@
-package pt.training.jee6.bookstore.cli;
+package eu.jpereira.trainings.jee.clientview.bookstore.cli;
 /**
  * Hello world!
  * 
