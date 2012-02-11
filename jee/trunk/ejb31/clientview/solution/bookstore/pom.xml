@@ -6,7 +6,7 @@
 	<!-- Parent POM and Multi-module -->
 	<groupId>eu.jpereira.trainings.jee.clientview.bookstore</groupId>
 	<artifactId>bookstore</artifactId>
-	<version>1.0-EXERCISE</version>
+	<version>1.0-FINAL</version>
 	<packaging>pom</packaging>
 	<name>bookstore</name>
 
