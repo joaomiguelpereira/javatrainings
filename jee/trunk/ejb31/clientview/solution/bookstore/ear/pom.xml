@@ -12,7 +12,7 @@
 	<packaging>ear</packaging>
 
 	<description>
-		This module builds the EAR to deploy in JBoss
+		This module is the EAR to deploy in JBoss
 	</description>
 
 	<dependencies>
@@ -43,6 +43,7 @@
 					<version>6</version>
 					<defaultLibBundleDir>lib</defaultLibBundleDir>
 					<displayName>${application.displayName}</displayName>
+					
 
 					<!-- Specify the modules to include in the EAR -->
 					<modules>
