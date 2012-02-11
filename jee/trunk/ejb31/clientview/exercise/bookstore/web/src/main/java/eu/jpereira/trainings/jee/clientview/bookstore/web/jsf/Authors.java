@@ -1,11 +1,12 @@
-package pt.training.jee6.bookstore.web.jsf;
+package eu.jpereira.trainings.jee.clientview.bookstore.web.jsf;
 
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 import javax.enterprise.inject.Model;
 
-import pt.training.jee6.bookstore.model.Author;
+import eu.jpereira.trainings.jee.clientview.bookstore.model.Author;
+
 
 /**
  * Authors JSF Managed beans
