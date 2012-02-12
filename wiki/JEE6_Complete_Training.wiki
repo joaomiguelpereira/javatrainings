@@ -32,6 +32,7 @@ Complete this survey: https://docs.google.com/spreadsheet/viewform?formkey=dFNEe
   * Presentation - http://www.box.com/s/ggekaasia0a4o9frilih
   * Exercises:
     * 01 - Local and Remote client view - http://www.box.com/s/u7l48gpk2nge12mbm6nn
+    * 02 - State Management - http://www.box.com/s/2t311czdxa4izbajos0h
     * 06 - Singleton EJB - http://www.box.com/s/jogld7yf9o6nlov8rrny
     * 07 - Async EJB - http://www.box.com/s/1xhog3dy5ykbgnxlcsgd
    
