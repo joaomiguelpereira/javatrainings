@@ -5,7 +5,7 @@ import javax.ejb.Stateless;
 
 
 @Stateless
-public class TimeoutCounterFacadeBean implements TimeoutCounterFacade {
+public class DefaultTimeoutCounterFacade implements TimeoutCounterFacade {
 
 	private @EJB
 	TimeoutCounter timeoutCounter;
