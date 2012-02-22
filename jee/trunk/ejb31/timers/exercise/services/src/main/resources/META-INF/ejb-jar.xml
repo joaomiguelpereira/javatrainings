@@ -1,0 +1,29 @@
+<ejb-jar xmlns="http://java.sun.com/xml/ns/javaee" version="3.1"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/ejb-jar_3_1.xsd">
+	<enterprise-beans>
+		<session>
+			<ejb-name>AuthorsReportingBean</ejb-name>
+			<local-bean/>
+			<ejb-class>eu.jpereira.trainings.jee.timers.AuthorsReportingBean</ejb-class>
+			<session-type>Stateless</session-type>
+			<timer>
+				<schedule>
+					
+					<minute>*/2</minute>
+					<hour>*</hour>
+
+				</schedule>
+				<timeout-method>
+					<method-name>runReport</method-name>
+				</timeout-method>
+				<persistent>false</persistent>
+				<info>Timer created with ejb deployment descriptor</info>
+			</timer>
+			
+		</session>
+
+	</enterprise-beans>
+	
+	
+</ejb-jar>
