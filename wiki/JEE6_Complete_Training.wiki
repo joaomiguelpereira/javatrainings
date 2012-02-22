@@ -35,6 +35,7 @@ Complete this survey: https://docs.google.com/spreadsheet/viewform?formkey=dFNEe
     * 02 - State Management - http://www.box.com/s/2t311czdxa4izbajos0h
     * 03 - Singleton EJB - http://www.box.com/s/jogld7yf9o6nlov8rrny
     * 04 - Async EJB - http://www.box.com/s/1xhog3dy5ykbgnxlcsgd
+    * 05 - Timer Service - http://www.box.com/s/jny18z71kef6glqtjcjn
    
 
 == Java Persistence API ==
