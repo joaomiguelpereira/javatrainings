@@ -1,16 +1,11 @@
 package eu.jpereira.trainings.jee.timers;
 
-import javax.ejb.EJB;
-import javax.ejb.Schedule;
 import javax.ejb.Stateless;
 import javax.ejb.Timer;
-import javax.interceptor.Interceptors;
-
-import eu.jpereira.trainings.jee.timers.framework.interceptors.MethodInvocationInterceptor;
 
 /**
- * This class defines a two timeout methods using annotations. One timeout will
- * run every two minutes, the other will run every three minutes
+ * This class defines two timeout methods using annotations. One timeout will
+ * run every minute, the other will run every 30 seconds
  */
 @Stateless
 public class BooksReportingBean {
@@ -21,24 +16,27 @@ public class BooksReportingBean {
 	// domain model.That's why the spec disallow interceptors in timeout
 	// methods, to reinforce
 	// this design.
-	private @EJB
-	BooksReportingBean delegate;
+	
+	//TODO: Inject an EJB reference to this class using the annotation javax.ejb.EJB
+	//private BooksReportingBean delegate;
 
-	// TODO: Annotate this method with @Schedule and configure the timer to run
-	// every two minutes. Configure the timer with persistence = false.
-	@Schedule(minute = "*/2", hour = "*", info = "BooksReporting Bean", persistent = false)
-	public void twoMinutes(Timer timer) {
-		delegate.doJob();
+	// TODO: Annotate this method with javax.ejb.Schedule and configure the timer to run
+	// every minute. Configure the timer with persistence = false.
+	//Example: @Schedule(minute = "*", hour = "*", info = "BooksReporting Bean", persistent = false)
+	public void oneMinute(Timer timer) {
+		//TODO: Delegate to an instance of this class but with ejb services
+		//delegate.doJob();
 	}
 
 	//TODO: Annotate this method with @Schedule and configure the timer to run
-	// every three minutes. Configure the timer with persistence = false.
-	@Schedule(minute = "*/3", hour = "*", info = "BooksReporting Bean", persistent = false)
-	public void threeMinutes(Timer timer) {
-		delegate.doJob();
+	// every thirty seconds. Configure the timer with persistence = false.
+	public void thirtySeconds(Timer timer) {
+		//TODO: Delegate to an instance of this class but with ejb services
+		//delegate.doJob();
 	}
 
-	@Interceptors(MethodInvocationInterceptor.class)
+	//This is the method that will be intercepted by MethodInvocationIntercepto to count the number of times the method was invoked
+	//TODO: Use the annotation javax.interceptor.Interceptors to specify the MethodInvocationInterceptor.class as an interceptor
 	public void doJob() {
 	}
 
