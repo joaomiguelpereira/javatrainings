@@ -13,17 +13,19 @@ import eu.jpereira.trainings.jee.timers.BookSellingReportingBean;
 import eu.jpereira.trainings.jee.timers.BooksReportingBean;
 import eu.jpereira.trainings.jee.timers.ReadersReportingBean;
 import eu.jpereira.trainings.jee.timers.service.TimeoutCounterFacade;
-import eu.jpereira.trainings.jee.timers.service.TimeoutCounterFacadeBean;
+import eu.jpereira.trainings.jee.timers.service.DefaultTimeoutCounterFacade;
 
 public class TimersTest extends RemoteEJBTest {
 
+	
+	private static final long POLL_INTERVAL =  5000;
 	/**
 	 * Configuration matches the deployed Session Beans in JBoss 7 Override it
 	 * here
 	 */
 	@BeforeClass
 	public static void setConfiguration() {
-		appName = "";
+		appName = ""; //We're deploying the EJB jar only
 		moduleName = "services-1.0-SNAPSHOT";
 		distinctName = "";
 	}
@@ -31,8 +33,9 @@ public class TimersTest extends RemoteEJBTest {
 	@Test(timeout=600000) //wait 10 minutes before failing
 	public void test() throws NamingException, InterruptedException {
 
+		
 		TimeoutCounterFacade facade = getStatelessSessionBeanReferenceFor(
-				TimeoutCounterFacade.class, TimeoutCounterFacadeBean.class);
+				TimeoutCounterFacade.class, DefaultTimeoutCounterFacade.class);
 
 		// this will count the number of hits in a timer. A hit is measured
 		// calling the TimeoutCounterFacade.getTimeoutCountFor(Class<?>) and
@@ -59,7 +62,8 @@ public class TimersTest extends RemoteEJBTest {
 			}
 			done = hit;
 			
-			Thread.sleep(5000);
+			//Wait
+			Thread.sleep(POLL_INTERVAL);
 
 		}
 
