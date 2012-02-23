@@ -40,6 +40,8 @@ Complete this survey: https://docs.google.com/spreadsheet/viewform?formkey=dFNEe
 
 == Java Persistence API ==
   * Presentation - http://www.box.com/s/tib04bnxb3r53eediqdj
+  * Exercises:
+    * 01 - Setup persistence - http://www.box.com/s/5ftss51mb62hchvzkoy1
 
 == Transactions ==
   * Presentation - http://www.box.com/s/prrm11pe7m1vfs955zdq
