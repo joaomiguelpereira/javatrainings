@@ -8,7 +8,7 @@
 		<version>1.0-SNAPSHOT</version>
 	</parent>
 	<artifactId>services</artifactId>
-	<packaging>jar</packaging>
+	<packaging>ejb</packaging>
 	<name>services</name>
 
 	<dependencies>
@@ -87,33 +87,7 @@
 	</build>
 
 
-	<profiles>
-		<profile>
-			<id>integration-tests</id>
-			<activation>
-				<property>
-					<name>env</name>
-					<value>itest</value>
-				</property>
-			</activation>
-			<build>
-				<plugins>
-					<plugin>
-						<groupId>org.jboss.as.plugins</groupId>
-						<artifactId>jboss-as-maven-plugin</artifactId>
-						<executions>
-							<execution>
-								<phase>pre-integration-test</phase>
-								<goals>
-									<goal>deploy</goal>
-								</goals>
-							</execution>
-						</executions>
-					</plugin>
-				</plugins>
-			</build>
-		</profile>
-	</profiles>
+	
 
 
 </project>
