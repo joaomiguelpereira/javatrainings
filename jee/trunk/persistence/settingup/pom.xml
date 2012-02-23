@@ -8,16 +8,15 @@
 	<groupId>eu.jpereira.trainings.jee.persistence</groupId>
 	<version>1.0-SNAPSHOT</version>
 	<packaging>pom</packaging>
-	<name>timers</name>
+	<name>persistence</name>
 
 
 	<!-- This is a multi-module project -->
 	<!-- List the modules -->
 	<modules>
-		<module>services</module>
-		<module>remote-integration-tests</module>
 		<module>model</module>
-		<module>model-tests</module>
+		<module>services</module>
+
 	</modules>
 
 
@@ -25,15 +24,9 @@
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 
-		<!-- Properties for configuring JEEUnit -->
-		<glassfish.version>3.1.1</glassfish.version>
+
 		<hibernate.version>3.6.8.Final</hibernate.version>
-		<logback.version>0.9.20</logback.version>
-		<slf4j.version>1.5.11</slf4j.version>
-		<spring.version>3.1.0.RELEASE</spring.version>
-		<tomcat6.version>6.0.33</tomcat6.version>
-		<tomcat7.version>7.0.23</tomcat7.version>
-		<weld.version>1.1.4.Final</weld.version>
+
 		<hsqldb.version>2.2.4</hsqldb.version>
 		<!-- Application properties -->
 		<application.finalName>timers</application.finalName>
@@ -41,15 +34,6 @@
 
 	</properties>
 
-
-	<repositories>
-		<!-- Configure Glashfish repository for testing artifacts -->
-		<repository>
-			<id>glassfish</id>
-			<name>Glassfish</name>
-			<url>http://download.java.net/maven/glassfish</url>
-		</repository>
-	</repositories>
 
 	<dependencyManagement>
 		<dependencies>
@@ -148,10 +132,6 @@
 				<version>${hsqldb.version}</version>
 			</dependency>
 
-
-
-
-
 		</dependencies>
 	</dependencyManagement>
 
@@ -193,4 +173,20 @@
 			</plugins>
 		</pluginManagement>
 	</build>
+
+	<profiles>
+		<profile>
+			<id>integration-tests</id>
+
+			<activation>
+				<property>
+					<name>env</name>
+					<value>itest</value>
+				</property>
+			</activation>
+			<modules>
+				<module>remote-integration-tests</module>
+			</modules>
+		</profile>
+	</profiles>
 </project>
