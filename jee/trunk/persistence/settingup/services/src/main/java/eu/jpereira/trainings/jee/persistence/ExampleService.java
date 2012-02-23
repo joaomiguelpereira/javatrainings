@@ -14,4 +14,6 @@ public interface ExampleService {
 	 * @return
 	 */
 	List<ExampleDomainObject> getAllExampleDomainObjects();
+
+	ExampleDomainObject createExampleDomainObject(String string);
 }
