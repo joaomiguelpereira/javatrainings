@@ -4,10 +4,15 @@
 	xsi:schemaLocation="
       http://java.sun.com/xml/ns/persistence
       http://java.sun.com/xml/ns/persistence/persistence_1_0.xsd">
-	<persistence-unit name="testPU"
-		transaction-type="RESOURCE_LOCAL">
-		<class>eu.jpereira.trainings.jee.persistence.model.ExampleDomainObject</class>
+
+	<!-- transactions are controlled by the user -->
+	<persistence-unit name="testPU" transaction-type="RESOURCE_LOCAL">
+		<!-- In the Unit Testing persistence unit, each persistent object should be listed here -->
+		<!-- TODO: Uncomment the follwoing class -->
 		
+		<!-- <class>eu.jpereira.trainings.jee.persistence.model.ExampleDomainObject</class> -->
+
+		<!-- Use an in Memory DB for unit tests -->
 		<properties>
 			<property name="hibernate.connection.driver_class" value="org.hsqldb.jdbcDriver" />
 			<property name="hibernate.connection.url" value="jdbc:hsqldb:mem:MyDataBase" />
