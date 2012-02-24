@@ -1,16 +1,16 @@
 package eu.jpereira.trainings.jee.persistence.model.customer;
 
+import static org.junit.Assert.assertNotNull;
+
 import org.junit.Test;
 
 import eu.jpereira.trainings.jee.persistence.model.DomainObjectTest;
 import eu.jpereira.trainings.jee.persistence.model.builder.BuilderRequiredValue;
 import eu.jpereira.trainings.jee.persistence.model.common.PostalAddress;
 
-
-import static org.junit.Assert.*;
-
 public class WebCustomerTest extends DomainObjectTest<WebCustomer> {
 
+	
 	
 	@Test
 	public void testGetCustomerCart() {
@@ -19,8 +19,10 @@ public class WebCustomerTest extends DomainObjectTest<WebCustomer> {
 		em.persist(testCustomer);
 		commitTx();
 		assertEntitySize(1);
+	
 	}
 	
+	@Test
 	public void testHasCart() {
 		WebCustomer testCustomer = createDummyObjectWithSerialNumber(0);
 		beginTx();
