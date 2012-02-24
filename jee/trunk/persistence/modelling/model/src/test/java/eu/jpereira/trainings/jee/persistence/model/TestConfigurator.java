@@ -24,5 +24,9 @@ public class TestConfigurator {
 	public String getPersistenceUnitName() {
 		return persistenceUnitName;
 	}
+	
+	public TestDBHelper getTestDbHelper() {
+		return new HSQLHelper() ;
+	}
 
 }

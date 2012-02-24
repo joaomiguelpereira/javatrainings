@@ -6,10 +6,8 @@ import static org.junit.Assert.assertTrue;
 
 import java.lang.reflect.ParameterizedType;
 import java.lang.reflect.Type;
-import java.sql.SQLException;
 import java.util.List;
 
-import org.junit.Before;
 import org.junit.Ignore;
 
 import eu.jpereira.trainings.jee.persistence.model.builder.BuilderRequiredValue;
@@ -20,14 +18,10 @@ import eu.jpereira.trainings.jee.persistence.model.builder.BuilderRequiredValue;
  * 
  */
 @Ignore
-public abstract class DomainObjectTest<T> extends HSQLPersistenceTest {
+public abstract class DomainObjectTest<T> extends PersistenceTest {
 	
-	@Before
-	public void reset() throws SQLException {
-		clearDatabase();
-
-	}
-
+	
+	
 
 	
 	/**

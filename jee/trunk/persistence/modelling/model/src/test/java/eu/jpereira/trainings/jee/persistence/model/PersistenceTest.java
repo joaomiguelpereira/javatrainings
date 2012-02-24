@@ -7,6 +7,7 @@ import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 
 import org.junit.AfterClass;
+import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Ignore;
 
@@ -48,6 +49,12 @@ public abstract class PersistenceTest {
 
 		if (emf != null)
 			emf.close();
+
+	}
+
+	@Before
+	public void reset() throws Exception {
+		TestConfigurator.instance.getTestDbHelper().clearDatabase();
 
 	}
 

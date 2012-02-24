@@ -11,13 +11,13 @@ import org.hibernate.impl.SessionImpl;
 import org.junit.Ignore;
 
 @Ignore
-public abstract class HSQLPersistenceTest extends PersistenceTest{
+public class HSQLHelper extends PersistenceTest implements TestDBHelper{
 	
 	/**
 	 * This will clear all tables from HSQLDB
 	 * @throws SQLException
 	 */
-	protected void clearDatabase() throws SQLException {
+	public void clearDatabase() throws SQLException {
 	    Connection c = ((SessionImpl) em.getDelegate()).connection();
 	    Statement s = c.createStatement();
 	    s.execute("SET DATABASE REFERENTIAL INTEGRITY FALSE");
