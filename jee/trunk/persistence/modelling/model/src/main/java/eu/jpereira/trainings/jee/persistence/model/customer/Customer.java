@@ -8,10 +8,10 @@ import javax.persistence.OneToOne;
 import javax.persistence.PrePersist;
 
 import eu.jpereira.trainings.jee.persistence.model.BasicDomainObject;
-import eu.jpereira.trainings.jee.persistence.model.PostalAddress;
-import eu.jpereira.trainings.jee.persistence.model.Store;
 import eu.jpereira.trainings.jee.persistence.model.builder.BuilderRequiredValue;
 import eu.jpereira.trainings.jee.persistence.model.cart.Cart;
+import eu.jpereira.trainings.jee.persistence.model.common.PostalAddress;
+import eu.jpereira.trainings.jee.persistence.model.store.Store;
 
 @Entity
 public abstract class Customer extends BasicDomainObject {

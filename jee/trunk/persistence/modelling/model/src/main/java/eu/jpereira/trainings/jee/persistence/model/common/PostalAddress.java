@@ -1,4 +1,4 @@
-package eu.jpereira.trainings.jee.persistence.model;
+package eu.jpereira.trainings.jee.persistence.model.common;
 
 import javax.persistence.Embeddable;
 

@@ -6,6 +6,7 @@ import org.junit.Test;
 import eu.jpereira.trainings.jee.persistence.model.items.ItemDimensions;
 import eu.jpereira.trainings.jee.persistence.model.items.PhysicalItem;
 import eu.jpereira.trainings.jee.persistence.model.items.SellableItem;
+import eu.jpereira.trainings.jee.persistence.model.store.Department;
 
 import static org.junit.Assert.*;
 

@@ -1,4 +1,4 @@
-package eu.jpereira.trainings.jee.persistence.model;
+package eu.jpereira.trainings.jee.persistence.model.store;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -12,8 +12,10 @@ import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 
-import eu.jpereira.trainings.jee.persistence.model.Store.Builder;
+import eu.jpereira.trainings.jee.persistence.model.BasicDomainObject;
+import eu.jpereira.trainings.jee.persistence.model.common.PostalAddress;
 import eu.jpereira.trainings.jee.persistence.model.customer.Customer;
+import eu.jpereira.trainings.jee.persistence.model.store.Store.Builder;
 
 /**
  * Store domain object

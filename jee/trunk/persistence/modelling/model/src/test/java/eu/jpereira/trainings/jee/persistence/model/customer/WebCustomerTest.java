@@ -3,8 +3,8 @@ package eu.jpereira.trainings.jee.persistence.model.customer;
 import org.junit.Test;
 
 import eu.jpereira.trainings.jee.persistence.model.DomainObjectTest;
-import eu.jpereira.trainings.jee.persistence.model.PostalAddress;
 import eu.jpereira.trainings.jee.persistence.model.builder.BuilderRequiredValue;
+import eu.jpereira.trainings.jee.persistence.model.common.PostalAddress;
 
 
 import static org.junit.Assert.*;

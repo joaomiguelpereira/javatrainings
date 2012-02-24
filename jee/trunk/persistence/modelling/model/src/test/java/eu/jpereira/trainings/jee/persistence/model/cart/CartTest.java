@@ -10,8 +10,8 @@ import org.junit.Before;
 import org.junit.Test;
 
 import eu.jpereira.trainings.jee.persistence.model.DomainObjectTest;
-import eu.jpereira.trainings.jee.persistence.model.PostalAddress;
 import eu.jpereira.trainings.jee.persistence.model.builder.BuilderRequiredValue;
+import eu.jpereira.trainings.jee.persistence.model.common.PostalAddress;
 import eu.jpereira.trainings.jee.persistence.model.customer.WebCustomer;
 import eu.jpereira.trainings.jee.persistence.model.items.EBookItem;
 import eu.jpereira.trainings.jee.persistence.model.items.ItemDimensions;
@@ -36,6 +36,13 @@ public class CartTest extends DomainObjectTest<Cart> {
 		beginTx();
 		em.persist(testCustomer);
 		commitTx();
+
+		WebCustomer otherCostumer = em
+				.createQuery("select c from WebCustomer c where c.email=?1", WebCustomer.class)
+				.setParameter(1, "Email").getSingleResult();
+		
+		
+		
 	}
 
 	@Test
@@ -62,7 +69,8 @@ public class CartTest extends DomainObjectTest<Cart> {
 		beginTx();
 		this.testCustomer.getCart().addItems(createItems);
 		commitTx();
-		assertEquals(Float.valueOf(100*300), this.testCustomer.getCart().calculatePrice());
+		assertEquals(Float.valueOf(100 * 300), this.testCustomer.getCart()
+				.calculatePrice());
 
 	}
 

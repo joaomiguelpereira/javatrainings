@@ -1,6 +1,6 @@
 package eu.jpereira.trainings.jee.persistence.model.items;
 
-import eu.jpereira.trainings.jee.persistence.model.PostalAddress;
+import eu.jpereira.trainings.jee.persistence.model.common.PostalAddress;
 
 
 /**

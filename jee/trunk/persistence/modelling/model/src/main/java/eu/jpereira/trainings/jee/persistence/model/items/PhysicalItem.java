@@ -3,7 +3,7 @@ package eu.jpereira.trainings.jee.persistence.model.items;
 import javax.persistence.Embedded;
 import javax.persistence.Entity;
 
-import eu.jpereira.trainings.jee.persistence.model.PostalAddress;
+import eu.jpereira.trainings.jee.persistence.model.common.PostalAddress;
 
 @Entity
 public class PhysicalItem extends SellableItem {

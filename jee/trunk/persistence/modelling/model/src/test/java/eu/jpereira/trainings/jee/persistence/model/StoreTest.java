@@ -7,8 +7,11 @@ import org.junit.Before;
 import org.junit.Test;
 
 import eu.jpereira.trainings.jee.persistence.model.builder.BuilderRequiredValue;
+import eu.jpereira.trainings.jee.persistence.model.common.PostalAddress;
 import eu.jpereira.trainings.jee.persistence.model.customer.Customer;
 import eu.jpereira.trainings.jee.persistence.model.customer.WebCustomer;
+import eu.jpereira.trainings.jee.persistence.model.store.Department;
+import eu.jpereira.trainings.jee.persistence.model.store.Store;
 
 /**
  * Unit test for ExampleDomainObject

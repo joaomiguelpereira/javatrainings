@@ -10,8 +10,8 @@
 		<!-- In the Unit Testing persistence unit, each persistent object should be listed here -->
 		<!-- TODO: Uncomment the follwoing class -->
 		
-		<class>eu.jpereira.trainings.jee.persistence.model.Store</class>
-		<class>eu.jpereira.trainings.jee.persistence.model.Department</class>
+		<class>eu.jpereira.trainings.jee.persistence.model.store.Store</class>
+		<class>eu.jpereira.trainings.jee.persistence.model.store.Department</class>
 		
 		<class>eu.jpereira.trainings.jee.persistence.model.customer.Customer</class>
 		<class>eu.jpereira.trainings.jee.persistence.model.customer.WebCustomer</class>

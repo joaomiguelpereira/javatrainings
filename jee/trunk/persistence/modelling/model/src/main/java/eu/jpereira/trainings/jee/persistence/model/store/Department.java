@@ -1,4 +1,4 @@
-package eu.jpereira.trainings.jee.persistence.model;
+package eu.jpereira.trainings.jee.persistence.model.store;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -8,6 +8,7 @@ import javax.persistence.Entity;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 
+import eu.jpereira.trainings.jee.persistence.model.BasicDomainObject;
 import eu.jpereira.trainings.jee.persistence.model.items.SellableItem;
 
 @Entity
