@@ -5,11 +5,11 @@
       http://java.sun.com/xml/ns/persistence
       http://java.sun.com/xml/ns/persistence/persistence_1_0.xsd">
 	<!-- TODO: Configure Persistence unit. You can use as many as you wish, 
-		but to keep things simple, use one for each fragment of your domain model in different jars. 
-		Follow the next TODOs: -->
+		but to keep things simple, use one for each fragment of your domain model 
+		in different jars. Follow the next TODOs: -->
 	<persistence-unit name="projectPU">
 
-		
+
 
 		<jta-data-source>java:jboss/datasources/MySqlDS</jta-data-source>
 
@@ -22,6 +22,9 @@
 			<!-- See http://docs.jboss.org/hibernate/orm/3.3/reference/en/html/session-configuration.html 
 				for hibernate specific configuration -->
 			<property name="hibernate.hbm2ddl.auto" value="create-drop" />
+			
+			<property name="hibernate.dialect" value="org.hibernate.dialect.MySQLDialect"/>
+			
 
 			<property name="hibernate.show_sql" value="true" />
 
