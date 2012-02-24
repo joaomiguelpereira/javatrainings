@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence version="1.0"
+	xmlns="http://java.sun.com/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="
+      http://java.sun.com/xml/ns/persistence
+      http://java.sun.com/xml/ns/persistence/persistence_1_0.xsd">
+	<!-- TODO: Configure Persistence unit. You can use as many as you wish, 
+		but to keep things simple, use one for each fragment of your domain model in different jars. 
+		Follow the next TODOs: -->
+	<persistence-unit name="projectPU">
+
+		
+
+		<jta-data-source>java:jboss/datasources/MySqlDS</jta-data-source>
+
+		<properties>
+
+			<!-- Properties for Hibernate (default provider for JBoss AS) -->
+			<!-- If you want that hibernate create the db tables on deployment and 
+				drop them on undeployment -->
+			<!-- <property name="hibernate.hbm2ddl.auto" value="create-drop" /> -->
+			<!-- See http://docs.jboss.org/hibernate/orm/3.3/reference/en/html/session-configuration.html 
+				for hibernate specific configuration -->
+			<property name="hibernate.hbm2ddl.auto" value="create-drop" />
+
+			<property name="hibernate.show_sql" value="true" />
+
+			<property name="hibernate.transaction.flush_before_completion"
+				value="true" />
+			<property name="hibernate.cache.provider_class" value="org.hibernate.cache.HashtableCacheProvider" />
+		</properties>
+	</persistence-unit>
+</persistence>

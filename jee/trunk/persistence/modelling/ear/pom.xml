@@ -1,0 +1,97 @@
+<?xml version="1.0"?>
+<project
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd"
+	xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>eu.jpereira.trainings.jee.persistence</groupId>
+		<artifactId>modelling</artifactId>
+		<version>1.0-SNAPSHOT</version>
+	</parent>
+
+	<artifactId>ear</artifactId>
+	<name>ear</name>
+	<packaging>ear</packaging>
+	<url>http://jpereira.eu</url>
+	<dependencies>
+
+		<dependency>
+			<groupId>${project.groupId}</groupId>
+			<artifactId>model</artifactId>
+			<version>${project.version}</version>
+			<type>ejb</type>
+		</dependency>
+
+		<dependency>
+			<groupId>${project.groupId}</groupId>
+			<artifactId>services</artifactId>
+			<version>${project.version}</version>
+			<type>ejb</type>
+		</dependency>
+
+
+	</dependencies>
+
+	<build>
+		<plugins>
+			<!-- Configure EAR Plugin -->
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-ear-plugin</artifactId>
+
+				<version>2.4.2</version>
+
+				<configuration>
+					<version>6</version>
+					<defaultLibBundleDir>lib</defaultLibBundleDir>
+					<displayName>${application.displayName}</displayName>
+
+					<!-- Specify the modules to include in the EAR -->
+					<modules>
+
+						<ejbModule>
+							<groupId>${project.groupId}</groupId>
+							<artifactId>services</artifactId>
+						</ejbModule>
+						<ejbModule>
+							<groupId>${project.groupId}</groupId>
+							<artifactId>model</artifactId>
+						</ejbModule>
+					</modules>
+
+				</configuration>
+			</plugin>
+
+
+
+		</plugins>
+	</build>
+
+	<profiles>
+		<profile>
+			<id>integration-tests</id>
+			<activation>
+				<property>
+					<name>env</name>
+					<value>itest</value>
+				</property>
+			</activation>
+			<build>
+				<plugins>
+					<plugin>
+						<groupId>org.jboss.as.plugins</groupId>
+						<artifactId>jboss-as-maven-plugin</artifactId>
+						<executions>
+							<execution>
+								<phase>pre-integration-test</phase>
+								<goals>
+									<goal>deploy</goal>
+								</goals>
+							</execution>
+						</executions>
+					</plugin>
+				</plugins>
+			</build>
+		</profile>
+	</profiles>
+</project>
