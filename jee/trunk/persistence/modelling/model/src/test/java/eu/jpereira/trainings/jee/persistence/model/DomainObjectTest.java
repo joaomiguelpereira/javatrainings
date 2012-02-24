@@ -6,22 +6,10 @@ import static org.junit.Assert.assertTrue;
 
 import java.lang.reflect.ParameterizedType;
 import java.lang.reflect.Type;
-import java.sql.Connection;
-import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.sql.Statement;
-import java.util.HashSet;
 import java.util.List;
-import java.util.Set;
 
-import javax.persistence.EntityManager;
-import javax.persistence.EntityManagerFactory;
-import javax.persistence.Persistence;
-
-import org.hibernate.impl.SessionImpl;
-import org.junit.AfterClass;
 import org.junit.Before;
-import org.junit.BeforeClass;
 import org.junit.Ignore;
 
 import eu.jpereira.trainings.jee.persistence.model.builder.BuilderRequiredValue;
@@ -32,86 +20,16 @@ import eu.jpereira.trainings.jee.persistence.model.builder.BuilderRequiredValue;
  * 
  */
 @Ignore
-public abstract class DomainObjectTest<T> extends PersistenceTest{
-
-	protected static EntityManagerFactory emf;
-	protected static EntityManager em;
-
-	// The name of the persistence context configured in
-	// src/test/resources/META-INF/persistence.xml
-	private static String persistenceUnitName = "testPU";
-
-	/**
-	 * Will create a new EntityManager for the persistence unit
-	 */
-	@BeforeClass
-	public static void initiTestCase() {
-		emf = Persistence.createEntityManagerFactory(persistenceUnitName);
-		em = emf.createEntityManager();
-	}
-
-	/**
-	 * This will clear all tables from HSQLDB
-	 * @throws SQLException
-	 */
-	private void clearDatabase() throws SQLException {
-	    Connection c = ((SessionImpl) em.getDelegate()).connection();
-	    Statement s = c.createStatement();
-	    s.execute("SET DATABASE REFERENTIAL INTEGRITY FALSE");
-	    Set<String> tables = new HashSet<String>();
-	    ResultSet rs = s.executeQuery("select table_name " +
-	        "from INFORMATION_SCHEMA.system_tables " +
-	        "where table_type='TABLE' and table_schem='PUBLIC'");
-	    while (rs.next()) {
-	        if (!rs.getString(1).startsWith("DUAL_")) {
-	            tables.add(rs.getString(1));
-	        }
-	    }
-	    rs.close();
-	    for (String table : tables) {
-	        s.executeUpdate("DELETE FROM " + table);
-	    }
-	    s.execute("SET DATABASE REFERENTIAL INTEGRITY TRUE");
-	    s.close();
-	    beginTx();
-	    em.flush();
-	    commitTx();
-	}
+public abstract class DomainObjectTest<T> extends HSQLPersistenceTest {
+	
 	@Before
 	public void reset() throws SQLException {
 		clearDatabase();
 
 	}
 
-	/**
-	 * Open a transaction
-	 */
-	@Ignore
-	protected void beginTx() {
-		em.getTransaction().begin();
-	}
 
-	/**
-	 * Commit a transaction
-	 */
-	@Ignore
-	protected void commitTx() {
-		em.getTransaction().commit();
-	}
-
-	/**
-	 * Shutdow entitymanager and entitymanager factory
-	 */
-	@AfterClass
-	public static void shutDown() {
-		if (em != null)
-			em.close();
-
-		if (emf != null)
-			emf.close();
-
-	}
-
+	
 	/**
 	 * Asserts that exists the expected number of entities in the DB
 	 * 

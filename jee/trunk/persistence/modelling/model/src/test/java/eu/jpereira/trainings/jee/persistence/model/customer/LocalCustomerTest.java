@@ -7,7 +7,9 @@ import eu.jpereira.trainings.jee.persistence.model.builder.BuilderRequiredValue;
 import eu.jpereira.trainings.jee.persistence.model.common.PostalAddress;
 
 public class LocalCustomerTest extends DomainObjectTest<LocalCustomer> {
-
+	
+	
+	
 	@Test
 	public void testCreate() throws BuilderRequiredValue {
 		LocalCustomer lCustomer = createDummyObjectWithSerialNumber(0);
