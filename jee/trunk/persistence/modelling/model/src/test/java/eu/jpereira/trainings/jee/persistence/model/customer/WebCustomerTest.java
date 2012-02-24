@@ -10,8 +10,6 @@ import eu.jpereira.trainings.jee.persistence.model.common.PostalAddress;
 
 public class WebCustomerTest extends DomainObjectTest<WebCustomer> {
 
-	
-	
 	@Test
 	public void testGetCustomerCart() {
 		WebCustomer testCustomer = createDummyObjectWithSerialNumber(0);
@@ -19,9 +17,9 @@ public class WebCustomerTest extends DomainObjectTest<WebCustomer> {
 		em.persist(testCustomer);
 		commitTx();
 		assertEntitySize(1);
-	
+
 	}
-	
+
 	@Test
 	public void testHasCart() {
 		WebCustomer testCustomer = createDummyObjectWithSerialNumber(0);
@@ -31,6 +29,7 @@ public class WebCustomerTest extends DomainObjectTest<WebCustomer> {
 		assertEntitySize(1);
 		assertNotNull(testCustomer.cart);
 	}
+
 	@Override
 	protected WebCustomer createDummyObjectWithSerialNumber(int i) {
 		WebCustomer customer = null;
