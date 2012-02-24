@@ -1,4 +1,4 @@
-package eu.jpereira.trainings.jee.persistence.model;
+package eu.jpereira.trainings.jee.persistence.model.store;
 
 import java.util.List;
 import static org.junit.Assert.*;
@@ -6,6 +6,7 @@ import static org.junit.Assert.*;
 import org.junit.Before;
 import org.junit.Test;
 
+import eu.jpereira.trainings.jee.persistence.model.DomainObjectTest;
 import eu.jpereira.trainings.jee.persistence.model.builder.BuilderRequiredValue;
 import eu.jpereira.trainings.jee.persistence.model.common.PostalAddress;
 import eu.jpereira.trainings.jee.persistence.model.customer.Customer;

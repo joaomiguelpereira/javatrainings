@@ -1,8 +1,9 @@
-package eu.jpereira.trainings.jee.persistence.model;
+package eu.jpereira.trainings.jee.persistence.model.store;
 
 import org.junit.Before;
 import org.junit.Test;
 
+import eu.jpereira.trainings.jee.persistence.model.DomainObjectTest;
 import eu.jpereira.trainings.jee.persistence.model.items.ItemDimensions;
 import eu.jpereira.trainings.jee.persistence.model.items.PhysicalItem;
 import eu.jpereira.trainings.jee.persistence.model.items.SellableItem;
