@@ -15,6 +15,7 @@ public class TestConfigurator {
 	// properties file, for example
 	private String persistenceUnitName = "testPU";
 
+	private TestDBHelper testDBHelper = new HSQLHelper();
 	public static TestConfigurator instance = new TestConfigurator();
 
 	private TestConfigurator() {
@@ -26,7 +27,7 @@ public class TestConfigurator {
 	}
 	
 	public TestDBHelper getTestDbHelper() {
-		return new HSQLHelper() ;
+		return this.testDBHelper;
 	}
 
 }
