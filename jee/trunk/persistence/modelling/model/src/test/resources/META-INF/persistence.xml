@@ -8,7 +8,7 @@
 	<!-- transactions are controlled by the user -->
 	<persistence-unit name="testPU" transaction-type="RESOURCE_LOCAL">
 		<!-- In the Unit Testing persistence unit, each persistent object should be listed here -->
-		<!-- TODO: Uncomment the follwoing class -->
+		<!-- TODO: Add the persistente Domain Object classes bellow.  -->
 		
 		<class>eu.jpereira.trainings.jee.persistence.model.store.Store</class>
 		<class>eu.jpereira.trainings.jee.persistence.model.store.Department</class>

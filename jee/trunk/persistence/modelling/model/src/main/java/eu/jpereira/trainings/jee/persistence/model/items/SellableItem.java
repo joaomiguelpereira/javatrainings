@@ -4,6 +4,7 @@ import javax.persistence.Entity;
 
 import eu.jpereira.trainings.jee.persistence.model.BasicDomainObject;
 
+//TODO: This is the base class for all types of Items sold by a department. This should be persistable because is used in polymorphic operations. Annotate withe the proper annotation
 @Entity
 public abstract class SellableItem extends BasicDomainObject {
 
