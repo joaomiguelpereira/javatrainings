@@ -9,9 +9,12 @@ import javax.persistence.OneToMany;
 import eu.jpereira.trainings.jee.persistence.model.BasicDomainObject;
 import eu.jpereira.trainings.jee.persistence.model.items.SellableItem;
 
+//TODO: The Cart Domain Object should be mapped to a table in the DB with the same name as this class
 @Entity
 public class Cart extends BasicDomainObject {
 
+	// TODO: A cart has a unidirectional one to many relationship to
+	// SellableItems. Annotate with the proper annotation
 	@OneToMany
 	private List<SellableItem> items;
 
@@ -40,12 +43,12 @@ public class Cart extends BasicDomainObject {
 
 	public void empty() {
 		this.items.clear();
-		
+
 	}
 
 	public Float calculatePrice() {
 		float price = 0;
-		for ( SellableItem sellableItem : this.items   ) {
+		for (SellableItem sellableItem : this.items) {
 			price += sellableItem.getPrice();
 		}
 		return price;

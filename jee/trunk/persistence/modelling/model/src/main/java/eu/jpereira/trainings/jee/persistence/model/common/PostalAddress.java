@@ -8,6 +8,9 @@ import javax.persistence.Embeddable;
  * @author jee
  * 
  */
+
+// TODO: This object is used to be embedded in other objects. Annotate with
+// proper annotation
 @Embeddable
 public class PostalAddress {
 
@@ -50,15 +53,17 @@ public class PostalAddress {
 			this.object.street = street;
 			return this;
 		}
+
 		public Builder withCity(String city) {
 			this.object.city = city;
 			return this;
 		}
+
 		public Builder withPostalCode(String postalCode) {
 			this.object.postalCode = postalCode;
 			return this;
 		}
-		
+
 		public PostalAddress build() {
 			PostalAddress postalAddress = this.object;
 			this.object = new PostalAddress();

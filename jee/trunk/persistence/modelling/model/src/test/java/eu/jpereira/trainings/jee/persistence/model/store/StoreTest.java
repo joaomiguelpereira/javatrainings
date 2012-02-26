@@ -78,6 +78,9 @@ public class StoreTest extends DomainObjectTest<Store> {
 		// now, let's check if the
 		Store persistedStore = find(storeId);
 		assertEquals(1, persistedStore.getAllDepartments().size());
+		
+		//Check the the department has the correct reference to the store
+		assertEquals(persistedStore, persistedStore.getAllDepartments().get(0).getStore());
 	}
 
 	@Test
@@ -90,17 +93,20 @@ public class StoreTest extends DomainObjectTest<Store> {
 		em.persist(testStore);
 		testStore.addDepartment(department);
 		commitTx();
-
+		assertEquals(testStore, department.getStore());
 		Long storeId = testStore.getId();
-		// now, let's check if the
+
+		
 		Store persistedStore = find(storeId);
 		assertEquals(1, persistedStore.getAllDepartments().size());
+ 
 		beginTx();
 		persistedStore.removeDepartment(persistedStore.getAllDepartments().get(
 				0));
 		commitTx();
 		persistedStore = find(storeId);
 		assertEquals(0, persistedStore.getAllDepartments().size());
+		assertNull(department.getStore());
 	}
 
 	@Test

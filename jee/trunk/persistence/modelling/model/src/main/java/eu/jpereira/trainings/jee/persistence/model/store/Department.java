@@ -11,15 +11,30 @@ import javax.persistence.OneToMany;
 import eu.jpereira.trainings.jee.persistence.model.BasicDomainObject;
 import eu.jpereira.trainings.jee.persistence.model.items.SellableItem;
 
+/**
+ * Domain object representing a Department
+ * 
+ * @author jee
+ * 
+ */
+//TODO: This should be mapped to a table in the DB named after the class name
 @Entity
 public class Department extends BasicDomainObject {
 
 	private String name;
 
+	// TODO: A department has a reference to the store that has this department.
+	// This field is part of a bidirectional OneToMany relationship in the
+	// Store Object. Annotate this field to be mapped as the other end of a
+	// OneToMany relationship bidirectional relationship.
 	@ManyToOne
 	private Store store;
 
-	@OneToMany(cascade=CascadeType.ALL)
+	// TODO: A Department has many items that can sell. This is a unidirectional
+	// one to many relationship. Annotate with the proper annotation to map this
+	// collection to a one to many relationship. Also, let the persistence
+	// provider to cascade all operations in child objects
+	@OneToMany(cascade = CascadeType.ALL)
 	private List<SellableItem> sellableItems;
 
 	public String getName() {
@@ -72,6 +87,11 @@ public class Department extends BasicDomainObject {
 	public void removeSellableItem(SellableItem itemToRemove) {
 
 		this.sellableItems.remove(itemToRemove);
+	}
+
+	public Store getStore() {
+
+		return this.store;
 	}
 
 }

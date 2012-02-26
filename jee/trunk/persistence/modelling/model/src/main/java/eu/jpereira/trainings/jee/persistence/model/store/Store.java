@@ -3,19 +3,13 @@ package eu.jpereira.trainings.jee.persistence.model.store;
 import java.util.ArrayList;
 import java.util.List;
 
-import javax.persistence.Column;
 import javax.persistence.Embedded;
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
 import javax.persistence.OneToMany;
-import javax.persistence.OneToOne;
 
 import eu.jpereira.trainings.jee.persistence.model.BasicDomainObject;
 import eu.jpereira.trainings.jee.persistence.model.common.PostalAddress;
 import eu.jpereira.trainings.jee.persistence.model.customer.Customer;
-import eu.jpereira.trainings.jee.persistence.model.store.Store.Builder;
 
 /**
  * Store domain object
@@ -23,6 +17,8 @@ import eu.jpereira.trainings.jee.persistence.model.store.Store.Builder;
  * @author jee
  * 
  */
+
+// TODO: This should be mapped to a table in the DB named after the class name
 @Entity
 public class Store extends BasicDomainObject {
 
@@ -30,12 +26,22 @@ public class Store extends BasicDomainObject {
 
 	private String description;
 
+	// TODO: One Store has many departments. This relationship is bidirectional,
+	// so at the other end of the relationship should exist a reference to this
+	// object
+	// Annotate the field with the proper annotation
 	@OneToMany(mappedBy = "store")
 	private List<Department> departments;
 
+	// TODO: One Store has many departments. This relationship is biderectional,
+	// so at the other end of the relationship should exes a reference to this
+	// object. Annotate the field with proper annotation
 	@OneToMany(mappedBy = "store")
 	private List<Customer> customers;
 
+	// TODO: PostalAddress should be mapped to the same table as Store, meaning
+	// that the object postalAddress should be embedded here. Annotate with the
+	// proper annotation to make postalAddress a embedded object of this object
 	@Embedded
 	public PostalAddress postalAddress;
 
@@ -43,16 +49,83 @@ public class Store extends BasicDomainObject {
 		return name;
 	}
 
+	public String getDescription() {
+		return description;
+	}
+
+	/**
+	 * Add a department to this store.
+	 * 
+	 * @param department
+	 */
 	public void addDepartment(Department department) {
 
 		if (this.departments == null) {
 			this.departments = new ArrayList<Department>();
 		}
 
+		// TODO: Since this is a bidirectional OneToMany relationship, you
+		// should set a reference to this object at the other end of the
+		// relationship. Uncomment the code bellow
 		department.assignToStore(this);
 
 		this.departments.add(department);
 
+	}
+
+	/**
+	 * Add a customer to the store
+	 * 
+	 * @param customer
+	 */
+	public void addCustomer(Customer customer) {
+		if (this.customers == null) {
+			this.customers = new ArrayList<Customer>();
+		}
+		// TODO: Since this is a biderectional OneToMany relationship, you
+		// should set a reference to this object at the other end of the
+		// relationship. Uncomment the followinf code
+		customer.assignToStore(this);
+		this.customers.add(customer);
+
+	}
+
+	/**
+	 * Remove a customer from this store
+	 * 
+	 * @param customer
+	 */
+	public void removeCustomer(Customer customer) {
+		// TODO: Since this is a bidirectional OneToMany relationship, you
+		// should remove the reference to this object from the other end of the
+		// relationship. Uncomment the folllowing line
+		customer.assignToStore(null);
+
+		this.customers.remove(customer);
+
+	}
+
+	/**
+	 * Remove a department from this store.
+	 * 
+	 * @param department
+	 */
+	public void removeDepartment(Department department) {
+
+		// TODO: Since this a bidirectional OneToMany relationship, you should
+		// remoce the reference to this object from the other end of the
+		// relationship. Uncomment the following line
+		department.assignToStore(null);
+		this.departments.remove(department);
+
+	}
+
+	public List<Department> getAllDepartments() {
+		return this.departments;
+	}
+
+	public List<Customer> getAllCustomers() {
+		return this.customers;
 	}
 
 	/**
@@ -93,32 +166,4 @@ public class Store extends BasicDomainObject {
 		}
 	}
 
-	public List<Department> getAllDepartments() {
-		return this.departments;
-	}
-
-	public void addCustomer(Customer customer) {
-		if (this.customers == null) {
-			this.customers = new ArrayList<Customer>();
-		}
-		customer.assignToStore(this);
-		this.customers.add(customer);
-
-	}
-
-	public List<Customer> getAllCustomers() {
-		return this.customers;
-	}
-
-	public void removeCustomer(Customer customer) {
-		customer.assignToStore(null);
-		this.customers.remove(customer);
-
-	}
-
-	public void removeDepartment(Department department) {
-		department.assignToStore(null);
-		this.departments.remove(department);
-
-	}
 }

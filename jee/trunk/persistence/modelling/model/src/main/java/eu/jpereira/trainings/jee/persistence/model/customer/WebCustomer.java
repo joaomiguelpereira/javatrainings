@@ -4,6 +4,7 @@ import javax.persistence.Entity;
 
 import eu.jpereira.trainings.jee.persistence.model.builder.BuilderRequiredValue;
 
+//TODO: This domain Object should be mapped to the DB
 @Entity
 public class WebCustomer extends Customer {
 
@@ -14,7 +15,7 @@ public class WebCustomer extends Customer {
 	}
 
 	public static class Builder extends Customer.CustomerBuilder<WebCustomer> {
-		
+
 		public Builder withEmail(String email) {
 			this.instance.email = email;
 			return this;
@@ -22,7 +23,7 @@ public class WebCustomer extends Customer {
 
 		@Override
 		protected WebCustomer createInstance() {
-			
+
 			return new WebCustomer();
 		}
 
