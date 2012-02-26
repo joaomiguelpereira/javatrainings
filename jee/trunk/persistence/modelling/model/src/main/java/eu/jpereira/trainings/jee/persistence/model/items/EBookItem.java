@@ -1,9 +1,7 @@
 package eu.jpereira.trainings.jee.persistence.model.items;
 
-import javax.persistence.Entity;
 
 //TODO: This domain object should be mapped to the DB. Annotate with the proper annotation
-@Entity
 public class EBookItem extends DigitalItem {
 
 	private String ISBN;

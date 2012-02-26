@@ -3,11 +3,6 @@ package eu.jpereira.trainings.jee.persistence.model.store;
 import java.util.ArrayList;
 import java.util.List;
 
-import javax.persistence.CascadeType;
-import javax.persistence.Entity;
-import javax.persistence.ManyToOne;
-import javax.persistence.OneToMany;
-
 import eu.jpereira.trainings.jee.persistence.model.BasicDomainObject;
 import eu.jpereira.trainings.jee.persistence.model.items.SellableItem;
 
@@ -18,7 +13,6 @@ import eu.jpereira.trainings.jee.persistence.model.items.SellableItem;
  * 
  */
 //TODO: This should be mapped to a table in the DB named after the class name
-@Entity
 public class Department extends BasicDomainObject {
 
 	private String name;
@@ -27,14 +21,12 @@ public class Department extends BasicDomainObject {
 	// This field is part of a bidirectional OneToMany relationship in the
 	// Store Object. Annotate this field to be mapped as the other end of a
 	// OneToMany relationship bidirectional relationship.
-	@ManyToOne
 	private Store store;
 
 	// TODO: A Department has many items that can sell. This is a unidirectional
 	// one to many relationship. Annotate with the proper annotation to map this
 	// collection to a one to many relationship. Also, let the persistence
 	// provider to cascade all operations in child objects
-	@OneToMany(cascade = CascadeType.ALL)
 	private List<SellableItem> sellableItems;
 
 	public String getName() {

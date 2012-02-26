@@ -3,19 +3,14 @@ package eu.jpereira.trainings.jee.persistence.model.cart;
 import java.util.ArrayList;
 import java.util.List;
 
-import javax.persistence.Entity;
-import javax.persistence.OneToMany;
-
 import eu.jpereira.trainings.jee.persistence.model.BasicDomainObject;
 import eu.jpereira.trainings.jee.persistence.model.items.SellableItem;
 
 //TODO: The Cart Domain Object should be mapped to a table in the DB with the same name as this class
-@Entity
 public class Cart extends BasicDomainObject {
 
 	// TODO: A cart has a unidirectional one to many relationship to
 	// SellableItems. Annotate with the proper annotation
-	@OneToMany
 	private List<SellableItem> items;
 
 	public void addItem(SellableItem sellableItem) {

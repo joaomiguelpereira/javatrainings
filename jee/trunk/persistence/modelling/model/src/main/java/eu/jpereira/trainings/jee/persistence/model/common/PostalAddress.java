@@ -1,6 +1,5 @@
 package eu.jpereira.trainings.jee.persistence.model.common;
 
-import javax.persistence.Embeddable;
 
 /**
  * Ambeddable PostalAddress
@@ -11,7 +10,6 @@ import javax.persistence.Embeddable;
 
 // TODO: This object is used to be embedded in other objects. Annotate with
 // proper annotation
-@Embeddable
 public class PostalAddress {
 
 	private String street;

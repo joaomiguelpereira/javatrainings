@@ -1,9 +1,7 @@
 package eu.jpereira.trainings.jee.persistence.model.items;
 
-import javax.persistence.Embeddable;
 
 //TODO: The state of this object should be persisted in the same table as client objects. Make this class embeddable
-@Embeddable
 public class ItemDimensions {
 
 	private Integer weigth;

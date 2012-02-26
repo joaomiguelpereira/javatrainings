@@ -3,10 +3,6 @@ package eu.jpereira.trainings.jee.persistence.model.store;
 import java.util.ArrayList;
 import java.util.List;
 
-import javax.persistence.Embedded;
-import javax.persistence.Entity;
-import javax.persistence.OneToMany;
-
 import eu.jpereira.trainings.jee.persistence.model.BasicDomainObject;
 import eu.jpereira.trainings.jee.persistence.model.common.PostalAddress;
 import eu.jpereira.trainings.jee.persistence.model.customer.Customer;
@@ -19,7 +15,6 @@ import eu.jpereira.trainings.jee.persistence.model.customer.Customer;
  */
 
 // TODO: This should be mapped to a table in the DB named after the class name
-@Entity
 public class Store extends BasicDomainObject {
 
 	private String name;
@@ -30,19 +25,16 @@ public class Store extends BasicDomainObject {
 	// so at the other end of the relationship should exist a reference to this
 	// object
 	// Annotate the field with the proper annotation
-	@OneToMany(mappedBy = "store")
 	private List<Department> departments;
 
 	// TODO: One Store has many departments. This relationship is biderectional,
 	// so at the other end of the relationship should exes a reference to this
 	// object. Annotate the field with proper annotation
-	@OneToMany(mappedBy = "store")
 	private List<Customer> customers;
 
 	// TODO: PostalAddress should be mapped to the same table as Store, meaning
 	// that the object postalAddress should be embedded here. Annotate with the
 	// proper annotation to make postalAddress a embedded object of this object
-	@Embedded
 	public PostalAddress postalAddress;
 
 	public String getName() {
@@ -67,7 +59,7 @@ public class Store extends BasicDomainObject {
 		// TODO: Since this is a bidirectional OneToMany relationship, you
 		// should set a reference to this object at the other end of the
 		// relationship. Uncomment the code bellow
-		department.assignToStore(this);
+		//department.assignToStore(this);
 
 		this.departments.add(department);
 
@@ -85,7 +77,7 @@ public class Store extends BasicDomainObject {
 		// TODO: Since this is a biderectional OneToMany relationship, you
 		// should set a reference to this object at the other end of the
 		// relationship. Uncomment the followinf code
-		customer.assignToStore(this);
+		//customer.assignToStore(this);
 		this.customers.add(customer);
 
 	}
@@ -99,7 +91,7 @@ public class Store extends BasicDomainObject {
 		// TODO: Since this is a bidirectional OneToMany relationship, you
 		// should remove the reference to this object from the other end of the
 		// relationship. Uncomment the folllowing line
-		customer.assignToStore(null);
+		//customer.assignToStore(null);
 
 		this.customers.remove(customer);
 
@@ -115,7 +107,7 @@ public class Store extends BasicDomainObject {
 		// TODO: Since this a bidirectional OneToMany relationship, you should
 		// remoce the reference to this object from the other end of the
 		// relationship. Uncomment the following line
-		department.assignToStore(null);
+		//department.assignToStore(null);
 		this.departments.remove(department);
 
 	}

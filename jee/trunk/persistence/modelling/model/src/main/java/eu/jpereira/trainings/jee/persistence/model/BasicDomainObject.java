@@ -1,9 +1,5 @@
 package eu.jpereira.trainings.jee.persistence.model;
 
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.MappedSuperclass;
 
 /**
  * The BasicDomain Object is the type for any domain object that is identified
@@ -12,10 +8,9 @@ import javax.persistence.MappedSuperclass;
  * @author jee
  * 
  */
-// TODO Persistence: This state of this class should be persisted in every class
+// TODO Persistence: The state of this class should be persisted in every class
 // down in the hierarchy. Annotate the class with proper javax.persistence
-// annotation
-@MappedSuperclass
+// annotation to tell persistence provider this is a mapped super class
 public abstract class BasicDomainObject extends DomainObject {
 
 	// TODO Persistence: The instance field id should be used by persistence
@@ -28,11 +23,8 @@ public abstract class BasicDomainObject extends DomainObject {
 	// db)
 	// TODO: Annotate the field with javax.persistence.GeneratedValue and set
 	// the strategy to GenerationType.AUTO
-	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
 	
-	// don'te have setter for id because is readonly. Persistence provide will
-	// assign a unique ID
+	
 	private Long id;
 
 	public Long getId() {

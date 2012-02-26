@@ -1,10 +1,5 @@
 package eu.jpereira.trainings.jee.persistence.model.customer;
 
-import javax.persistence.CascadeType;
-import javax.persistence.Embedded;
-import javax.persistence.Entity;
-import javax.persistence.ManyToOne;
-import javax.persistence.OneToOne;
 import javax.persistence.PrePersist;
 
 import eu.jpereira.trainings.jee.persistence.model.BasicDomainObject;
@@ -22,7 +17,6 @@ import eu.jpereira.trainings.jee.persistence.model.store.Store;
 // TODO: This is the base class for all types of customers. This should be it
 // self a an entity because is used in polymorphic operations and should be
 // mapped to the DB. Annotate with the proper annotation
-@Entity
 public abstract class Customer extends BasicDomainObject {
 
 	protected String firstName;
@@ -32,19 +26,16 @@ public abstract class Customer extends BasicDomainObject {
 	// TODO: The postal address should be mapped to the same table as customer.
 	// Annotate the field with the proper annotation to embedded the object
 	// postalAddress to the same table
-	@Embedded
 	protected PostalAddress postalAddress;
 
 	// A customer is the other end of a bidirectional relationship in Store
 	// object. Annotate this field to be mapped as the other end of the
 	// OneToMany
 	// relationship between Store and Customer in Store.
-	@ManyToOne
 	protected Store store;
 
 	// TODO: Every customer has only one cart. Persistence operations on a
 	// Customer shoulp propagate to the Cart object
-	@OneToOne(cascade = CascadeType.ALL)
 	protected Cart cart;
 
 	public void assignToStore(Store store) {

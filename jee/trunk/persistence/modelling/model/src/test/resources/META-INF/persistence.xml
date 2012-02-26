@@ -10,22 +10,8 @@
 		<!-- In the Unit Testing persistence unit, each persistent object should be listed here -->
 		<!-- TODO: Add the persistente Domain Object classes bellow.  -->
 		
-		<class>eu.jpereira.trainings.jee.persistence.model.store.Store</class>
-		<class>eu.jpereira.trainings.jee.persistence.model.store.Department</class>
-		
-		<class>eu.jpereira.trainings.jee.persistence.model.customer.Customer</class>
-		<class>eu.jpereira.trainings.jee.persistence.model.customer.WebCustomer</class>
-		<class>eu.jpereira.trainings.jee.persistence.model.customer.LocalCustomer</class>
-		
-		
-		<class>eu.jpereira.trainings.jee.persistence.model.cart.Cart</class>
-		
-		<class>eu.jpereira.trainings.jee.persistence.model.items.SellableItem</class>
-		<class>eu.jpereira.trainings.jee.persistence.model.items.DigitalItem</class>
-		<class>eu.jpereira.trainings.jee.persistence.model.items.SoftwareItem</class>
-		<class>eu.jpereira.trainings.jee.persistence.model.items.EBookItem</class>
-		<class>eu.jpereira.trainings.jee.persistence.model.items.PhysicalItem</class>
-		
+		<!-- <class>eu.jpereira.trainings.jee.persistence.model.store.Store</class> -->
+				
 
 		<!-- Use an in Memory DB for unit tests -->
 		<properties>

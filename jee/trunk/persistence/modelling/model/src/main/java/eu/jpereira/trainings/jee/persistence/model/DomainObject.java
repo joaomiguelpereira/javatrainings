@@ -1,7 +1,5 @@
 package eu.jpereira.trainings.jee.persistence.model;
 
-import javax.persistence.MappedSuperclass;
-import javax.persistence.Version;
 
 /**
  * This is the base class for all Domain Objects in the App
@@ -10,8 +8,8 @@ import javax.persistence.Version;
  * 
  */
 // TODO Persistence: This state of this class should be persisted in every class
-// down in the hierarchy. Annotate the class with proper javax.persistence annotation
-@MappedSuperclass
+// down in the hierarchy. Annotate the class with proper javax.persistence
+// annotation to tell persistence provider this is a mapped super class
 public abstract class DomainObject {
 	// Add any common state and behavior here
 
@@ -20,6 +18,6 @@ public abstract class DomainObject {
 	// synchronized with state the DB. Create a new private instance field of
 	// type string and annotate it with the proper javax.persistence annotation
 
-	@Version
+
 	private Long version;
 }

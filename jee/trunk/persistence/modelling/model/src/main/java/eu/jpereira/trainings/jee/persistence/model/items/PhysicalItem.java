@@ -1,17 +1,12 @@
 package eu.jpereira.trainings.jee.persistence.model.items;
 
-import javax.persistence.Embedded;
-import javax.persistence.Entity;
-
 import eu.jpereira.trainings.jee.persistence.model.common.PostalAddress;
 
 //TODO: This domain object should be mapped to the DB. Annotate with the proper annotation
-@Entity
 public class PhysicalItem extends SellableItem {
 
 	// TODO: The dimensions object should be mapped to the same table as this
 	// object
-	@Embedded
 	private ItemDimensions dimensions;
 
 	public float calculateShippingCosts(PostalAddress toAddress,

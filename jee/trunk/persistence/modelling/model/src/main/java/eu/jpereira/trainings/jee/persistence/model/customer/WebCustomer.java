@@ -1,11 +1,8 @@
 package eu.jpereira.trainings.jee.persistence.model.customer;
 
-import javax.persistence.Entity;
-
 import eu.jpereira.trainings.jee.persistence.model.builder.BuilderRequiredValue;
 
 //TODO: This domain Object should be mapped to the DB
-@Entity
 public class WebCustomer extends Customer {
 
 	private String email;
