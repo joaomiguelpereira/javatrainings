@@ -81,7 +81,8 @@ Complete this survey: https://docs.google.com/spreadsheet/viewform?formkey=dFNEe
 
 
 
-==
+== Configurations
+=== JBoss 7 AS DS configuration
 {{{
 
  <datasource jndi-name="java:jboss/datasources/MySqlDS" pool-name="MySqlDS">
