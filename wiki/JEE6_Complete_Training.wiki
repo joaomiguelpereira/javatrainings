@@ -82,7 +82,7 @@ Complete this survey: https://docs.google.com/spreadsheet/viewform?formkey=dFNEe
 
 
 ==
-
+{{{
 
  <datasource jndi-name="java:jboss/datasources/MySqlDS" pool-name="MySqlDS">
                     <connection-url>
@@ -123,10 +123,10 @@ Complete this survey: https://docs.google.com/spreadsheet/viewform?formkey=dFNEe
                     </statement>
                 </datasource>
 
-
-
 <driver name="com.mysql" module="com.mysql">
                         <xa-datasource-class>
                             com.mysql.jdbc.jdbc2.optional.MysqlXADataSource
                         </xa-datasource-class>
                     </driver>
+
+}}}
