@@ -1,0 +1,9 @@
+Adding a topic to jboss 7
+
+{JBOSS_HOME}/bin/jboss-admin.sh
+connect
+add-jms-topic --name=ordersTopic  --jndi=topics/orders
+
+Remove a topic 
+
+remove-jms-topic --name=ordersTopic
