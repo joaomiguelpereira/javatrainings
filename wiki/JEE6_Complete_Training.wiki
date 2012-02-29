@@ -78,3 +78,55 @@ Complete this survey: https://docs.google.com/spreadsheet/viewform?formkey=dFNEe
 == Windows/Ububtu VM ==
   * MySql user/pass: root/jee6
   * JBoss Console: admin/123123
+
+
+
+==
+
+
+ <datasource jndi-name="java:jboss/datasources/MySqlDS" pool-name="MySqlDS">
+                    <connection-url>
+                        jdbc:mysql://localhost:3306/settingup
+                    </connection-url>
+                    <driver>
+                        com.mysql
+                    </driver>
+                    <transaction-isolation>
+                        TRANSACTION_READ_COMMITTED
+                    </transaction-isolation>
+                    <pool>
+                        <min-pool-size>
+                            10
+                        </min-pool-size>
+                        <max-pool-size>
+                            100
+                        </max-pool-size>
+                        <prefill>
+                            true
+                        </prefill>
+                    </pool>
+                    <security>
+                        <user-name>
+                            root
+                        </user-name>
+                        <password>
+                            jee6
+                        </password>
+                    </security>
+                    <statement>
+                        <prepared-statement-cache-size>
+                            32
+                        </prepared-statement-cache-size>
+                        <share-prepared-statements>
+                            true
+                        </share-prepared-statements>
+                    </statement>
+                </datasource>
+
+
+
+<driver name="com.mysql" module="com.mysql">
+                        <xa-datasource-class>
+                            com.mysql.jdbc.jdbc2.optional.MysqlXADataSource
+                        </xa-datasource-class>
+                    </driver>
