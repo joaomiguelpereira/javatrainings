@@ -18,8 +18,8 @@ Tests will fail. That's your job to fix the application so all tests run
   * Analyse also the *services* project
 
 = Fix the application ==
-  * Open file {{{ScheduledOrdesJobCreator}} and follow the *TODO*s
-  * Open file {{{JobsSubmitter}} and follow the *TODO*s
+  * Open file {{{ScheduledOrdesJobCreator}}} and follow the *TODO*s
+  * Open file {{{JobsSubmitter}}} and follow the *TODO*s
 
 After fixing the application and with the queue created, test the application:
   * {{{ mvn clean install}}}
