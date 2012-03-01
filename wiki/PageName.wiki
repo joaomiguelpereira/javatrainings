@@ -1,9 +1,17 @@
 #Exercise for QUEUES
 
-= Update the exercises fodle =
+= Update the exercises folder and run tests=
 
 Update your exercises folder from SVN
   
   * Go to {exercises_folder}/ejb31/mdb/queues
   * Generate the eclipse projects
     * {{{ mvn clean eclipse:eclipse -Dmaven.skip.test=true}}}
+  * Start JBoss 7 and test the application
+    * {{{ mvn clean install}}
+
+Tests will fail. That's your job to fix the application so all tests run
+
+= Analyse tests and application =
+  * In Eclipse, anayle project {{{remote-integration-tests}}
+  * Open class {{OrdesRemoteFacadeTest}} and analyse the test {{{testCreateOrder()}}}
