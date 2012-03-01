@@ -6,7 +6,7 @@ Update your exercises folder from SVN
   * Generate the eclipse projects
     * {{{ mvn clean eclipse:eclipse -Dmaven.skip.test=true}}}
   * Start JBoss 7 and test the application
-    * {{{ mvn clean install}}
+    * {{{ mvn clean install}}}
 
 Tests will fail. That's your job to fix the application so all tests run
 
