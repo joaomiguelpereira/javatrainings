@@ -1,0 +1,9 @@
+#Exercise for QUEUES
+
+= Update the exercises fodle =
+
+Update your exercises folder from SVN
+  
+  * Go to {exercises_folder}/ejb31/mdb/queues
+  * Generate the eclipse projects
+    * {{{ mvn clean eclipse:eclipse -Dmaven.skip.test=true}}}
