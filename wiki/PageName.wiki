@@ -14,4 +14,12 @@ Tests will fail. That's your job to fix the application so all tests run
 
 = Analyse tests and application =
   * In Eclipse, anayle project *remote-integration-tests*
-  * Open class {{OrdesRemoteFacadeTest}} and analyse the test {{{testCreateOrder()}}}
+  * Open class {{{OrdesRemoteFacadeTest}}} and analyse the test {{{testCreateOrder()}}}
+  * Analyse also the *services* project
+
+= Fix the application ==
+  * Open file {{{ScheduledOrdesJobCreator}} and follow the *TODO*s
+  * Open file {{{JobsSubmitter}} and follow the *TODO*s
+
+After fixing the application and with the queue created, test the application:
+  * {{{ mvn clean install}}}
