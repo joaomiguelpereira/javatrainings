@@ -3,7 +3,6 @@ package eu.jpereira.trainings.jee.mdb.queues.producer;
 import javax.ejb.EJB;
 import javax.ejb.Schedule;
 import javax.ejb.Stateless;
-import javax.jms.JMSException;
 
 import eu.jpereira.trainings.jee.mdb.queues.model.jobs.Job;
 import eu.jpereira.trainings.jee.mdb.queues.model.jobs.ProcessOrderJob;
@@ -21,27 +20,26 @@ public class ScheduledOrderJobCreator {
 
 	private @EJB
 	Orders ordersDao;
-	
-	private @EJB
-	JobsSubmitter jobSubmitter;
+
+	// TODO: Inject a EJB of type JobsSumitter
+	// private JobsSubmitter jobSubmitter;
 
 	@SuppressWarnings("unused")
-	@Schedule(second = "*/30", minute = "*", hour="*", persistent=false)
+	@Schedule(second = "*/30", minute = "*", hour = "*", persistent = false)
 	private void createJob() {
 		System.out.println("Running ScheduleOrderJobCreator");
 		SellOrder order = ordersDao.findOldestUnprocessedOrder();
 
 		if (order != null) {
 
-			Job job = new ProcessOrderJob.Builder().forDomainObjectId(order.getId())
-					.build();
+			Job job = new ProcessOrderJob.Builder().forDomainObjectId(
+					order.getId()).build();
 
-			try {
-				jobSubmitter.submitJob(job);
-			} catch (JMSException e) {
-				//Handle the exception correctlty
-				e.printStackTrace();
-			}
+			// TODO: Use the stateless bean JobsSubmiter to submit the JOB
+			/*
+			 * try { jobSubmitter.submitJob(job); } catch (JMSException e) {
+			 * //Handle the exception correctlty e.printStackTrace(); }
+			 */
 		}
 
 	}

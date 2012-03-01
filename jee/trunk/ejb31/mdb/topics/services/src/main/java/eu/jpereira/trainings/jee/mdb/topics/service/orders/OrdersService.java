@@ -5,15 +5,14 @@ import java.util.List;
 import javax.ejb.EJB;
 import javax.ejb.Remote;
 import javax.ejb.Stateless;
-import javax.jms.JMSException;
 
 import eu.jpereira.trainings.jee.mdb.topics.model.ModelNotFoundException;
 import eu.jpereira.trainings.jee.mdb.topics.model.customers.Customer;
 import eu.jpereira.trainings.jee.mdb.topics.model.customers.Customers;
 import eu.jpereira.trainings.jee.mdb.topics.model.items.Item;
 import eu.jpereira.trainings.jee.mdb.topics.model.items.Items;
-import eu.jpereira.trainings.jee.mdb.topics.model.orders.SellOrders;
 import eu.jpereira.trainings.jee.mdb.topics.model.orders.SellOrder;
+import eu.jpereira.trainings.jee.mdb.topics.model.orders.SellOrders;
 import eu.jpereira.trainings.jee.mdb.topics.service.orders.SellOrderCounter.SellOrderType;
 
 @Stateless
@@ -29,8 +28,10 @@ public class OrdersService implements OrdersRemoteFacade {
 
 	
 	private @EJB SellOrderCounter ordersCounter;
-	private @EJB
-	SellOrderNotfier notifier;
+
+	//TODO: Inject an EJB of type SellOrderNotifier
+	
+	//private SellOrderNotfier notifier;
 
 	@Override
 	public Long placeOrder(List<Long> itemsIds, Long customerID)
@@ -46,15 +47,16 @@ public class OrdersService implements OrdersRemoteFacade {
 		SellOrder order = orders.persist(new SellOrder.Builder()
 				.forCustomer(customer).withItems(itemsList).build());
 
-		// This is a good integration for sending a message to a queue
+		// This is a good integration for sending a message to the topic
+		//TODO: Use the SellOrderNotigier EJB to send a message
+		/*
 		try {
 			notifier.notifyNewSellOrder(order);
 		} catch (JMSException e) {
-			// TODO Auto-generated catch block
 			// Just log it
 			e.printStackTrace();
 		}
-
+        */
 		return order.getId();
 
 	}

@@ -1,25 +1,22 @@
 package eu.jpereira.trainings.jee.mdb.topics.service.orders;
 
-import javax.ejb.EJB;
-import javax.jms.JMSException;
-import javax.jms.Message;
-import javax.jms.ObjectMessage;
-
-import eu.jpereira.trainings.jee.mdb.topics.model.orders.SellOrder;
 import eu.jpereira.trainings.jee.mdb.topics.service.orders.SellOrderCounter.SellOrderType;
 
-public abstract class SellOrdersTopicListener implements
-		javax.jms.MessageListener {
+//TODO: This is the base class for all MDBs. Implement the interface javax.jms.MessageListener
 
-	private @EJB
-	SellOrderCounter sellOrdersCounter;
+public abstract class SellOrdersTopicListener /*implements javax.jms.MessageListener */{
 
+	
+	//TODO: Inject an EJB of type SellOrderCounter. Analyze the SellOrderCounter
+	//private SellOrderCounter sellOrdersCounter;
+
+	//This abstract method is implemented by concrete MDBs
 	protected abstract SellOrderType getType();
 
+	//TODO: Implement the interface from javax.jms.MessageListener
+	/*
 	@Override
 	public void onMessage(Message message) {
-		System.out.println("Handling Message on "
-				+ this.getClass().getSimpleName());
 		if (message instanceof ObjectMessage) {
 
 			ObjectMessage objectMessage = (ObjectMessage) message;
@@ -27,7 +24,7 @@ public abstract class SellOrdersTopicListener implements
 
 				if (objectMessage.getObject() instanceof SellOrder) {
 					SellOrder sellOrder = (SellOrder) objectMessage.getObject();
-					System.out.println("----handling price "+sellOrder.getTotalPrice()+" on class "+this.getClass().getSimpleName());
+			
 					// Will only count the number of hits in this MDB
 					sellOrdersCounter.hitOrderType(getType());
 				}
@@ -37,7 +34,9 @@ public abstract class SellOrdersTopicListener implements
 				e.printStackTrace();
 			}
 		}
+		
+		
 
-	}
+	}*/
 
 }

@@ -1,7 +1,5 @@
 package eu.jpereira.trainings.jee.mdb.topics.service.orders;
 
-import static org.junit.Assert.assertEquals;
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -17,8 +15,6 @@ import eu.jpereira.trainings.jee.mdb.topics.service.customers.CustomersRemoteFac
 import eu.jpereira.trainings.jee.mdb.topics.service.customers.CustomersService;
 import eu.jpereira.trainings.jee.mdb.topics.service.items.ItemsRemoteFacade;
 import eu.jpereira.trainings.jee.mdb.topics.service.items.ItemsService;
-import eu.jpereira.trainings.jee.mdb.topics.service.orders.OrdersRemoteFacade;
-import eu.jpereira.trainings.jee.mdb.topics.service.orders.OrdersService;
 import eu.jpereira.trainings.jee.mdb.topics.service.orders.SellOrderCounter.SellOrderType;
 import eu.jpereira.trainings.jee.mdb.topics.test.RemoteStatelessBeanTest;
 
@@ -77,7 +73,7 @@ public class OrdersRemoteFacadeTest extends
 			done = true;
 			for (SellOrderType type : SellOrderType.values()) {
 				int count = facade.getProcessedOrders(type);
-				System.out.println("Testing "+type+" --> "+count);
+				
 				done = done &  count > 0;
 			}
 			System.out.println("Sleeping...");
