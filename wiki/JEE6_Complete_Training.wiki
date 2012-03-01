@@ -49,6 +49,9 @@ Complete this survey: https://docs.google.com/spreadsheet/viewform?formkey=dFNEe
 
 == Asynchronous Java EE Applications and Messaging ==
   * Presentation - http://www.box.com/s/1cxki8xy8oayq72pohmd
+  * Exercises:
+    * 01 - Queues - http://code.google.com/p/javatrainings/wiki/QueuesExercise
+    * 02 - Topics - http://code.google.com/p/javatrainings/wiki/TopicsExercise
 
 == Additional Content ==
 
