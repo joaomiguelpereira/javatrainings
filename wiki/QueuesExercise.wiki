@@ -1,5 +1,3 @@
-#Exercise for QUEUES
-
 = Update the exercises folder and run tests=
 
 Update your exercises folder from SVN
