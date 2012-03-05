@@ -11,7 +11,7 @@ Update your exercises folder from SVN
 Tests will fail. That's your job to fix the application so all tests run
 
 = Analyse tests and application =
-  * In Eclipse, anayle project *remote-integration-tests*
+  * In Eclipse, analyse project *remote-integration-tests*
   * Open class {{{OrdesRemoteFacadeTest}}} and analyse the test {{{testCreateOrder()}}}
   * Analyse also the *services* project
 
