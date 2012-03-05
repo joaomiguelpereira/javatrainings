@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	template="/WEB-INF/templates/default.xhtml">
+
+	<ui:define name="content">
+		<h1>Project Management Web App</h1>
+
+		<div id="mainMenu">
+		<ul>
+
+			<li><h:outputLink value="/projectmngt/rest-api">
+				<h:outputText value="REST API" />
+			</h:outputLink></li>
+		</ul>
+		</div>
+	</ui:define>
+</ui:composition>
