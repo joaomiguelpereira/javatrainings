@@ -1,3 +1,2 @@
-#Watch Object Oriented Programming videos
-
-<iframe src="http://player.vimeo.com/video/43612849?title=0&amp;byline=0" width="400" height="300" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
+#Vides (WIP: Categorize)
+http://player.vimeo.com/video/43612849?title=0&amp;byline=0
