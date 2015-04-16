@@ -1,0 +1,27 @@
+# Update the exercises folder and run tests #
+
+Update your exercises folder from SVN
+
+  * Go to {exercises\_folder}/ejb31/mdb/queues
+  * Generate the eclipse projects
+    * ` mvn clean eclipse:eclipse -Dmaven.skip.test=true`
+  * Start JBoss 7 and test the application
+    * ` mvn clean install`
+
+Tests will fail. That's your job to fix the application so all tests run
+
+# Analyse tests and application #
+  * In Eclipse, analyse project **remote-integration-tests**
+  * Open class `OrdesRemoteFacadeTest` and analyse the test `testCreateOrder()`
+  * Analyse also the **services** project
+
+# Fix the application #
+  * Open file `ScheduledOrdesJobCreator` and follow the **TODOs**
+  * Open file `JobsSubmitter` and follow the **TODOs**
+  * Open file `OrderProcessor` and follow the **TODOs**
+
+After fixing the application and with the queue created, test the application:
+  * ` mvn clean install`
+
+
+**See http://code.google.com/p/javatrainings/wiki/JBoss7Hints for hints about adding removing queues in JBoss7**

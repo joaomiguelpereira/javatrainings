@@ -1,0 +1,29 @@
+## Adding/Removig a topic to JBoss 7 ##
+
+```
+{JBOSS_HOME}/bin/jboss-admin.sh
+connect
+add-jms-topic --name=ordersTopic  --entries=topics/orders
+```
+**Remove a topic**
+
+```
+{JBOSS_HOME}/bin/jboss-admin.sh
+connect
+remove-jms-topic --name=ordersTopic
+```
+
+== Adding/removing queues to JBoss 7
+
+```
+{JBOSS_HOME}/bin/jboss-admin.sh
+connect
+add-jms-queue --name=ordersTopic  --entries=queues/orders
+```
+**Remove a topic**
+
+```
+{JBOSS_HOME}/bin/jboss-admin.sh
+connect
+remove-jms-queue --name=ordersQueue
+```

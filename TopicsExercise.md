@@ -1,0 +1,33 @@
+# Update the exercises folder and run tests #
+
+Update your exercises folder from SVN
+
+  * Go to {exercises\_folder}/ejb31/mdb/topics
+  * Generate the eclipse projects
+    * ` mvn clean eclipse:eclipse -Dmaven.skip.test=true`
+  * Start JBoss 7 and test the application
+    * ` mvn clean install`
+
+Tests will fail. That's your job to fix the application so all tests run
+
+# Analyse tests and application #
+  * In Eclipse, analyze project **remote-integration-tests**
+  * Open class `OrdesRemoteFacadeTest` and analyse the test `testCreateOrder()`
+  * Analyse also the **services** project
+
+# Fix the application #
+  * Open file `OrdersService` and follow the **TODOs**
+  * Open file `SellOrderNotifier` and follow the **TODOs**
+  * Open file `SellOrdersTopicListener` and follow the **TODOs**
+  * Open file `AverageOrdersTopicListener` and follow the **TODOs**
+  * Open file `BigOrdersTopicListener` and follow the **TODOs**
+  * Open file `SmallOrdersTopicListener` and follow the **TODOs**
+
+
+
+
+After fixing the application and with the topic created, test the application:
+  * ` mvn clean install`
+
+
+**See http://code.google.com/p/javatrainings/wiki/JBoss7Hints for hints about adding removing queues in JBoss7**
